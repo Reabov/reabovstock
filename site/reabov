@@ -1,0 +1,1315 @@
+-- MySQL dump 10.13  Distrib 5.7.41, for Linux (x86_64)
+--
+-- Host: localhost    Database: v0423_reabov
+-- ------------------------------------------------------
+-- Server version	5.7.41-0ubuntu0.18.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ws_abonament`
+--
+
+DROP TABLE IF EXISTS `ws_abonament`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_abonament` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `from_date` varchar(255) NOT NULL,
+  `to_date` varchar(255) NOT NULL,
+  `days` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `title_en` varchar(255) NOT NULL,
+  `little_title_en` varchar(255) NOT NULL DEFAULT '',
+  `text_en` varchar(255) NOT NULL,
+  `max` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_abonament`
+--
+
+LOCK TABLES `ws_abonament` WRITE;
+/*!40000 ALTER TABLE `ws_abonament` DISABLE KEYS */;
+INSERT INTO `ws_abonament` VALUES (1,1,0,'2021-05-22','2021-06-22',33,12,'30 Days','best value','144 per year',5),(2,1,0,'2021-02-22','2022-02-23',365,120,'12 Month','','10 per Month',10),(4,1,500,'','',90,30,'Summer 2023','','BEST OFFER NOW',2);
+/*!40000 ALTER TABLE `ws_abonament` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_abonament_client`
+--
+
+DROP TABLE IF EXISTS `ws_abonament_client`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_abonament_client` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `ab_id` int(11) NOT NULL,
+  `ab_start` datetime NOT NULL,
+  `ab_end` datetime NOT NULL,
+  `is_paid` tinyint(4) NOT NULL DEFAULT '0',
+  `paypal_token` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=240 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_abonament_client`
+--
+
+LOCK TABLES `ws_abonament_client` WRITE;
+/*!40000 ALTER TABLE `ws_abonament_client` DISABLE KEYS */;
+INSERT INTO `ws_abonament_client` VALUES (2,10,2,'2023-05-23 18:11:24','2024-05-22 18:11:24',0,''),(3,10,2,'2023-05-23 18:47:28','2024-05-22 18:47:28',1,''),(4,26,1,'2023-05-24 12:52:06','2023-06-23 12:52:06',1,''),(6,28,1,'2023-05-26 16:57:54','2023-06-25 16:57:54',1,''),(7,30,1,'2023-05-27 11:56:40','2023-06-26 11:56:40',1,''),(8,31,4,'2023-05-29 19:34:34','2023-06-20 19:34:34',1,''),(9,31,4,'2023-05-29 19:35:34','2023-06-20 19:35:34',0,''),(12,27,4,'2023-05-30 17:29:10','2023-06-21 17:29:10',0,''),(13,27,4,'2023-05-30 17:31:10','2023-06-21 17:31:10',0,''),(14,27,4,'2023-05-30 17:38:13','2023-06-21 17:38:13',0,''),(15,27,4,'2023-05-30 17:40:13','2023-06-21 17:40:13',0,''),(16,27,4,'2023-05-30 17:42:13','2023-06-21 17:42:13',0,''),(17,27,4,'2023-05-30 17:25:17','2023-06-21 17:25:17',0,''),(18,27,4,'2023-05-30 17:53:18','2023-06-21 17:53:18',0,''),(19,27,4,'2023-05-30 17:55:18','2023-06-21 17:55:18',0,''),(20,27,4,'2023-05-30 17:44:47','2023-06-21 17:44:47',0,''),(21,27,4,'2023-05-30 17:50:47','2023-06-21 17:50:47',0,''),(22,27,4,'2023-05-30 17:02:49','2023-06-21 17:02:49',0,''),(23,27,4,'2023-05-30 18:35:02','2023-06-21 18:35:02',0,''),(24,27,2,'2023-05-30 18:39:10','2024-05-29 18:39:10',0,'58T6717570628152D'),(25,27,4,'2023-05-30 18:36:22','2023-06-21 18:36:22',0,'9PY1772479982632B'),(26,27,4,'2023-05-30 18:51:24','2023-06-21 18:51:24',0,''),(27,27,4,'2023-05-30 18:27:26','2023-06-21 18:27:26',0,'92253887RB802015N'),(28,27,4,'2023-05-31 09:49:19','2023-06-22 09:49:19',0,''),(29,27,4,'2023-05-31 09:49:47','2023-06-22 09:49:47',0,''),(30,27,4,'2023-05-31 09:57:49','2023-06-22 09:57:49',0,'0H595455HK646374A'),(40,27,4,'2023-05-31 11:21:13','2023-06-22 11:21:13',0,'7N014848401434908'),(42,27,4,'2023-05-31 11:38:52','2023-06-22 11:38:52',0,'5K9030310Y9499640'),(43,27,4,'2023-05-31 11:12:57','2023-06-22 11:12:57',0,'65W29151YC545851H'),(44,27,4,'2023-05-31 11:26:58','2023-06-22 11:26:58',0,'17D21009AX089382F'),(45,27,4,'2023-05-31 12:06:02','2023-06-22 12:06:02',0,'05P27086GJ5880935'),(46,27,4,'2023-05-31 12:44:20','2023-06-22 12:44:20',0,'9DH46734EL782083P'),(47,27,4,'2023-05-31 12:31:56','2023-06-22 12:31:56',0,'3KW04243U73079242'),(48,27,4,'2023-05-31 12:06:59','2023-06-22 12:06:59',0,'1RM99295LP883740Y'),(49,27,4,'2023-05-31 14:04:18','2023-06-22 14:04:18',0,'8LT10116EV1921011'),(50,27,4,'2023-05-31 14:13:23','2023-06-22 14:13:23',0,'2L281470XY5772924'),(51,27,4,'2023-05-31 14:46:24','2023-06-22 14:46:24',0,'8BW86012TR405333G'),(52,27,4,'2023-05-31 14:33:26','2023-06-22 14:33:26',0,'73H117574J0273946'),(53,27,4,'2023-05-31 14:59:27','2023-06-22 14:59:27',0,'8CE12548DT6888742'),(54,27,4,'2023-05-31 14:09:30','2023-06-22 14:09:30',0,'3AT352674H935193U'),(55,27,4,'2023-05-31 14:05:32','2023-06-22 14:05:32',0,'129288509B790404B'),(56,27,4,'2023-05-31 14:04:43','2023-06-22 14:04:43',0,'0G033298LF6193357'),(57,27,4,'2023-05-31 14:30:48','2023-06-22 14:30:48',0,'9W6029046T516483U'),(58,27,4,'2023-05-31 14:55:49','2023-06-22 14:55:49',0,'8BJ430115U735124L'),(59,27,4,'2023-05-31 14:32:53','2023-06-22 14:32:53',0,'20F87156AN8880612'),(60,27,4,'2023-05-31 14:31:56','2023-06-22 14:31:56',0,'21344153BT8538920'),(62,27,4,'2023-05-31 15:48:04','2023-06-22 15:48:04',0,'42E48271KT138092S'),(65,27,4,'2023-05-31 16:34:08','2023-06-22 16:34:08',0,'EC-95C622378N825752U'),(66,27,4,'2023-05-31 17:43:22','2023-06-22 17:43:22',0,'2V257820XT362481B'),(67,34,5,'2023-05-31 18:15:03','2023-06-30 18:15:03',0,'01R18935GV779302E'),(68,27,5,'2023-06-01 09:10:48','2023-07-01 09:10:48',0,'6V076511XC569983E'),(69,27,5,'2023-06-01 11:38:33','2023-07-01 11:38:33',0,'72G99632KD477333G'),(71,27,4,'2023-06-01 12:38:23','2023-06-23 12:38:23',0,'8N592819EU7418040'),(72,27,4,'2023-06-01 18:16:17','2023-06-23 18:16:17',0,'1KA12747SU941225K'),(73,27,5,'2023-06-02 09:25:53','2023-07-02 09:25:53',0,'EC-03R55875AL952251B'),(74,33,4,'2023-06-02 09:37:58','2023-06-24 09:37:58',0,'4LJ94559U08822332'),(75,33,4,'2023-06-02 09:58:58','2023-06-24 09:58:58',0,'16T55681XF892844L'),(77,27,5,'2023-06-02 11:50:56','2023-07-02 11:50:56',0,'EC-7RY516804C131805U'),(78,27,5,'2023-06-02 11:09:57','2023-07-02 11:09:57',1,'EC-70L74386B3739983K'),(79,33,4,'2023-06-04 18:32:47','2023-06-26 18:32:47',0,'EC-2BG92500EF054070K'),(80,35,5,'2023-06-07 14:36:56','2023-07-07 14:36:56',0,'EC-0MT54423VF629672A'),(81,35,2,'2023-06-07 14:42:56','2024-06-06 14:42:56',1,'EC-8L360348LT466673F'),(82,33,2,'2023-06-07 20:32:45','2024-06-06 20:32:45',0,'EC-14X20825N3626991H'),(83,32,2,'2023-06-13 11:17:51','2024-06-12 11:17:51',0,'EC-34N60376XK5668813'),(84,32,1,'2023-06-20 17:09:44','2023-07-23 17:09:44',0,'EC-07815808DJ158624A'),(85,33,2,'2023-06-22 15:09:37','2024-06-21 15:09:37',0,'EC-71H48587R56943745'),(86,33,1,'2023-06-24 14:20:16','2023-07-27 14:20:16',0,'EC-92H67243MX052483N'),(87,33,1,'2023-06-24 14:28:17','2023-07-27 14:28:17',0,'EC-0WH83206594353517'),(88,34,2,'2023-06-24 14:58:20','2024-06-23 14:58:20',0,'EC-67931004CH279383U'),(89,27,1,'2023-07-04 16:22:30','2023-08-06 16:22:30',0,'EC-81996273XC541625E'),(90,27,4,'2023-07-04 16:00:31','2023-10-02 16:00:31',0,'EC-3X397887F31448307'),(91,27,1,'2023-07-04 16:32:56','2023-08-04 16:32:56',0,'EC-3X397887F31448307'),(92,27,1,'2023-07-05 10:39:51','2023-08-07 10:39:51',0,''),(93,27,2,'2023-07-05 10:04:52','2024-07-04 10:04:52',0,''),(94,27,4,'2023-07-05 10:38:56','2023-10-03 10:38:56',0,'EC-8MN446471N7302031'),(95,27,2,'2023-07-05 10:08:58','2024-07-04 10:08:58',0,'EC-2RD68008DP1149422'),(96,27,4,'2023-07-05 10:29:58','2023-10-03 10:29:58',0,'EC-3L716070B1993583J'),(97,27,1,'2023-07-05 10:32:58','2023-08-07 10:32:58',0,'EC-1UF043145L9895623'),(98,27,1,'2023-07-05 11:05:02','2023-08-07 11:05:02',0,'EC-4TL53570AH698132D'),(99,27,1,'2023-07-05 11:31:13','2023-08-07 11:31:13',0,'EC-8TU34778GP7912812'),(100,27,1,'2023-07-05 11:00:16','2023-08-07 11:00:16',0,'EC-7X50325582329720N'),(101,27,2,'2023-07-05 11:12:17','2024-07-04 11:12:17',0,'EC-5TR445629A773053E'),(102,27,1,'2023-07-05 11:35:24','2023-08-07 11:35:24',0,'EC-33P204555Y749212K'),(103,27,1,'2023-07-05 11:14:30','2023-08-07 11:14:30',0,''),(104,27,1,'2023-07-05 11:24:30','2023-08-07 11:24:30',0,''),(105,27,2,'2023-07-05 11:01:32','2024-07-04 11:01:32',0,'EC-3T994454XM003281B'),(106,27,1,'2023-07-05 11:54:41','2023-08-07 11:54:41',0,''),(107,27,1,'2023-07-05 11:50:46','2023-08-07 11:50:46',0,''),(108,27,1,'2023-07-05 11:13:47','2023-08-07 11:13:47',0,'EC-39K5185553693744V'),(109,27,1,'2023-07-05 11:13:47','2023-08-07 11:13:47',0,''),(110,27,2,'2023-07-05 11:13:47','2024-07-04 11:13:47',0,''),(111,27,2,'2023-07-05 11:13:47','2024-07-04 11:13:47',0,''),(112,27,2,'2023-07-05 11:47:51','2024-07-04 11:47:51',0,'EC-8T7358732K7296724'),(113,27,2,'2023-07-05 11:52:51','2024-07-04 11:52:51',0,''),(114,27,2,'2023-07-05 11:52:51','2024-07-04 11:52:51',0,''),(115,27,2,'2023-07-05 11:21:53','2024-07-04 11:21:53',0,''),(116,27,2,'2023-07-05 11:29:54','2024-07-04 11:29:54',0,''),(117,27,2,'2023-07-05 11:59:54','2024-07-04 11:59:54',0,''),(118,27,2,'2023-07-05 11:59:54','2024-07-04 11:59:54',0,''),(119,27,2,'2023-07-05 11:59:54','2024-07-04 11:59:54',0,''),(120,27,2,'2023-07-05 11:59:54','2024-07-04 11:59:54',0,''),(121,27,2,'2023-07-05 11:00:55','2024-07-04 11:00:55',0,''),(122,27,2,'2023-07-05 11:00:55','2024-07-04 11:00:55',0,''),(123,27,4,'2023-07-05 11:04:55','2023-10-03 11:04:55',0,''),(124,27,1,'2023-07-05 12:22:03','2023-07-05 12:22:03',0,''),(125,27,1,'2023-07-05 12:28:09','2023-08-07 12:28:09',0,''),(126,27,2,'2023-07-05 12:57:09','2024-07-04 12:57:09',0,''),(127,27,2,'2023-07-05 12:57:09','2024-07-04 12:57:09',0,''),(128,27,2,'2023-07-05 12:57:09','2024-07-04 12:57:09',0,''),(129,27,1,'2023-07-05 12:57:09','2023-08-07 12:57:09',0,'EC-4BS06970XS797512H'),(130,27,1,'2023-07-05 12:57:09','2023-08-07 12:57:09',0,'EC-3XD98355HD7588811'),(131,27,2,'2023-07-05 12:57:09','2024-07-04 12:57:09',0,''),(132,27,1,'2023-07-05 12:57:09','2023-08-07 12:57:09',0,''),(133,27,2,'2023-07-05 12:28:17','2024-07-04 12:28:17',0,''),(134,27,2,'2023-07-05 12:47:17','2024-07-04 12:47:17',0,''),(135,27,2,'2023-07-05 12:09:18','2024-07-04 12:09:18',0,''),(136,27,2,'2023-07-05 12:03:20','2024-07-04 12:03:20',0,''),(137,27,2,'2023-07-05 12:01:21','2024-07-04 12:01:21',0,''),(138,27,4,'2023-07-05 12:15:22','2023-10-03 12:15:22',0,''),(139,27,4,'2023-07-05 12:42:22','2023-10-03 12:42:22',0,''),(140,27,4,'2023-07-05 12:47:23','2023-10-03 12:47:23',0,''),(141,27,4,'2023-07-05 12:50:24','2023-10-03 12:50:24',0,''),(142,27,2,'2023-07-05 12:27:25','2024-07-04 12:27:25',0,''),(143,27,2,'2023-07-05 12:09:27','2024-07-04 12:09:27',0,''),(144,27,1,'2023-07-05 12:26:30','2023-08-07 12:26:30',0,''),(145,27,1,'2023-07-05 12:12:33','2023-08-07 12:12:33',0,''),(146,27,2,'2023-07-05 12:19:33','2024-07-04 12:19:33',0,''),(147,34,2,'2023-07-07 11:44:22','2024-07-06 11:44:22',0,'EC-6ST74144NN431002N'),(148,34,4,'2023-07-07 11:46:22','2023-10-05 11:46:22',0,'EC-4YD59760S08621015'),(149,33,2,'2023-07-07 20:55:14','2024-07-06 20:55:14',0,'EC-14M72970RX877151A'),(150,33,2,'2023-07-07 20:20:15','2024-07-06 20:20:15',0,'EC-76641243PC819922C'),(151,33,2,'2023-07-07 20:30:29','2024-07-06 20:30:29',0,'EC-68H65496VA541621M'),(152,33,2,'2023-07-07 20:09:31','2024-07-06 20:09:31',0,'EC-9MG854189E6045235'),(153,33,2,'2023-07-07 20:02:50','2024-07-06 20:02:50',0,'EC-7D270644CD164535B'),(154,33,2,'2023-07-07 20:30:50','2024-07-06 20:30:50',0,'EC-77S33365HU0980401'),(155,33,2,'2023-07-10 13:44:12','2024-07-09 13:44:12',0,'EC-1PA21201YR8400949'),(156,33,2,'2023-07-10 13:53:12','2024-07-09 13:53:12',0,'EC-85C663000U368604S'),(157,33,2,'2023-07-10 13:07:15','2024-07-09 13:07:15',0,'EC-1DG18562A91762538'),(158,33,4,'2023-07-10 13:44:16','2023-10-08 13:44:16',0,'EC-0XL29606T7273634V'),(159,33,1,'2023-07-10 16:22:59','2023-08-12 16:22:59',0,'EC-7DA84198BV310693A'),(160,33,1,'2023-07-10 16:28:59','2023-08-12 16:28:59',0,'EC-4PF882464X715032S'),(161,33,1,'2023-07-10 16:40:59','2023-08-12 16:40:59',0,'EC-7AY85357SJ550331S'),(162,33,1,'2023-07-10 17:53:05','2023-08-12 17:53:05',0,'EC-35035840Y90146824'),(163,33,1,'2023-07-10 17:57:07','2023-08-12 17:57:07',0,'EC-36U78157AV435400Y'),(164,33,2,'2023-07-10 17:57:50','2024-07-09 17:57:50',0,'EC-90080095LD195464J'),(165,27,2,'2023-07-20 18:48:10','2024-07-19 18:48:10',0,'EC-84P78764N8936562P'),(166,27,2,'2023-07-20 18:52:10','2024-07-19 18:52:10',0,'EC-1DL30392VX264004Y'),(167,27,1,'2023-07-20 18:58:12','2023-08-22 18:58:12',0,'EC-95J24495BF529534H'),(168,27,4,'2023-07-20 18:02:13','2023-10-18 18:02:13',0,'EC-5L4272280G512650G'),(169,27,2,'2023-07-21 09:35:15','2024-07-20 09:35:15',0,'EC-4VU473869V4627510'),(170,27,2,'2023-07-21 09:44:16','2024-07-20 09:44:16',0,'EC-9U753111JJ7124057'),(171,27,2,'2023-07-21 09:29:20','2024-07-20 09:29:20',0,'EC-2YX491190B745351A'),(172,27,1,'2023-07-21 09:46:20','2023-08-23 09:46:20',0,'EC-55X94068DH2391945'),(173,27,4,'2023-07-21 09:49:20','2023-10-19 09:49:20',0,'EC-7JC59252NW561853J'),(174,27,4,'2023-07-21 09:52:20','2023-10-19 09:52:20',0,'EC-2LB28115GE3038834'),(175,27,2,'2023-07-21 09:08:21','2024-07-20 09:08:21',0,'EC-4P778828LL563620K'),(176,27,4,'2023-07-21 09:12:21','2023-10-19 09:12:21',0,'EC-6JM33127CH370025J'),(177,27,4,'2023-07-21 09:24:21','2023-10-19 09:24:21',0,'EC-8UB264879Y881893G'),(178,27,2,'2023-07-21 09:26:21','2024-07-20 09:26:21',0,'EC-2GW9446918195373R'),(179,27,1,'2023-07-21 09:29:21','2023-08-23 09:29:21',0,'EC-92567223F75779234'),(180,27,2,'2023-07-21 09:09:22','2024-07-20 09:09:22',0,'EC-19M13400G5378930D'),(181,27,1,'2023-07-21 09:21:22','2023-08-23 09:21:22',0,'EC-1BF22850WC906300W'),(182,27,1,'2023-07-21 09:54:22','2023-08-23 09:54:22',0,'EC-2G131278AT3983627'),(183,27,1,'2023-07-21 09:09:26','2023-08-23 09:09:26',0,'EC-74636384SP5384925'),(184,27,1,'2023-07-21 09:05:28','2023-08-23 09:05:28',0,'EC-99G30627NP929653N'),(185,27,2,'2023-07-21 09:11:29','2024-07-20 09:11:29',0,'EC-1CN9704915190831F'),(186,27,1,'2023-07-21 09:30:29','2023-08-23 09:30:29',0,'EC-41U0957143635993A'),(187,27,2,'2023-07-21 09:54:31','2024-07-20 09:54:31',0,'EC-3JR31140LK799422Y'),(188,27,1,'2023-07-21 09:58:49','2023-08-23 09:58:49',0,'EC-0F9402209U671523J'),(189,27,4,'2023-07-21 09:17:51','2023-10-19 09:17:51',0,'EC-1UC79433F1844770W'),(190,27,2,'2023-07-21 09:17:55','2024-07-20 09:17:55',0,'EC-27124743S9938464Y'),(191,27,4,'2023-07-21 09:02:57','2023-10-19 09:02:57',0,'EC-1ET84501TN461133V'),(192,27,2,'2023-07-21 09:38:57','2024-07-20 09:38:57',0,'EC-0TS40671XB2251800'),(193,27,2,'2023-07-21 10:55:01','2024-07-20 10:55:01',0,'EC-4JD4148527266862G'),(194,27,4,'2023-07-21 10:02:04','2023-10-19 10:02:04',0,'EC-0XJ105456M180242M'),(195,27,2,'2023-07-21 10:43:05','2024-07-20 10:43:05',0,'EC-3RU73354H94730745'),(196,27,4,'2023-07-21 10:03:06','2023-10-19 10:03:06',0,'EC-3ST02382J0843282C'),(197,27,4,'2023-07-21 10:59:08','2023-10-19 10:59:08',0,'EC-6AB11709GH8136226'),(198,27,4,'2023-07-21 10:52:09','2023-10-19 10:52:09',0,'EC-7RB80015GF128530Y'),(199,27,2,'2023-07-21 10:23:10','2024-07-20 10:23:10',0,'EC-12760606WS648350V'),(200,27,1,'2023-07-21 10:45:21','2023-08-23 10:45:21',0,'EC-7UT237799N949312C'),(201,27,1,'2023-07-21 10:07:30','2023-08-23 10:07:30',0,'EC-80X20103PB7198402'),(202,27,1,'2023-07-21 10:43:36','2023-08-23 10:43:36',0,'EC-6BE465577M596251L'),(203,27,1,'2023-07-21 10:45:38','2023-08-23 10:45:38',0,'EC-62857684LF604982R'),(204,27,1,'2023-07-21 10:30:39','2023-08-23 10:30:39',0,'EC-6MY9957003749594E'),(205,27,1,'2023-07-21 10:43:39','2023-08-23 10:43:39',0,'EC-5BC23972289785100'),(206,27,1,'2023-07-21 10:51:40','2023-08-23 10:51:40',0,'EC-8WR48938H1049583B'),(207,27,2,'2023-07-21 10:29:57','2024-07-20 10:29:57',0,'EC-8K0553349G789560U'),(208,27,1,'2023-07-21 10:59:58','2023-08-23 10:59:58',0,'EC-30554580C5325374G'),(209,27,1,'2023-07-21 11:12:01','2023-08-23 11:12:01',0,'EC-0HH652305V8662735'),(210,34,1,'2023-07-21 14:10:22','2023-08-23 14:10:22',0,'EC-5JN40921V9942235U'),(211,34,1,'2023-07-21 14:09:25','2023-08-23 14:09:25',0,'EC-2SC17277W5147370E'),(212,27,1,'2023-07-21 15:18:02','2023-08-23 15:18:02',0,'EC-80U050799V931345L'),(213,27,1,'2023-07-21 15:01:03','2023-08-23 15:01:03',0,'EC-2US1417753827783S'),(214,27,1,'2023-07-21 15:52:07','2023-08-23 15:52:07',0,'EC-1AU097507A289091K'),(215,27,2,'2023-07-21 15:19:12','2024-07-20 15:19:12',0,'EC-8UV38543P0816631X'),(216,27,2,'2023-07-21 16:37:34','2024-07-20 16:37:34',0,'EC-3UB68635EJ251701A'),(217,33,2,'2023-07-21 19:27:08','2024-07-20 19:27:08',0,'EC-4FR21403ME942143A'),(218,37,2,'2023-07-22 22:25:17','2024-07-21 22:25:17',0,'EC-9AL79495EN002874W'),(219,37,1,'2023-07-24 22:13:53','2023-08-26 22:13:53',0,'EC-7WL11343GE808723S'),(220,33,1,'2023-07-25 13:35:49','2023-08-27 13:35:49',0,'EC-1F671451M81645947'),(221,34,1,'2023-07-25 13:08:57','2023-08-27 13:08:57',0,'EC-25187068WH694082Y'),(222,34,1,'2023-07-25 13:32:58','2023-08-27 13:32:58',0,'EC-6UK64570BR485841L'),(223,27,1,'2023-07-27 09:53:45','2023-08-29 09:53:45',0,'EC-98836880GR812300E'),(224,27,1,'2023-07-27 10:54:18','2023-08-29 10:54:18',0,'EC-4SM20863MR6497338'),(225,27,2,'2023-07-27 11:20:16','2024-07-26 11:20:16',0,'EC-6PH15799AK871764X'),(226,27,2,'2023-07-27 11:03:21','2024-07-26 11:03:21',0,'EC-69X9077952247924L'),(227,27,2,'2023-07-27 11:40:40','2024-07-26 11:40:40',0,'EC-8V4962622U781972R'),(228,27,2,'2023-07-27 11:15:46','2024-07-26 11:15:46',0,'EC-5JL503415V624482A'),(229,27,2,'2023-07-27 11:23:46','2024-07-26 11:23:46',0,'EC-5LB935309P9133215'),(230,34,1,'2023-07-27 14:54:20','2023-08-29 14:54:20',0,'EC-9SH26158DP5240337'),(231,34,1,'2023-07-27 14:05:21','2023-08-29 14:05:21',0,'EC-29W43628XR593402A'),(232,34,1,'2023-07-27 14:13:22','2023-08-29 14:13:22',0,'EC-1SF55357HY965480F'),(233,34,1,'2023-07-27 14:30:33','2023-08-29 14:30:33',0,'EC-9ER91199V1160071G'),(234,27,2,'2023-07-27 14:57:43','2024-07-26 14:57:43',0,'EC-63N983814Y6837201'),(235,27,2,'2023-07-27 14:22:46','2024-07-26 14:22:46',0,'EC-95B8610255434121M'),(236,27,2,'2023-07-27 14:50:47','2024-07-26 14:50:47',0,'EC-85W76144S9547054Y'),(237,34,1,'2023-07-27 14:12:49','2023-08-29 14:12:49',1,'EC-2Y333455LS560772K'),(238,27,1,'2023-07-27 17:06:01','2023-08-29 17:06:01',0,'EC-8034469572581442R'),(239,33,1,'2023-07-29 11:46:32','2023-08-31 11:46:32',0,'EC-12B99100KG5286045');
+/*!40000 ALTER TABLE `ws_abonament_client` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_abonament_line`
+--
+
+DROP TABLE IF EXISTS `ws_abonament_line`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_abonament_line` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ab_id` int(11) NOT NULL,
+  `title_en` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_abonament_line`
+--
+
+LOCK TABLES `ws_abonament_line` WRITE;
+/*!40000 ALTER TABLE `ws_abonament_line` DISABLE KEYS */;
+INSERT INTO `ws_abonament_line` VALUES (3,2,'High Quality'),(4,2,'High Quality'),(5,2,'High Quality'),(6,2,'High Quality'),(7,4,'High Quality Download'),(8,4,'High Quality Download'),(9,4,'High Quality Download'),(10,4,'High Quality Download'),(11,4,'High Quality Download'),(12,4,'High Quality Download'),(13,4,'High Quality Download'),(14,5,'boind'),(15,5,'boing 2'),(16,5,'tik tak'),(17,5,'bamm bamm'),(18,1,'high quality'),(19,1,'high resolutin files'),(20,1,'Multi sizes files'),(21,1,'+ 3 Days For Free');
+/*!40000 ALTER TABLE `ws_abonament_line` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_about`
+--
+
+DROP TABLE IF EXISTS `ws_about`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_about` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_about`
+--
+
+LOCK TABLES `ws_about` WRITE;
+/*!40000 ALTER TABLE `ws_about` DISABLE KEYS */;
+INSERT INTO `ws_about` VALUES (1,'2pozdrubzt.png');
+/*!40000 ALTER TABLE `ws_about` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_backup_mysql`
+--
+
+DROP TABLE IF EXISTS `ws_backup_mysql`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_backup_mysql` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `add_date` datetime NOT NULL,
+  `rec_date` datetime NOT NULL,
+  `del_date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_backup_mysql`
+--
+
+LOCK TABLES `ws_backup_mysql` WRITE;
+/*!40000 ALTER TABLE `ws_backup_mysql` DISABLE KEYS */;
+INSERT INTO `ws_backup_mysql` VALUES (1,1,'new_backup_2018-05-28-14.sql','2018-05-28 17:04:26','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,'new_backup_2020-07-13-14.sql','2020-07-13 16:37:13','0000-00-00 00:00:00','0000-00-00 00:00:00');
+/*!40000 ALTER TABLE `ws_backup_mysql` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_banner`
+--
+
+DROP TABLE IF EXISTS `ws_banner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_banner` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `image_en` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_banner`
+--
+
+LOCK TABLES `ws_banner` WRITE;
+/*!40000 ALTER TABLE `ws_banner` DISABLE KEYS */;
+INSERT INTO `ws_banner` VALUES (1,1,500,'smdvdbv43a.jpg');
+/*!40000 ALTER TABLE `ws_banner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_carousel`
+--
+
+DROP TABLE IF EXISTS `ws_carousel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_carousel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `green` tinyint(4) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `text_en` varchar(255) NOT NULL,
+  `year` year(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_carousel`
+--
+
+LOCK TABLES `ws_carousel` WRITE;
+/*!40000 ALTER TABLE `ws_carousel` DISABLE KEYS */;
+INSERT INTO `ws_carousel` VALUES (1,0,0,500,'REABO STOCK is born',2020),(2,0,0,500,'вупрыаврыф',2029),(3,0,0,500,'Rebov to',2024),(4,1,0,500,'Reabov se',2025),(5,1,0,500,'Reabov foreva',2026),(6,1,1,500,'Reabov to',2027),(7,1,0,500,'Reabov se',2028),(8,1,0,500,'Test 15654',2023);
+/*!40000 ALTER TABLE `ws_carousel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_catalog`
+--
+
+DROP TABLE IF EXISTS `ws_catalog`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_catalog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_ru` varchar(192) NOT NULL,
+  `preview_ru` varchar(256) NOT NULL,
+  `text_ru` longtext NOT NULL,
+  `image` varchar(32) NOT NULL,
+  `page_title_ru` varchar(256) NOT NULL,
+  `meta_d_ru` varchar(256) NOT NULL,
+  `meta_k_ru` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(192) NOT NULL,
+  `preview_en` varchar(256) NOT NULL,
+  `text_en` longtext NOT NULL,
+  `page_title_en` varchar(256) NOT NULL,
+  `meta_d_en` varchar(256) NOT NULL,
+  `meta_k_en` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_catalog`
+--
+
+LOCK TABLES `ws_catalog` WRITE;
+/*!40000 ALTER TABLE `ws_catalog` DISABLE KEYS */;
+INSERT INTO `ws_catalog` VALUES (1,'1','','<p>6</p>\r\n','861675jiis.png','2','4','5',500,1,'1','','<p>6</p>\r\n','2','4','5');
+/*!40000 ALTER TABLE `ws_catalog` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_catalog_elements`
+--
+
+DROP TABLE IF EXISTS `ws_catalog_elements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_catalog_elements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL,
+  `title_ru` varchar(192) NOT NULL,
+  `preview_ru` varchar(256) NOT NULL,
+  `text_ru` longtext NOT NULL,
+  `image` varchar(32) NOT NULL,
+  `page_title_ru` varchar(256) NOT NULL,
+  `meta_d_ru` varchar(256) NOT NULL,
+  `meta_k_ru` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(192) NOT NULL,
+  `preview_en` varchar(256) NOT NULL,
+  `text_en` longtext NOT NULL,
+  `page_title_en` varchar(256) NOT NULL,
+  `meta_d_en` varchar(256) NOT NULL,
+  `meta_k_en` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_catalog_elements`
+--
+
+LOCK TABLES `ws_catalog_elements` WRITE;
+/*!40000 ALTER TABLE `ws_catalog_elements` DISABLE KEYS */;
+INSERT INTO `ws_catalog_elements` VALUES (1,1,'7','','<p>2</p>\r\n','gpijee8fb9.png','8','0','1',500,1,'7','','<p>2</p>\r\n','8','0','1');
+/*!40000 ALTER TABLE `ws_catalog_elements` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_categories`
+--
+
+DROP TABLE IF EXISTS `ws_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(11) NOT NULL DEFAULT '1',
+  `image` varchar(256) NOT NULL,
+  `title_en` varchar(256) NOT NULL,
+  `text_en` varchar(256) NOT NULL,
+  `page_title_en` varchar(256) NOT NULL,
+  `meta_d_en` varchar(256) NOT NULL,
+  `meta_k_en` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_categories`
+--
+
+LOCK TABLES `ws_categories` WRITE;
+/*!40000 ALTER TABLE `ws_categories` DISABLE KEYS */;
+INSERT INTO `ws_categories` VALUES (1,1,'','WeddingRings','<p>WeddingRings</p>\r\n','WeddingRings','Describt','Describt',500),(2,1,'','MenRings','<p>MenRings</p>\r\n','MenRings','Men Rings','Men Rings',500),(3,1,'','WomenRings','<p>Women Rings</p>\r\n','WomenRings','Women Rings','Women Rings',500),(13,1,'','Earrings','<p>Earrings</p>\r\n','Earrings','Earrings','Earrings',500),(14,1,'','Crosses','<p>Crosses</p>\r\n','Crosses','Crosses','Crosses',500),(15,1,'','Pendants','<p>Pendants</p>\r\n','Pendants','Pendants','Pendants',500),(16,1,'','Icons','<p>Icons</p>\r\n','Icons','Icons','Icons',500),(17,1,'','Sets','<p>Sets</p>\r\n','Sets','Sets','Sets',500),(18,1,'','Sculptures','<p>Sculptures</p>\r\n','Sculptures','Sculptures','Sculptures',500),(19,1,'','Chains','<p>Chains</p>\r\n','Chains','Chains','Chains',500),(20,1,'','Bracelets','<p>Bracelets</p>\r\n','Bracelets','Bracelets','Bracelets',500),(31,1,'','Casts','<p>Casts</p>\r\n','Casts','Casts','Casts',500),(32,1,'','Vectors','<p>Vectors</p>\r\n','Vectors','Vectors','Vectors',500),(33,1,'','Others','<p>Others</p>\r\n','Others','Others','Others',500),(34,1,'','Caps','<p>Caps</p>\r\n','Caps','Caps','Caps',500);
+/*!40000 ALTER TABLE `ws_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_categories_elements`
+--
+
+DROP TABLE IF EXISTS `ws_categories_elements`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_categories_elements` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` varchar(255) NOT NULL DEFAULT '',
+  `type` int(11) NOT NULL COMMENT '0 - Standart , 1 - Extend	',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `image` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `title_en` varchar(256) NOT NULL,
+  `page_title_en` varchar(255) NOT NULL,
+  `format` varchar(255) NOT NULL,
+  `text_en` varchar(255) NOT NULL,
+  `meta_d_en` varchar(255) NOT NULL,
+  `meta_k_en` varchar(255) NOT NULL,
+  `link_en` varchar(356) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_categories_elements`
+--
+
+LOCK TABLES `ws_categories_elements` WRITE;
+/*!40000 ALTER TABLE `ws_categories_elements` DISABLE KEYS */;
+INSERT INTO `ws_categories_elements` VALUES (1,'3',0,1,'j9sv284jie.jpg',500,'GOLD RING','GOLD RING','F1','GOLD RING','GOLD RING','GOLD RING','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(14,'3',1,1,'a68fp13svv.png',500,'Model inf513786','Model inf513786','xsd,ret,exsd','Model inf513786','Model inf513786','Model inf513786','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(15,'3',0,1,'96ie17ffhf.jpg',500,'Model inf513','Model inf513','xsd','Model inf513','Model inf513','Model inf513','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(43,'3',0,1,'sftny6s_3h.jpg',500,'Model inf256','Model inf256','ret, xd','Model inf256','Model inf256','Model inf256','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(44,'3',0,1,'6_frhr3v6l.jpg',500,'Model inf109565745','Model inf109565745','xd,xsd,ret','Model inf109565745','Model inf109565745','Model inf109565745','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(45,'3',1,1,'c9599op2gu.jpg',500,'Model inf1095657','Model inf1095657','xd,xsd,ttf','Model inf1095657','Model inf1095657','Model inf1095657','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(46,'3',0,1,'rzyr7r95bn.jpg',500,'Model inf1986','Model inf1986','xsd,xsd,xs','Model inf1986','Model inf1986','Model inf1986','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(47,'3',0,1,'4io78gk_lc.jpg',500,'Model inf10','Model inf10','xsd,xsd,xsd','Model inf10','Model inf10','Model inf10','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(48,'3',0,1,'3b2n64ced7.jpg',500,'Model inf9','Model inf9','wsd,wsd,xsd','Model inf9','Model inf9','Model inf9','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(49,'3',0,1,'udiz91v8o4.png',500,'Model inf8','Model inf8','ret','Model inf8','Model inf8','Model inf8','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(50,'3',0,1,'khrsgseo_2.png',500,'Model inf7','Model inf7','xsd,xsd,xsd','Model inf7','Model inf7','Model inf7','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(51,'3',0,1,'komcub4n3d.png',500,'Model inf5','Model inf5','xsd,xsd,xsd','Model inf5','Model inf5','Model inf5','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(52,'3',0,1,'ey8amedhcg.png',500,'Model inf6','Model inf6','xd,xd,xd','Model inf6','Model inf6','Model inf6','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(53,'3',0,1,'f3omzzd2r6.png',500,'Model inf4','Model inf4','xd,xd,xd','Model inf4','Model inf4','Model inf4','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(54,'3',0,1,'m893j7nby7.png',500,'Model inf2','Model inf2','xsd,xsd,xsd','Model inf2','Model inf2','Model inf2','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(55,'3,5,13,6,7',0,1,'rpuek5mm3b.png',500,'Model inf3','Model inf3','3dm obj stl','Model inf3','Model inf3','Model inf3','http://reabov.webfun.cf/images/elements/Winter%20Collection.png'),(64,'3,13',0,1,'1uvm_k18zk.png',500,'Model inf1','Model inf1','.obj .stl .fbx','The best product of the day lea lea lealea ','Model inf1','Model inf1','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(65,'1',1,1,'c4lgi6jru4.jpg',500,'Model ver1','Model ver1','obj 3dm stl','Model ver1','Model ver1','Model ver1','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(66,'13,3',0,1,'c7ay19yg1u.jpg',500,'Cat test','Cat test','xe,xd','Cat testCat testCat testCat testCat test','','',''),(67,'3,13',0,1,'kckektrc28.jpg',500,'MultCat','MultCat','df,fd','testtet','','',''),(68,'1,2,13',0,1,'vap5tmkbin.jpg',500,'MulticatAdd','MulticatAdd','ds','MulticatAddMulticatAddMulticatAddMulticatAdd','','',''),(69,'13,1,3',0,1,'r6kpmez393.jpg',500,'Model134','Model134','xd,xsd','Model134Model134Model134','','',''),(71,'1',0,0,'9g9rck6fhu.jpg',500,'WeddingTest','WeddingTest','xd,xd,xd','WeddingTestWeddingTest','','',''),(72,'1',0,1,'de_lni5_6v.jpg',500,'07.07','2023','.we .fgh .rty','descriere ','','',''),(73,'1,2',0,1,'gi4psinfja.jpg',500,'Test','Test','.we .fgh .rty','Test','','',''),(74,'',0,1,'pait2vj8jf.jpg',500,'Test','Test','we fgh rty','Test','','',''),(76,'',0,1,'3rzhik2mmu.png',500,'New tovar','New tovar','xsd','New tovar desc ','','',''),(77,'3',0,1,'t3nciu2lph.png',500,'Test 10','Test 10','obj stl jhgfdfdg','aici trebuie descriere ? ce fel de descriere','','',''),(78,'3',0,1,'_3r_au2euk.jpg',500,'test 11','test 11','kjuj yghhj','aici e o oarecare descriere !','','',''),(79,'33',0,1,'oama8iin2r.jpg',500,'Car 3D model','Car 3D model page-title','obj, stl','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It ha','','','');
+/*!40000 ALTER TABLE `ws_categories_elements` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_categories_elements_size`
+--
+
+DROP TABLE IF EXISTS `ws_categories_elements_size`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_categories_elements_size` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `elem_id` int(11) NOT NULL,
+  `var_id` int(11) NOT NULL DEFAULT '0',
+  `image` varchar(255) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(256) NOT NULL,
+  `link_en` varchar(356) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_categories_elements_size`
+--
+
+LOCK TABLES `ws_categories_elements_size` WRITE;
+/*!40000 ALTER TABLE `ws_categories_elements_size` DISABLE KEYS */;
+INSERT INTO `ws_categories_elements_size` VALUES (1,2,0,'6m2py36lpt.jpg',500,1,'Size 1',''),(2,2,0,'yfa3uf5i3p.jpg',500,1,'Size 2',''),(3,0,2,'3nf8d3lfgs.jpg',500,1,'Size 3',''),(4,0,1,'9f714h1avl.jpg',500,1,'Size 4',''),(5,13,1,'hscilu5_ss.jpg',500,1,'Size 5',''),(6,42,0,'3jjissvo_r.jpg',500,1,'1',''),(7,57,0,'etun9673mp.png',500,1,'The size',''),(8,57,0,'der7t42fly.png',500,1,'Size second',''),(9,57,0,'3_o2yr6ayo.png',900,1,'Size firsth',''),(10,0,4,'y1nlfcz6ps.png',500,1,'Size1',''),(11,0,4,'pvnunrcov4.png',700,1,'Size2',''),(12,0,4,'n_gv2ftk7_.png',500,1,'Size3',''),(13,0,5,'tcvcmd4kvf.png',500,1,'Size5',''),(14,0,5,'pg437ftb91.png',500,1,'Size6',''),(15,0,7,'y3p4rln64v.jpg',500,1,'Size 1',''),(16,0,7,'p2tysek3d7.jpg',500,1,'size 2',''),(17,0,10,'6uci6u17dg.png',500,1,'size 1',''),(18,0,10,'8n6d5ks6v_.png',500,1,'sixe 2 ',''),(20,64,0,'t64y_e7zz_.png',500,1,'Size 1','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(21,64,0,'bcvd5idd8u.png',500,1,'Size 2','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(22,64,0,'agb6ymde7v.png',500,1,'Size 3','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(23,64,0,'o95hv1y6v2.png',500,1,'Size 4','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(24,64,0,'4vt2yftari.png',500,1,'Size 5','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(25,64,0,'8f_d8ojpmf.png',500,1,'Size 6','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(26,64,0,'p182utv7mv.png',500,1,'Size 7','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(27,64,0,'e5im8sbzo6.png',500,1,'Size 8','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(28,64,0,'c7m_kf4jod.png',500,1,'Size 9','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(29,64,0,'c2gc476du7.png',500,1,'Size 10','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(30,0,13,'nf2i888gfm.jpg',500,1,'Size 1','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(31,0,13,'da_oh584td.jpg',500,1,'Size 2','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(32,0,13,'uo1_4u1_br.jpg',500,1,'Size 3','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(33,0,13,'n8tal_jge8.jpg',500,1,'Size 4','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(34,0,13,'1djrnarjda.jpg',500,1,'Size 5','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(35,0,13,'7hk_ge3zkl.jpg',500,1,'Size 6','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(36,0,13,'k9mhmykzjf.jpg',500,1,'Size 7','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(37,0,13,'zsu7imtm5g.jpg',500,1,'Size 8','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(38,0,13,'8pos58adab.jpg',500,1,'Size 9','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_20mm.zip?dl=0'),(39,0,13,'39z3d8hcv1.jpg',500,1,'Size 10','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(40,0,12,'2rseb8u81t.jpg',500,1,'Size 1','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(41,0,12,'gf_1an9rd7.jpg',500,1,'Size 2','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(42,0,12,'_9a22lgv6v.jpg',500,1,'Size 3','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(43,0,12,'751jp4tf2m.jpg',500,1,'Size 4','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(44,0,12,'8s64e7e4vi.jpg',500,1,'Size 5','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(45,0,12,'vn5v2buufh.jpg',500,1,'Size 6','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(46,0,12,'yz9eldbgvv.jpg',500,1,'Size 7','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(47,0,12,'ae7yheltpo.jpg',500,1,'Size 8','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(48,0,12,'j85y_g3hl5.jpg',500,1,'Size 9','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(49,0,12,'7n91c1e_jp.jpg',500,1,'Size 10','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0'),(50,0,12,'gvu347s9vz.jpg',500,1,'Size 11','https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0');
+/*!40000 ALTER TABLE `ws_categories_elements_size` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_categories_variation`
+--
+
+DROP TABLE IF EXISTS `ws_categories_variation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_categories_variation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(256) NOT NULL,
+  `text_en` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_categories_variation`
+--
+
+LOCK TABLES `ws_categories_variation` WRITE;
+/*!40000 ALTER TABLE `ws_categories_variation` DISABLE KEYS */;
+INSERT INTO `ws_categories_variation` VALUES (1,13,1,'Men','Men'),(2,13,1,'Women','Women'),(4,58,1,'Test',''),(5,58,1,'Test2',''),(6,58,1,'Test3',''),(9,56,1,'woman',''),(12,65,1,'Women',''),(13,65,1,'Men','');
+/*!40000 ALTER TABLE `ws_categories_variation` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_cities`
+--
+
+DROP TABLE IF EXISTS `ws_cities`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_cities` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_ru` varchar(64) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(64) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_cities`
+--
+
+LOCK TABLES `ws_cities` WRITE;
+/*!40000 ALTER TABLE `ws_cities` DISABLE KEYS */;
+INSERT INTO `ws_cities` VALUES (1,'Кишинев',500,1,'Кишинев');
+/*!40000 ALTER TABLE `ws_cities` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_client_downloads`
+--
+
+DROP TABLE IF EXISTS `ws_client_downloads`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_client_downloads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `date_create` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_client_downloads`
+--
+
+LOCK TABLES `ws_client_downloads` WRITE;
+/*!40000 ALTER TABLE `ws_client_downloads` DISABLE KEYS */;
+INSERT INTO `ws_client_downloads` VALUES (1,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-20 15:00:46'),(2,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-20 15:00:50'),(3,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-20 15:00:52'),(4,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-20 15:00:58'),(5,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-20 15:01:03'),(6,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-21 15:01:06'),(7,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-23 15:01:08'),(8,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-23 15:01:10'),(9,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-24 15:01:16'),(10,26,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-24 15:01:19'),(11,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 15:53:24'),(12,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 15:53:28'),(13,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:13:25'),(14,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:13:29'),(15,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:13:30'),(16,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:13:31'),(17,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:15:44'),(18,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:15:50'),(19,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:15:52'),(20,27,13,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-25 17:15:55'),(21,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-26 16:58:35'),(22,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-26 16:59:10'),(23,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-26 16:59:14'),(24,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-26 17:00:03'),(25,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-26 17:00:05'),(26,28,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-27 11:13:38'),(27,30,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-27 11:42:32'),(28,30,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-27 11:43:15'),(29,31,2,'http://reabov.webfun.cf/images/elements/Winter%20Collection.png','2023-05-29 19:35:04'),(30,30,63,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-05-31 16:59:05'),(31,30,62,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-05-31 17:30:31'),(32,35,64,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-07 22:42:29'),(33,35,64,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-07 22:52:55'),(34,27,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-09 13:08:24'),(35,27,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-09 13:19:10'),(36,27,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-22 13:03:03'),(37,27,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-22 13:03:08'),(38,35,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-06-24 05:11:54'),(39,27,65,'https://www.dl.dropboxusercontent.com/s/amyrei1y2cxqj6u/Size3_19mm.zip?dl=0','2023-07-04 16:34:49');
+/*!40000 ALTER TABLE `ws_client_downloads` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_clients`
+--
+
+DROP TABLE IF EXISTS `ws_clients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `full_name` varchar(256) NOT NULL,
+  `countrye` varchar(256) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `activated` tinyint(4) NOT NULL DEFAULT '0',
+  `image` varchar(256) NOT NULL,
+  `crypt` varchar(255) NOT NULL,
+  `registration_date` date NOT NULL,
+  `last_auth_date` datetime NOT NULL,
+  `elem_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_clients`
+--
+
+LOCK TABLES `ws_clients` WRITE;
+/*!40000 ALTER TABLE `ws_clients` DISABLE KEYS */;
+INSERT INTO `ws_clients` VALUES (1,'PoorDev@mail.ru','29623a638535967158bde856a29a5997533b7924dd58aeec33a87efebade7cf65b372016c0b09967a6058f7f0cd4191919e20610e292fe6ee770a4c46d97d33e','Poor Dev','Мадагаскар',1,0,'vlmd73likm.jpg','','2023-05-03','0000-00-00 00:00:00',1),(2,'PoorDev@mail.ru','1cdd6d6b835a5a68202ad243f5a955184a14bd170abf8193821b7faff8571549469ac185f92d0e1d23c59535811deb2837fb02c0042a6f8900871c0f66564ebc','Poor Dev','Мадагаскар',1,0,'vlmd73likm.jpg','','2023-05-04','0000-00-00 00:00:00',1),(3,'PoorDev@mail.ru','47ca24b3ff5fdb0a162182855e2b780f2ef89768735a46e9b3aa7ca2be61f1906d0ba5686502761eb0396bfbf2e3778e8ca9a9bfac6b6c8d2767f161d5a3283d','Poor Dev','Буркина-Фасо',1,0,'vlmd73likm.jpg','','2023-05-04','0000-00-00 00:00:00',3),(5,'PoorDev@mail.ru','e450a1bd9de6523c2c9da22d59896d00a5ce6698d6d047e6a2dad1d179b059b44bc8d7f934d2cc568ec2073bbaaa0c8c5867313ddd4e8cbba7a5fe6a1e80fb45','Poor Dev','Мозамбик',1,0,'vlmd73likm.jpg','','2023-05-04','0000-00-00 00:00:00',2),(6,'PoorDev@mail.ru','ad35083044f8154bf1cd20e5d1ae0cbd30a3a82234f9c5f27121b9da136d0099764223c8e78e6a6a4b45ae604d70fd3407265c1fa2680f3b136e9f5eb8afcb56','Poor Dev','Мозамбик',1,0,'vlmd73likm.jpg','','2023-05-04','0000-00-00 00:00:00',2),(7,'termoluxservicedev1@gmail.com','e2db916c82dffccd9f92206c3eed60a6c22ed361017bb78db47b64c90d0d39571a63cf4050c79076009b1b4a0857e67a6852cd5cfb898271cb646d1f4b801b79','Poor Dev','Буркина-Фасо',1,0,'vlmd73likm.jpg','','2023-05-04','0000-00-00 00:00:00',3),(27,'nafrit13@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','New Clie','Mozambique',1,1,'','1646c530eaf8920554057916b3460906663772d8525a355d56c568a2e3186a15e23b85fce7ca0641cc1ad8ad57c0e11dc3c0a1868248f6e91ad5dc5b52b028d9','2023-05-24','2023-07-27 17:25:20',59),(28,'termoluxservicedev@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','Vera Orlanova','Burkina-Faso',1,1,'','a728db3b27502ed11a520addae4b49b15de425f19ba6789a2ead0004eb1c5461199c47f6306e6faa20479d767a25753952c012139fb57a8ffd7875223128dfe6','2023-05-26','2023-05-27 11:02:19',2),(29,'victoria@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','valeria','Mozambique',1,0,'','f594a4a02ad0403bf2b3f4cdb60b05350d289404442a9e71fb3bbc7eee4c53f79e4d4e77fb42f12a085befbac4a32c53f4feaf211fc8c3f1afaabaa9173b5f0f','2023-05-27','2023-05-27 11:24:47',2),(31,'vwebmaster160@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','valeria','Moldova',1,0,'n1tdro_2dg.jpg','6357ddecf55fa0a0d7c2095dcc67713a619d2fb7fdc8dca238c8f8f9bf7c5ea3df7d349b7d5493d082e73a28632dff029bbc1e54ef2b4955b23082f58d9c7bd2','2023-05-29','2023-05-30 09:16:26',112),(32,'valeria@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','valeria','Moldova',1,0,'','905404d03cff95ab90396143a6d4d55ec290870336fe1c69636797d6740cbbd65767f7601c796843acdaec34f42fb49f9e909202909c2fde445fcccf38b53a60','2023-05-31','2023-06-20 17:38:34',112),(33,'alexandrureabov@gmail.com','b53e33bbecdea119d6b54aad83307a65aefc140d9705ab19bfe0a61c732d48aa677d17499b0149752756f8adbdd84d099e03211ed3128d1e426045ca52b2a959','Alexandruuuu','Portugal',1,1,'37h4r_bkkb.webp','6a8cea72b0b6bea3c02e2b249bac99b678d584e09ac2553705eccd08b50df50ca628684f78a48b360f359e0d642dbe9908e8e41b55d4879cbb57337a5bca1b80','2023-05-31','2023-07-29 17:38:59',139),(34,'victoria.webmaster.studio@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','valeria','Algeria',1,1,'1pjlkl3n6e.png','aaec87442fdfa1888f9e11337b255c620ebfb5db3410e76ad0e573df968d722d6ca4dc96dbe6ec848f5ea7c1aa6f5eea5e555c497c3240f1f59743d917b524e7','2023-05-31','2023-07-28 16:54:45',3),(35,'reabovstock@gmail.com','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','Reabov','Argentina',1,1,'','23ad67bcd3d7ac9143680b0e66f60949db965cb15dba2da11d0a09d20aa1fc2e76bde8b854b2a486915abdf2551884a344b919e127c9e8d8521824a4e9bc3a9a','2023-06-07','2023-06-24 13:18:42',7),(36,'rar@mail.ru','cfff4996a74d114593fc1aeb5e807a26533e10c869e49a3fec429d662d8941ad136b5a11b2743250c0bf1855cf69c8f7120ba680fc34f1166fed2bb59508960a','Alban','Albania',1,0,'','','2023-06-12','0000-00-00 00:00:00',2),(37,'denis.pascaru95@gmail.com','3b8b9a998a623610171aa477bdb9a85cac82e5627f21c4a430b0ca41ec8d4ffd1ae660af1281bb127bcb1501f0ec4380e7b5e102618c26ee3f483db03316aa9f','Dionis Pascaru ','Moldova',1,1,'','ae0e238be5076ac094480a118e73260db1eecdc746c8459b930a50fbf10a657b1813d64df137fdf880ba21bd259d457853990fe5e262e8f0901722172c71afd7','2023-06-24','2023-07-22 22:10:01',112);
+/*!40000 ALTER TABLE `ws_clients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_collections`
+--
+
+DROP TABLE IF EXISTS `ws_collections`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_collections` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(11) NOT NULL DEFAULT '1',
+  `main` tinyint(4) NOT NULL DEFAULT '0',
+  `next_main` tinyint(4) NOT NULL DEFAULT '0',
+  `image` varchar(256) NOT NULL,
+  `video` varchar(255) NOT NULL,
+  `title_en` varchar(256) NOT NULL,
+  `sub_title_en` varchar(256) NOT NULL DEFAULT '',
+  `text_en` varchar(256) NOT NULL,
+  `page_title_en` varchar(256) NOT NULL,
+  `meta_d_en` varchar(256) NOT NULL,
+  `meta_k_en` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_collections`
+--
+
+LOCK TABLES `ws_collections` WRITE;
+/*!40000 ALTER TABLE `ws_collections` DISABLE KEYS */;
+INSERT INTO `ws_collections` VALUES (1,1,1,1,'jznkggv22l.png','spzhzyk7vn.mp4','Weeding','','<p>Description</p>\r\n','Коллекции','esdgsg','asdegasdg',500),(4,0,1,1,'dpkcphdtj_.png','kjr98clkbt.mp4','TEST ONE','','<p>egeasgsag</p>\r\n','asdasdas','grsdgrsd','hsdahdsh',10000),(5,1,0,1,'9fvj72758r.png','efp9o21gpd.mp4','sdfhsd','','<p>gsegsagasg</p>\r\n','hfdhsfd','jsgdfjsgf','jsfdjsgfjgfj',500),(16,1,1,1,'4ch74_lg42.png','n2zppyo134.mp4','Add products','','','Add products','Add products','Add products',500),(17,1,1,1,'y3de21otio.png','79h3bmgdyj.mp4','Ring','','','Ring','Ring','Ring',500),(18,1,1,0,'ug_yer_4i5.png','no_2l2a_7m.mp4','Main','','','Main','Main','Main',500),(19,1,1,1,'7hef99nvsi.png','i3gel93pb5.mp4','Collection','','','Collection','Collection','Collection',500),(20,1,1,0,'5sy13iaaid.png','vsg2rhga8u.mp4','Collection main','','','Collection main','Collection main','Collection main',500),(21,1,1,1,'bpl98ncbzd.png','hnpybdmf1d.mp4','Winter','','','Winter','Winter','Winter',500),(22,1,1,1,'z1kzjcaaad.jpg','jtmy4ghdu6.mp4','AAAAAA A AAAAAA AAAAAAAAA AA AAAAAA','','','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA','AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',500);
+/*!40000 ALTER TABLE `ws_collections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_collections_products`
+--
+
+DROP TABLE IF EXISTS `ws_collections_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_collections_products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `elem_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=504 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_collections_products`
+--
+
+LOCK TABLES `ws_collections_products` WRITE;
+/*!40000 ALTER TABLE `ws_collections_products` DISABLE KEYS */;
+INSERT INTO `ws_collections_products` VALUES (99,17,1),(102,19,1),(107,21,1),(130,16,58),(134,16,14),(135,16,15),(331,4,1),(332,4,14),(333,4,15),(334,4,43),(335,4,44),(336,4,45),(337,4,46),(338,4,47),(339,4,48),(340,4,49),(341,4,50),(342,4,51),(343,4,52),(344,4,53),(345,4,54),(346,4,55),(347,4,64),(348,4,65),(358,5,72),(360,22,15),(361,22,43),(362,22,47),(363,22,53),(364,22,54),(365,22,55),(366,22,72),(443,1,1),(444,1,14),(445,1,15),(446,1,43),(447,1,44),(448,1,45),(449,1,46),(450,1,47),(451,1,48),(452,1,49),(453,1,50),(454,1,51),(455,1,52),(456,1,53),(457,1,54),(458,1,55),(459,1,64),(460,1,65),(461,1,66),(463,1,68),(464,1,69),(465,1,72),(467,1,74),(482,1,73),(489,17,76),(497,1,77),(498,1,78),(499,5,78),(500,16,78),(501,17,78),(502,18,78),(503,18,79);
+/*!40000 ALTER TABLE `ws_collections_products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_country`
+--
+
+DROP TABLE IF EXISTS `ws_country`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_country` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_en` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_country`
+--
+
+LOCK TABLES `ws_country` WRITE;
+/*!40000 ALTER TABLE `ws_country` DISABLE KEYS */;
+INSERT INTO `ws_country` VALUES (1,'Afghanistan',500,1),(2,'Albania',500,1),(3,'Algeria',500,1),(4,'Andorra',500,1),(5,'Angola',500,1),(6,'Antigua and Barbuda',500,1),(7,'Argentina',500,1),(8,'Armenia',500,1),(9,'Australia',500,1),(10,'Austria',500,1),(11,'Azerbaijan',500,1),(12,'Bahamas',500,1),(13,'Bahrain',500,1),(14,'Bangladesh',500,1),(15,'Barbados',500,1),(16,'Belarus',500,1),(17,'Belgium',500,1),(18,'Belize',500,1),(19,'Benin',500,1),(20,'Bhutan',500,1),(21,'Bolivia',500,1),(22,'Bosnia and Herzegovina',500,1),(23,'Botswana',500,1),(24,'Brazil',500,1),(25,'Brunei',500,1),(26,'Bulgaria',500,1),(27,'Burkina Faso',500,1),(28,'Burundi',500,1),(29,'Cambodia',500,1),(30,'Cameroon',500,1),(31,'Canada',500,1),(32,'Cape Verde',500,1),(33,'Central Africa',500,1),(34,'Chad',500,1),(35,'Chile',500,1),(36,'China',500,1),(37,'Colombia',500,1),(38,'Comoros',500,1),(39,'Congo',500,1),(40,'Congo (Dem. Republic)',500,1),(41,'Costa Rica',500,1),(42,'Croatia',500,1),(43,'Cuba',500,1),(44,'Cyprus',500,1),(45,'Czechia',500,1),(46,'Denmark',500,1),(47,'Djibouti',500,1),(48,'Dominica',500,1),(49,'Dominican Republic',500,1),(50,'Ecuador',500,1),(51,'Egypt',500,1),(52,'El Salvador',500,1),(53,'Equatorial Guinea',500,1),(54,'Eritrea',500,1),(55,'Estonia',500,1),(56,'Eswatini',500,1),(57,'Ethiopia',500,1),(58,'Fiji',500,1),(59,'Finland',500,1),(60,'France',500,1),(61,'Gabon',500,1),(62,'Gambia',500,1),(63,'Georgia',500,1),(64,'Germany',500,1),(65,'Ghana',500,1),(66,'Greece',500,1),(67,'Grenada',500,1),(68,'Guatemala',500,1),(69,'Guinea',500,1),(70,'Guinea-Bissau',500,1),(71,'Guyana',500,1),(72,'Haiti',500,1),(73,'Honduras',500,1),(74,'Hungary',500,1),(75,'Iceland',500,1),(76,'India',500,1),(77,'Indonesia',500,1),(78,'Iran',500,1),(79,'Iraq',500,1),(80,'Ireland',500,1),(81,'Israel',500,1),(82,'Italy',500,1),(83,'Ivory Coast',500,1),(84,'Jamaica',500,1),(85,'Japan',500,1),(86,'Jordan',500,1),(87,'Kazakhstan',500,1),(88,'Kenya',500,1),(89,'Kiribati',500,1),(90,'Kuwait',500,1),(91,'Kyrgyzstan',500,1),(92,'Laos',500,1),(93,'Latvia',500,1),(94,'Lebanon',500,1),(95,'Lesotho',500,1),(96,'Liberia',500,1),(97,'Libya',500,1),(98,'Liechtenstein',500,1),(99,'Lithuania',500,1),(100,'Luxembourg',500,1),(101,'Madagascar',500,1),(102,'Malawi',500,1),(103,'Malaysia',500,1),(104,'Maldives',500,1),(105,'Mali',500,1),(106,'Malta',500,1),(107,'Marshall Islands',500,1),(108,'Mauritania',500,1),(109,'Mauritius',500,1),(110,'Mexico',500,1),(111,'Micronesia',500,1),(112,'Moldova',500,1),(113,'Monaco',500,1),(114,'Mongolia',500,1),(115,'Montenegro',500,1),(116,'Morocco',500,1),(117,'Mozambique',500,1),(118,'Myanmar',500,1),(119,'Namibia',500,1),(120,'Nauru',500,1),(121,'Nepal',500,1),(122,'Netherlands',500,1),(123,'New Zealand',500,1),(124,'Nicaragua',500,1),(125,'Niger',500,1),(126,'Nigeria',500,1),(127,'North Korea',500,1),(128,'North Macedonia',500,1),(129,'Norway',500,1),(130,'Oman',500,1),(131,'Pakistan',500,1),(132,'Palau',500,1),(133,'Panama',500,1),(134,'Papua New Guinea',500,1),(135,'Paraguay',500,1),(136,'Peru',500,1),(137,'Philippines',500,1),(138,'Poland',500,1),(139,'Portugal',500,1),(140,'Qatar',500,1),(141,'Romania',500,1),(142,'Russia',500,1),(143,'Rwanda',500,1),(144,'Saint Kitts and Nevis',500,1),(145,'Saint Lucia',500,1),(146,'Saint Vincent and the Grenadines',500,1),(147,'Samoa',500,1),(148,'San Marino',500,1),(149,'Sao Tome and Principe',500,1),(150,'Saudi Arabia',500,1),(151,'Senegal',500,1),(152,'Serbia',500,1),(153,'Seychelles',500,1),(154,'Sierra Leone',500,1),(155,'Singapore',500,1),(156,'Slovakia',500,1),(157,'Slovenia',500,1),(158,'Solomon Islands',500,1),(159,'Somalia',500,1),(160,'South Africa',500,1),(161,'South Korea',500,1),(162,'South Sudan',500,1),(163,'Spain',500,1),(164,'Sri Lanka',500,1),(165,'Sudan',500,1),(166,'Suriname',500,1),(167,'Sweden',500,1),(168,'Switzerland',500,1),(169,'Syria',500,1),(170,'Tajikistan',500,1),(171,'Tanzania',500,1),(172,'Thailand',500,1),(173,'Timor-Leste',500,1),(174,'Togo',500,1),(175,'Tonga',500,1),(176,'Trinidad and Tobago',500,1),(177,'Tunisia',500,1),(178,'Turkey',500,1),(179,'Turkmenistan',500,1),(180,'Tuvalu',500,1),(181,'Uganda',500,1),(182,'Ukraine',500,1),(183,'United Arab Emirates',500,1),(184,'United Kingdom',500,1),(185,'United States',500,1),(186,'Uruguay',500,1),(187,'Uzbekistan',500,1),(188,'Vanuatu',500,1),(189,'Venezuela',500,1),(190,'Vietnam',500,1),(191,'Yemen',500,1),(192,'Zambia',500,1),(193,'Zimbabwe',500,1);
+/*!40000 ALTER TABLE `ws_country` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_cpu`
+--
+
+DROP TABLE IF EXISTS `ws_cpu`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_cpu` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `cpu` varchar(384) NOT NULL,
+  `lang` varchar(2) NOT NULL,
+  `elem_id` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=235 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_cpu`
+--
+
+LOCK TABLES `ws_cpu` WRITE;
+/*!40000 ALTER TABLE `ws_cpu` DISABLE KEYS */;
+INSERT INTO `ws_cpu` VALUES (1,3,'/ajax/ru/','ru',0),(2,1,'/ru/','ru',0),(3,69,'/1/','ru',35),(4,70,'/novosti/','ru',0),(5,71,'/3/','ru',1),(6,72,'/ru/terms-and-conditions/','ru',0),(10,3,'/ajax/en/','en',0),(11,1,'/','en',0),(12,69,'/jbl9y9vhudne/','en',35),(13,70,'/aphe46h8f_14/','en',0),(14,71,'/h_nyznvn97vb/','en',1),(15,72,'/terms-and-conditions/','en',0),(16,73,'/add-products/','ru',16),(17,73,'/en/add-products/','en',16),(85,74,'/model-inf513/','en',15),(84,74,'/test/','ru',15),(20,73,'/ring/','ru',17),(21,73,'/en/ring/','en',17),(22,73,'/sedgsedg/','ru',4),(23,73,'/ef/','en',4),(24,75,'/about/ru/','ru',0),(25,75,'/about/en/','en',0),(26,76,'/col_list/ru/','ru',0),(27,76,'/col_list/en/','en',0),(28,77,'/search/ru/','ru',0),(29,77,'/search/en/','en',0),(30,79,'/prices/ru/','ru',0),(31,79,'/prices/en/','en',0),(32,80,'/personal/ru/','ru',0),(33,80,'/personal/en/','en',0),(34,81,'/reg/ru/','ru',0),(35,81,'/reg/en/','en',0),(36,82,'/login/ru/','ru',0),(37,82,'/login/en/','en',0),(38,83,'/forgot/ru/','ru',0),(39,83,'/forgot/en/','en',0),(40,84,'/contacts/ru/','ru',0),(41,84,'/contacts/en/','en',0),(42,85,'/politics/ru/','ru',0),(43,85,'/politics/en/','en',0),(44,78,'/rings/','ru',13),(45,78,'/en/earrings/','en',13),(46,78,'/sedgs/','ru',3),(47,78,'/womenrings/','en',3),(48,78,'/efa/','ru',2),(49,78,'/menrings/','en',2),(50,78,'/kolica-muzh/','ru',1),(51,78,'/weddingrings/','en',1),(52,78,'/rings/new/','ru',14),(53,78,'/crosses/','en',14),(54,78,'/rings/new/new/','ru',15),(55,78,'/pendants/','en',15),(56,78,'/rings/new/new/new/','ru',16),(57,78,'/icons/','en',16),(58,78,'/rings/new/new/new/new/','ru',17),(59,78,'/sets/','en',17),(60,78,'/rings/new/new/new/new/new/','ru',18),(61,78,'/sculptures/','en',18),(62,78,'/rings/new/new/new/new/new/new/','ru',19),(63,78,'/chains/','en',19),(64,78,'/rings/new/new/new/new/new/new/new/','ru',20),(65,78,'/bracelets/','en',20),(214,78,'/casts/','en',31),(215,78,'/vectors/','en',32),(216,78,'/others/','en',33),(217,78,'/caps/','en',34),(72,73,'/svadebnye/','ru',1),(73,73,'/weeding/','en',1),(74,73,'/gdsag/','ru',5),(75,73,'/sdfhsd/','en',5),(76,73,'/main/','ru',18),(77,73,'/en/main/','en',18),(78,73,'/collection/','ru',19),(79,73,'/en/collection/','en',19),(80,73,'/collection-main/','ru',20),(81,73,'/en/collection-main/','en',20),(82,73,'/winter/','ru',21),(83,73,'/en/winter/','en',21),(86,74,'/tovar/','ru',14),(87,74,'/model-inf513786/','en',14),(88,74,'/gold-ring/','ru',1),(89,74,'/en/gold-ring/','en',1),(220,74,'/model-ver1/','en',65),(225,74,'/model134/','en',69),(226,74,'/weddingtest/','en',71),(227,74,'/0707/','en',72),(228,74,'/test/new/','en',73),(229,74,'/test/new/new/','en',74),(231,74,'/new-tovar/','en',76),(232,74,'/test-10/','en',77),(233,74,'/test-11/','en',78),(234,74,'/car-3d-model/','en',79),(158,86,'/ru/registraciya-zavershena/','ru',0),(159,86,'/registraciya-zavershena/','en',0),(160,87,'/ru/logout/','ru',0),(161,87,'/logout/','en',0),(162,88,'/ru/stranica-oplaty/','ru',0),(163,88,'/stranica-oplaty/','en',0),(164,89,'/mail1/ru/','ru',0),(165,89,'/mail1/en/','en',0),(166,90,'/mail2/ru/','ru',0),(167,90,'/mail2/en/','en',0),(168,91,'/mail3/ru/','ru',0),(169,91,'/mail3/en/','en',0),(170,92,'/mail4/ru/','ru',0),(171,92,'/mail4/en/','en',0),(172,93,'/success/ru/','ru',0),(173,93,'/success/en/','en',0),(174,74,'/ru/test/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/new/','ru',43),(175,74,'/model-inf256/','en',43),(219,73,'/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa/','en',22),(176,74,'/ru/colproduct/','ru',44),(177,74,'/model-inf109565745/','en',44),(178,74,'/ru/sedg/','ru',45),(179,74,'/model-inf1095657/','en',45),(180,74,'/ru/necklage/','ru',46),(181,74,'/model-inf1986/','en',46),(182,74,'/ru/gold/','ru',47),(183,74,'/model-inf10/','en',47),(184,74,'/ru/gold/new/','ru',48),(185,74,'/model-inf9/','en',48),(186,74,'/ru/gold/new/new/','ru',49),(187,74,'/model-inf8/','en',49),(188,74,'/ru/gold/new/new/new/','ru',50),(189,74,'/model-inf7/','en',50),(190,74,'/ru/gold/new/new/new/new/','ru',51),(191,74,'/model-inf5/','en',51),(192,74,'/ru/silver/','ru',52),(193,74,'/model-inf6/','en',52),(194,74,'/ru/silver/new/','ru',53),(195,74,'/model-inf4/','en',53),(196,74,'/ru/silver/new/new/','ru',54),(197,74,'/model-inf2/','en',54),(198,74,'/ru/silver/new/new/new/','ru',55),(199,74,'/model-inf3/','en',55),(218,74,'/model-inf1/','en',64),(224,74,'/multicatadd/','en',68),(223,74,'/multcat/','en',67),(208,94,'/paypal-success/','en',0),(209,95,'/paypal-cancel/','en',0),(210,96,'/paypal-test/','en',0),(222,74,'/cat-test/','en',66),(221,99,'/test_page/en/','en',0);
+/*!40000 ALTER TABLE `ws_cpu` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_inteface_lang`
+--
+
+DROP TABLE IF EXISTS `ws_inteface_lang`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_inteface_lang` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(2) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_inteface_lang`
+--
+
+LOCK TABLES `ws_inteface_lang` WRITE;
+/*!40000 ALTER TABLE `ws_inteface_lang` DISABLE KEYS */;
+INSERT INTO `ws_inteface_lang` VALUES (2,'ru','Русский',1);
+/*!40000 ALTER TABLE `ws_inteface_lang` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_inteface_lang_content`
+--
+
+DROP TABLE IF EXISTS `ws_inteface_lang_content`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_inteface_lang_content` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `level` tinyint(4) NOT NULL DEFAULT '1' COMMENT '0-общие для всех проектов, 1 - индивидуальные',
+  `code` varchar(64) NOT NULL,
+  `text` text NOT NULL,
+  `comment` tinytext NOT NULL,
+  `lang` varchar(2) NOT NULL DEFAULT 'en',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=141 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_inteface_lang_content`
+--
+
+LOCK TABLES `ws_inteface_lang_content` WRITE;
+/*!40000 ALTER TABLE `ws_inteface_lang_content` DISABLE KEYS */;
+INSERT INTO `ws_inteface_lang_content` VALUES (1,0,'ACCOUNT_IS_BLOCKED','Your account has been suspended','','ru'),(3,0,'LOGIN_TO_START','Sign in to start your session','','ru'),(4,0,'YOUR_LOGIN','Your login','','ru'),(5,0,'PASSWORD','Password','','ru'),(6,0,'LOGIN_BTN','Login','Login button','ru'),(7,0,'INVALID_LOGIN_OR_PASS','Invalid login or password','','ru'),(8,0,'INVALID_CAPTCHA','Invalid captcha code','','ru'),(9,0,'CONTROL_PANEL','CMS','','ru'),(10,0,'STUDIO_WEBMASTER_CP','Studio Webmaster','','ru'),(11,0,'AUTHORIZED','Authorized','','ru'),(12,0,'PROFILE','Profile','','ru'),(13,0,'QUIT','Quit','','ru'),(14,0,'PUBLIC_PART','Public part','','ru'),(15,0,'LEFTMENU_MENU','MENU','','ru'),(16,0,'LEFTMENU_SETTINGS','SETTINGS','','ru'),(17,0,'ADD_ELEM','Add element','','ru'),(18,0,'EDIT_ELEM','Edit element','','ru'),(19,0,'DELETE_ELEM','Delete element','','ru'),(20,0,'LIST_ELEMENTS','List elements','','ru'),(21,0,'CHANGE_ACTIVITY','Change activity','','ru'),(22,0,'TITLE','Title','','ru'),(23,0,'IMAGE','Image','','ru'),(24,0,'USER','User','','ru'),(25,0,'EMAIL','E-mail','','ru'),(26,0,'USERNAME','Username','','ru'),(27,0,'PRICE','Price','','ru'),(28,0,'VIEW_ELEM','View element','','ru'),(29,0,'SURE_TO_DELETE','Are you sure you want to delete this item?','','ru'),(30,0,'ACTIONS','Actions','','ru'),(31,0,'PAGE_TITLE','Page title (tag title)','','ru'),(32,0,'PAGE_METAD','Page description (meta description)','','ru'),(33,0,'PAGE_METAK','Page keywords (meta keywords)','','ru'),(34,0,'PAGE_TEXT','Page text','','ru'),(35,0,'PAGE_ADDR','Page address (url)','','ru'),(36,0,'PAGE_PHOTOGALLERY','Photo gallery','','ru'),(37,0,'CODE','Code','','ru'),(38,0,'GO_BACK','Go back','','ru'),(39,0,'DESCRIPTION','Description','','ru'),(40,0,'NO_EDITABLE_DATA','No data to edit','','ru'),(41,0,'SORT','Sort (output order value)','','ru'),(42,0,'SAVE','Save','','ru'),(43,0,'ACTIVE','Active','','ru'),(44,0,'INACTIVE','Inactive','','ru'),(45,0,'CURRENT_IMAGE','Current image','','ru'),(46,0,'IMAGE_IS_NOT_SET','Image is not set','','ru'),(47,0,'SEARCH_KEY','Search key','','ru'),(48,0,'LANG','Language','','ru'),(49,0,'CHANGE_IMAGE','Change image','','ru'),(50,0,'CATEGORY','Category','','ru'),(51,0,'PREVIEW','Preview','','ru'),(52,0,'PARAMETERS','Parameters','','ru'),(53,0,'AUTHOR','Author','','ru'),(54,0,'DATA_ADDED','Data successfully added!','','ru'),(55,0,'DATA_UPDATED','Data successfully updated!','','ru'),(56,0,'VALUE','Value','','ru'),(57,0,'PASSWORDS_NOT_MATCH','The passwords you entered do not match','','ru'),(58,0,'PASS_CONFIRM','Password confirmation\r\n','','ru'),(59,0,'USER_NAME','User name','','ru'),(60,0,'USER_LEVEL','User level','','ru'),(61,0,'USER_LANGUAGE','User language','','ru'),(62,0,'NEW_PASSWORD','New password','','ru'),(63,0,'IS_BLOCKED','Is blocked','','ru'),(64,0,'MESSAGE','Message','','ru'),(65,0,'FILES','Files','','ru'),(66,0,'PHONE_NUMBER','Phone number','','ru'),(67,0,'GO_OUT_QUESTION','Go out?','','ru'),(68,0,'ERROR_OCCURED','An error has occurred!','','ru'),(69,0,'LINK','Link','','ru'),(70,0,'TEXT','Text','','ru'),(71,0,'ALLADATA','All data','','ru'),(72,0,'USERLOGIN','User login','','ru'),(73,0,'COLOR_THEME','Color theme','','ru'),(74,0,'CHANGE_PASSWORD','Set new password','','ru'),(75,0,'REPEAT_NEW_PASS','Repeat new password','','ru'),(76,0,'PASS_HAS_EXPIRED','Your password has expired. Password sent to your e-mail','','ru'),(77,0,'YOUR_NEW_PASSWORD','Automatic password change','','ru'),(78,0,'YOUR_NEW_PASSWORD_IS','Your new password is #password#','','ru'),(79,0,'DATE','Date','','ru'),(80,0,'JOBPOST','Должность','','ru'),(81,0,'YEAR','Year','','ru'),(82,0,'MINSUM','Min. sum','','ru'),(83,0,'MAXSUM','Max. sum','','ru'),(84,0,'COMMISSION','Commission','','ru'),(85,0,'ONE_TIME_FEE','One time fee','','ru'),(86,0,'ADDITIONAL_ANNUAL_FEE','Additional annual fee','','ru'),(87,0,'ADDITIONAL_ANNUAL_FEE_PERCENT','Additional annual fee percent','','ru'),(88,0,'MIN_PERCENT','Min. percent','','ru'),(89,0,'MAX_PERCENT','Max. percent','','ru'),(90,0,'MIN_TERM','Min. term','','ru'),(91,0,'MAX_TERM','Max. term','','ru'),(92,0,'PERIOD','Period','','ru'),(93,0,'PLEDGE','Pledge','','ru'),(94,0,'IN_MDL','In MDL','','ru'),(95,0,'AUTOPROLONGATION','Autoprolongation','','ru'),(96,0,'WITHDRAWING','Withdrawing','','ru'),(97,0,'CAPITALISATION','Capitalisation','Capitalisation','ru'),(98,0,'REFILL','Refill','','ru'),(99,0,'ADDRESS','Address','','ru'),(100,0,'WORKDAYS','Working schedule on weekdays','','ru'),(101,0,'SATURDAY','Working schedule on saturday','','ru'),(102,0,'SUNDAY','Working schedule on sunday','','ru'),(103,0,'WEEKEND','Work on weekends','','ru'),(104,0,'LAT','Latitude','','ru'),(105,0,'LON','Longitude','','ru'),(106,0,'HAS_ATM','Has an ATM','','ru'),(107,0,'LOCATION','Location','','ru'),(108,0,'STUDIO_FOOTER_LINK','https://webmaster.md','','ru'),(109,0,'SEARCH_WORD','Искать','','ru'),(110,0,'ID_WORD','ID','','ru'),(112,0,'COMMENT','Комментарий','','ru'),(113,0,'SUCCES_COPY','Скопировано','','ru'),(114,0,'EXISTS_WORD','already exists!','','ru'),(115,0,'CREATED_WORD','Создан','','ru'),(116,0,'VIEW_WORD','Просмотр','','ru'),(117,0,'SETTING_CHANGE',' Настройки изменены','','ru'),(118,0,'ENTRY_VALUE','Укажите значение','','ru'),(119,0,'LANG_ADDS_SUCCESS','Язык добавлен!','','ru'),(120,0,'LANGUAS_FOR_COPY','Язык для копий значений всех таблиц ','','ru'),(121,0,'CODE_NEW_LANG','Код нового языка (например: ru, en, fr)','','ru'),(122,0,'NAME_NEW_LANG','Название нового языка','','ru'),(123,0,'MEDIUM','Средний','','ru'),(124,0,'COMPLICATED','Сложный','','ru'),(125,0,'SIMPLE','Простой','','ru'),(126,0,'NOT','Not','','ru'),(127,0,'COMPLICITED_PASSWORD','Сложность пароля','','ru'),(128,0,'LANG_INTERFACE','Lang CMS','','ru'),(129,0,'LOGIN_WORD','Логин','','ru'),(130,0,'INVALID_BLOCK_TYPE','Invalid block type','','ru'),(131,0,'ELEMENT_WORD','Element','','ru'),(132,0,'NOT_FOUND_WORD','Not found','','ru'),(133,0,'CURRENT_IMAGES','Текущие изображения','','ru'),(134,0,'DELETE_IMAGE_','Удалить изображение?','','ru'),(135,0,'ADD_IMAGE_GALLERY','Добавить изображения','','ru'),(136,0,'LEFTMENU_CONSTRUCTOR','CONSTRUCTOR','','ru'),(137,1,'LIST_ELEMENTS','List elements','','en'),(138,0,'CHANGE_HOME_LANG','Change home lang','','ru'),(139,0,'IS_HOME','Make the main thing','','ru'),(140,1,'LANG_CONTENT','Lang content','','ru');
+/*!40000 ALTER TABLE `ws_inteface_lang_content` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_lang_dictionary`
+--
+
+DROP TABLE IF EXISTS `ws_lang_dictionary`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_lang_dictionary` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `edit_by_user` tinyint(1) NOT NULL DEFAULT '1',
+  `comments` text NOT NULL,
+  `title_en` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=287 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_lang_dictionary`
+--
+
+LOCK TABLES `ws_lang_dictionary` WRITE;
+/*!40000 ALTER TABLE `ws_lang_dictionary` DISABLE KEYS */;
+INSERT INTO `ws_lang_dictionary` VALUES (1,0,'ALL',0,'','Основные термины'),(43,1,'MSG_ALL_ADRESA',0,'','Adresa'),(44,0,'MSG_ADMIN_FULL_NAME',0,'','Имя/Фамилия'),(45,0,'MAIN',1,'','Main'),(46,0,'ABOUT',1,'','About'),(47,0,'CATALOG',1,'','Catalog'),(48,0,'CONTACTS',1,'','Contacts'),(49,0,'REG',1,'','Registration'),(50,0,'AUTH',1,'','Auth'),(51,0,'MESSAGE',1,'','Message'),(52,0,'LETTER',1,'','Letter'),(53,0,'BLOCKS',1,'','Blocks'),(55,45,'MSG_MAIN_JOIN_AND_DOWNLOAD',1,'','Join and Download'),(56,45,'MSG_MAIN_FIND_AND_DOWNLOAD_A_THOUSANDS_HIGH_QUALITY_JEWELRY_3D_PRINTABLE_FILES',1,'','Find and Download a thousands high quality Jewelry 3D Printable Files'),(57,45,'MSG_MAIN_DONE',1,'','Done'),(58,45,'MSG_MAIN_FILTER',1,'','Filter'),(59,45,'MSG_MAIN_SEARCH_BY_WORDS',1,'','Search by words'),(60,45,'MSG_MAIN_ON_ALL_CATEGORIES_OR_JUST_ON_SELECTED',1,'','on all categories or just on selected'),(61,45,'MSG_MAIN_SEARCH_3D_MODELS',1,'','Search 3D Models'),(62,45,'MSG_MAIN_JEWELRY_3D_MODELS_COLLECTION',1,'','JEWELRY 3D MODELS COLLECTION'),(63,45,'MSG_MAIN_EXPLORE_COLLECTIONS',1,'','Explore collections'),(64,45,'MSG_MAIN_JEWELRY_3D_MODELS',1,'','JEWELRY 3D MODELS'),(65,45,'MSG_MAIN_3D_MODELS_SCULPTURES',1,'','3D MODELS SCULPTURES'),(66,45,'MSG_MAIN_OBJ_AND_STL_FORMATS_PRINTABLE_AND_FOR_CUTTING_MACHINE_MODELS',1,'','obj and stl formats printable and for cutting machine models'),(67,45,'MSG_MAIN_EXPLORE',1,'','EXPLORE'),(267,51,'MSG_MESSAGE_VVEDITE_PRAVILINO_STARYJ_PAROLI',1,'','Введите правильно старый пароль'),(69,45,'MSG_MAIN_GET_A_SUBSCRIPTION_NOW_AND_START_DOWNLOAD',1,'','Get a Subscription Now and start Download'),(70,45,'MSG_MAIN_THOUSANDS_OF_JEWELRY_PRINTABLE_3D_MODELS',1,'','Thousands of Jewelry printable 3D Models, Vector arts for engraving or for 3D modeling, sculptures, 3D jewelry elements, just SUBSCRIBE AND DOWNLOAD.'),(71,45,'MSG_MAIN_SELECT_YOUR_PLAN_AND_START_DOWNLOAD_YOUR_3D_MODELS',1,'','Select your Plan and start Download your 3D Models'),(72,45,'MSG_MAIN_GET_A_PLAN',1,'','Get a Plan'),(73,45,'MSG_MAIN_HAVE_SOME_QUESTIONS_FEEL_FREE_TO_CONTACT_US',1,'','Have some questions? feel free to contact us.'),(74,45,'MSG_MAIN_FOLLOW_US_ON_SOCIAL_MEDIA',1,'','FOLLOW US ON SOCIAL MEDIA'),(76,46,'MSG_ABOUT_GET_TO_KNOW_US',1,'','Get to know us'),(77,46,'MSG_ABOUT_WE_ARE_A_SKILLED_AND_PASSIONATE_3D_MODELING',1,'','We are a skilled and passionate 3D modeling design studio team that creates high-quality models for various industries. Using advanced technology and software, we approach each project with a fresh perspective and keen attention to detail. Our collaborative and client-focused approach ensures that we exceed our clients&#39; expectations.'),(78,46,'MSG_ABOUT_SOME_OF_OUR_MILESTONES',1,'','Some of our milestones'),(79,46,'MSG_ABOUT_OUR_TEAM',1,'','Our Team'),(80,46,'MSG_ABOUT_WE_ARE_A_SKILLED_AND_PASSIONATE_3D_MODELING_DESIGN_STUDIO_TEAM_THAT_CREATES_HIGH-QUALITY_MODELS_FOR_VARIOUS_INDUSTRIES',1,'','We are a skilled and passionate 3D modeling design studio team that creates high-quality models for various industries. Using advanced technology and software, we approach each project with a fresh perspective and keen attention to detail. Our collaborative and client-focused approach ensures that we exceed our clients&#39; expectations.'),(81,46,'MSG_ABOUT_IF_YOU_ARE_IN_LOVE_OF_3D_MODELING',1,'','IF YOU ARE IN LOVE OF 3D MODELING'),(82,46,'MSG_ABOUT_JOIN_ON_OUR_TEAM',1,'','Join on our TEAM'),(83,46,'MSG_ABOUT_COMPLETE_INFORMATION',1,'','Complete information'),(84,46,'MSG_ABOUT_AND_WE_WILL_LET_YOU_KNOW_LOREM_IPSUM',1,'','and we will let you know lorem ipsum'),(85,46,'MSG_ABOUT_SEND_EMAIL',1,'','SEND EMAIL'),(86,46,'MSG_ABOUT_JOIN_OUR_DREAM_TEAM_AND_CREATE_AND_MODEL_3D_MODELS_FROM_ANYWHERE_IN_THE_WORLD',1,'','Join our Dream Team and create and model 3D Models from anywhere in the world! Simply create a designer account on our platform and get started. We welcome you to collaborate with us and unleash your creativity.'),(87,46,'MSG_ABOUT_COMING_SOON',1,'','coming soon'),(88,46,'MSG_ABOUT_PRE-REGISTER',1,'','Pre-register'),(89,46,'MSG_ABOUT_OUR_CLIENTS_IS_FROM_AROUND_THE_WORLD',1,'','Our Clients is from around the world'),(90,46,'MSG_ABOUT_IF_YOU_WANT_TO_KNOW_MORE_ABOUT_US_AND_OUR_TEAM',1,'','If you want to know more about us and our team, promotions, collections 3D models and a lot of cool moments with our customer and team'),(91,46,'MSG_ABOUT_FOLLOW_US_ON_SOCIAL_MEDIA',1,'','FOLLOW US ON SOCIAL MEDIA'),(92,46,'MSG_ABOUT_SUPPORT_OUR_PLATFORM',1,'','SUPPORT OUR PLATFORM'),(93,46,'MSG_ABOUT_IF_YOU_BELIEVE_IN_OUR_MISSION_AND_WANT_TO_SUPPORT_OUR_PLATFORM_WE_WELCOME_YOUR_DONATIONS',1,'','If you believe in our mission and want to support our platform, we welcome your donations. Your contributions will help us continue to develop and improve our services, providing valuable resources to our users. Every dollar counts, and we are grateful for any support you can offer. Thank you for being a part of our community and helping us grow.'),(94,46,'MSG_ABOUT_DONATE',1,'','Donate'),(95,46,'MSG_ABOUT_DESIGNED_BY',1,'','Designed by'),(96,46,'MSG_ABOUT_REABOVSTUDIO',1,'','REABOVSTUDIO'),(97,46,'MSG_ABOUT_DEVELOPED_BY',1,'','Developed by'),(98,47,'MSG_CATALOG_AVAILABLE_FORMATS',1,'','Available formats'),(99,47,'MSG_CATALOG_SELECT_VARIATION',1,'','Select Variation'),(100,47,'MSG_CATALOG_SELECT_SIZE_AND_CLICK_TO_DOWNLOAD',1,'','Select size and click to download'),(101,47,'MSG_CATALOG_DOWNLOAD',1,'','download'),(102,47,'MSG_CATALOG_TAGS',1,'','Tags'),(103,47,'MSG_CATALOG_SIMILAR_MODELS',1,'','Similar models'),(104,47,'MSG_CATALOG_SIMILAR_MODELS_TITLE',1,'','Similar models'),(105,47,'MSG_CATALOG_FILTERS',1,'','Filters'),(106,47,'MSG_CATALOG_SEARCH_3D_MODELS',1,'','Search 3D Models'),(107,47,'MSG_CATALOG_DONE',1,'','Done'),(108,47,'MSG_CATALOG_FILTER',1,'','Filter'),(109,47,'MSG_CATALOG_SEARCH_BY_WORDS',1,'','Search by words'),(110,47,'MSG_CATALOG_ON_ALL_CATEGORIES_OR_JUST_ON_SELECTED',1,'','on all categories or just on selected'),(111,47,'MSG_CATALOG_REGISTER_NOW',1,'','Register now'),(112,47,'MSG_CATALOG_FOR_MORE',1,'','for more'),(113,47,'MSG_CATALOG_FOLLOW_US_ON_SOCIAL_MEDIA',1,'','FOLLOW US ON SOCIAL MEDIA'),(114,48,'MSG_CONTACTS_YOU_MUST_TO_BE_LOGGED_TO_SENT_THE_EMAIL',1,'','You must to be logged to sent the email'),(115,48,'MSG_CONTACTS_TYPE_YOUR_TEXT',1,'','Type your text'),(116,48,'MSG_CONTACTS_SEND_EMAIL',1,'','SEND EMAIL'),(117,49,'MSG_REG_LOG_IN',1,'','Log in'),(118,49,'MSG_REG_REGISTER',1,'','Register'),(119,49,'MSG_REG_FULL_NAME',1,'','Full name'),(120,49,'MSG_REG_COUNTRY',1,'','Country'),(121,49,'MSG_REG_EMAIL',1,'','Email'),(122,49,'MSG_REG_PASSWORD',1,'','Password'),(123,49,'MSG_REG_CONFIRM_PASSWORD',1,'','Confirm Password'),(124,49,'MSG_REG_EMAIL_WAS_SEND',1,'','Email was Send'),(125,49,'MSG_REG_CHECK_YOUR_E-MAIL',1,'','Check your E-mail.'),(126,49,'MSG_REG_BACK_TO_LOG_IN',1,'','Back to Log In'),(127,49,'MSG_REG_I_ACCEPT_ALL_',1,'','I accept all '),(128,49,'MSG_REG_TERMS_AND_CONDITION',1,'','Terms and Condition'),(129,49,'MSG_REG_AND',1,'','and'),(130,49,'MSG_REG_PRIVACY_POLICY',1,'','Privacy Policy'),(131,49,'MSG_REG_CREATE_ACCOUNT',1,'','Create Account'),(132,50,'MSG_AUTH_LOG_IN',1,'','Log in'),(133,50,'MSG_AUTH_REGISTER',1,'','Register'),(134,50,'MSG_AUTH_HI',1,'','Hi,'),(135,50,'MSG_AUTH_WE_ARE_HAPPY_TO_SEE_YOU_BACK_AGAIN',1,'','We are happy to see you back again!'),(136,50,'MSG_AUTH_EMAIL',1,'','Email'),(137,50,'MSG_AUTH_PASSWORD',1,'','Password'),(138,50,'MSG_AUTH_STAY_LOGGED_ON_THIS_COMPUTER',1,'','Stay logged on this computer'),(139,50,'MSG_AUTH_FORGET_PASSWORD',1,'','Reset my password'),(140,50,'MSG_AUTH_LOG_IN_BTN',1,'','Log in'),(141,50,'MSG_AUTH_RESET_PASSWORD',1,'','Reset Password'),(142,50,'MSG_AUTH_TYPE_HERE_YOUR_ACCOUNT_EMAIL_ADDRESS',1,'','Type here your account email address.'),(143,50,'MSG_AUTH_THIS_IS_MY_EMAIL_ADDRESS',1,'','This is my email address'),(144,50,'MSG_AUTH_SEND',1,'','Send'),(145,0,'SUBSCRIBES',1,'','Subscribes'),(146,0,'PERSONAL',1,'','Personal'),(268,51,'MSG_MESSAGE_CHTOBY_IZMENITI_PAROLI_NUZHNO_PRAVILINO_VVESTI_STARYJ_PAROLI',1,'','Чтобы изменить пароль, нужно правильно ввести старый пароль'),(148,145,'MSG_SUBSCRIBES_WINTER_3D_JEWELRY_MODELS_COLLECTION',1,'','Winter 3D Jewelry Models Collection'),(149,145,'MSG_SUBSCRIBES_CAPTURE_THE_MAGIC_OF_WINTER_WITH_OUR_EXQUISITE_WINTER_JEWELRY_COLLECTION',1,'','Capture the magic of winter with our exquisite Winter Jewelry Collection.'),(150,145,'MSG_SUBSCRIBES_CREATE_YOUR_OWN_WINTER-INSPIRED_JEWELRY_WITH_OUR_WINTER_JEWELRY_3D_PRINTABLE_MODELS',1,'','Create your own winter-inspired jewelry with our Winter Jewelry 3D Printable Models Collection. Intricately crafted designs ready for 3D printing.'),(151,145,'MSG_SUBSCRIBES_EUR',1,'','EUR'),(152,145,'MSG_SUBSCRIBES_SUBSCRIBE_NOW',1,'','Subscribe Now'),(153,145,'MSG_SUBSCRIBES_CONTENT_MAKE_YOUR_PAYMENT_AICI_CEVA_IN_ENGLEZA_REFERITOR_LA_TRANSFER_DSSDUDUHUSHSUDHIUFH',1,'','Content Make your payment aici ceva in engleza referitor la transfer dssduduhushsudhiufh'),(154,145,'MSG_SUBSCRIBES_DONT_HAVE_AN_ACCOUNT__SIGN_UP_NOW_FOR_FREE',1,'','Don&#39;t have an account ? Sign up Now for FREE'),(155,145,'MSG_SUBSCRIBES_CREATE_ACCOUNT',1,'','Create Account'),(156,145,'MSG_SUBSCRIBES_NAME',1,'','Name:'),(157,145,'MSG_SUBSCRIBES_EMAIL',1,'','Email:'),(158,145,'MSG_SUBSCRIBES_YOUR_SUBSCRIPTION_PERIOD',1,'','Your Subscription Period'),(159,145,'MSG_SUBSCRIBES_SELECT_A_PAYMENT_METHOD',1,'','Select a payment method'),(160,145,'MSG_SUBSCRIBES_VISA_MASTERCARD_AMERICAN_EXPRESS',1,'','Visa, Mastercard, American Express'),(161,145,'MSG_SUBSCRIBES_PAYPAL',1,'','Paypal'),(162,145,'MSG_SUBSCRIBES_YOU_WILL_PAY',1,'','You will pay'),(163,145,'MSG_SUBSCRIBES_I_ACCEPT_ALL',1,'','I accept all'),(164,145,'MSG_SUBSCRIBES_TERMS_AND_CONDITION',1,'','Terms and Condition'),(165,145,'MSG_SUBSCRIBES_I_ACCEPT',1,'','I accept'),(166,145,'MSG_SUBSCRIBES_PRIVACY_POLICY',1,'','Privacy Policy'),(167,145,'MSG_SUBSCRIBES_PAY',1,'','Pay'),(168,146,'MSG_PERSONAL_DOWNLOADS',1,'','Downloads'),(169,146,'MSG_PERSONAL_NOTIFICATIONS',1,'','Notifications'),(170,146,'MSG_PERSONAL_SUBSCRIPTIONS',1,'','Subscriptions'),(171,146,'MSG_PERSONAL_SETTINGS',1,'','Settings'),(172,146,'MSG_PERSONAL_CLICK_TO_DOWNLOAD',1,'','Click to download'),(173,146,'MSG_PERSONAL_GET_A_SUBSCRIPTION_NOW_AND_START_DOWNLOAD',1,'','Get a Subscription Now and start Download'),(174,146,'MSG_PERSONAL_THOUSANDS_OF_JEWELRY_PRINTABLE_3D_MODELS_',1,'','Thousands of Jewelry printable 3D Models, Vector arts for engraving or for 3D modeling, sculptures, 3D jewelry elements, just SUBSCRIBE AND DOWNLOAD.'),(175,146,'MSG_PERSONAL_SELECT_YOUR_PLAN_AND_START_DOWNLOAD_YOUR_3D_MODELS',1,'','Select your Plan and start Download your 3D Models'),(176,146,'MSG_PERSONAL_GET_A_PLAN',1,'','Get a Plan'),(177,146,'MSG_PERSONAL_EXPIRED',1,'','Expired'),(178,146,'MSG_PERSONAL_EXTEND_YOUR_SUBSCRIPTION',1,'','Extend your Subscription'),(179,146,'MSG_PERSONAL_ACTIVE',1,'','Active'),(180,146,'MSG_PERSONAL_EDIT',1,'','Edit'),(181,146,'MSG_PERSONAL_FULL_NAME',1,'','Full name'),(182,146,'MSG_PERSONAL_COUNTRY',1,'','Country'),(183,146,'MSG_PERSONAL_EMAIL',1,'','Email'),(184,146,'MSG_PERSONAL_OLD_PASSWORD',1,'','Old Password'),(185,146,'MSG_PERSONAL_NEW_PASSWORD',1,'','Password'),(186,146,'MSG_PERSONAL_REPEAT_NEW_PASSWORD',1,'','Confirm Password'),(187,146,'MSG_PERSONAL_SAVE_CHANGES',1,'','Save changes'),(188,146,'MSG_PERSONAL_YOUR_MESSAGE_WAS_SENT_SUCCEFULLY',1,'','Your message was sent succefully'),(189,146,'MSG_PERSONAL_MESSAGE_ERROR',1,'','Message error'),(190,146,'MSG_PERSONAL_PAYMENT_ERROR',1,'','Payment error'),(191,146,'MSG_PERSONAL_YOUR_PAYMENT_IS_SUCCEFULLY',1,'','Your payment is succefully'),(192,146,'MSG_PERSONAL_DOWNLOAD_IN_PROGRESS',1,'','Download in progress'),(193,146,'MSG_PERSONAL_DOWNLOAD_LIMIT',1,'','Download limit'),(194,53,'MSG_BLOCKS_ABOUT_US',1,'','about us'),(195,53,'MSG_BLOCKS_PRICES',1,'','prices'),(196,53,'MSG_BLOCKS_CONTACT_US',1,'','contact us'),(197,53,'MSG_BLOCKS_3D_MODELS',1,'','3D models'),(198,53,'MSG_BLOCKS_MY_PROFILE',1,'','My Profile'),(199,53,'MSG_BLOCKS_DOWNLOADS',1,'','Downloads'),(200,53,'MSG_BLOCKS_SETTINGS',1,'','Settings'),(201,53,'MSG_BLOCKS_SUBSCRIPTION',1,'','Subscription'),(202,53,'MSG_BLOCKS_NOTIFICATIONS',1,'','Notifications'),(203,53,'MSG_BLOCKS_LOG_OUT',1,'','LOG OUT'),(204,53,'MSG_BLOCKS_LOG_IN',1,'','Log In'),(205,53,'MSG_BLOCKS_REGISTER',1,'','Register'),(206,53,'MSG_BLOCKS_CLOSE',1,'','Close'),(207,53,'MSG_BLOCKS_TERMS_AND_CONDITIONS',1,'','terms and conditions'),(208,53,'MSG_BLOCKS_PRIVACY_POLICY',1,'','privacy policy'),(209,53,'MSG_BLOCKS_ALL_RIGHT_IS_RESERVED__2023',1,'','all right © 2019 - 2023'),(210,53,'MSG_BLOCKS_REABOV_STUDIO',1,'','REABOV STUDIO'),(211,53,'MSG_BLOCKS_OUR_SITE_USING_COOKIES_FOR_BETTER_WORK_AND_YOUR_COMFORT',1,'','Our site using cookies for better work and your comfort. If you visit our site you accept agree with cookies and'),(212,53,'MSG_BLOCKS_ACCEPT',1,'','Accept'),(213,53,'MSG_BLOCKS_BACK',1,'','back'),(214,53,'MSG_BLOCKS_TOP',1,'','top'),(215,51,'MSG_MESSAGE_PROIZOSHLA_OSHIBKA_POVTORITE_POPYTKU_POZZHE',1,'','Произошла ошибка, повторите попытку позже'),(216,51,'MSG_MESSAGE_ETA_ELEKTRONNAYA_POCHTA_NE_PODTVERZHDENA',1,'','Эта электронная почта не подтверждена'),(217,51,'MSG_MESSAGE_NEVERNYJ_PAROLI',1,'','Неверный пароль'),(218,51,'MSG_MESSAGE_V_BAZE_DANNYH_NET_POLIZOVATELYA_S_TAKIM_ELEKTRONNYM_ADRESOM',1,'','В базе данных нет пользователя с таким электронным адресом'),(219,51,'MSG_MESSAGE_NOVYJ_PAROLI_BYL_VYSLAN_NO_IZMENITI_EGO_NE_UDALOSI_POPROBUJTE_ESCHYO_RAZ',1,'','Новый пароль был выслан, но изменить его не удалось! Попробуйте ещё раз!'),(220,51,'MSG_MESSAGE_IZMENITI_PAROLI_NE_UDALOSI_NOVYJ_PAROLI_NE_BYL_VYSLAN',1,'','Изменить пароль не удалось. Новый пароль не был выслан'),(221,51,'MSG_MESSAGE_NE_UDALOSI_NACHATI_SKACHIVANIE',1,'','Не удалось начать скачивание'),(222,51,'MSG_MESSAGE_NA_SEGODNYA_PREVYSHEN_LIMIT_ZAGRUZOK',1,'','На сегодня превышен лимит загрузок'),(223,51,'MSG_MESSAGE_PODPISKU_NE_UDALOSI_OFORMITI',1,'','Подписку не удалось оформить'),(224,51,'MSG_MESSAGE_NELIZYA_SKACHIVATI_ZAGRUZKI_IZ_ISTORII_ESLI_SROK_VASHEJ_PODPISKI_ISTYOK',1,'','Нельзя скачивать загрузки из истории если срок вашей подписки истёк'),(225,51,'MSG_MESSAGE_IMYA_NE_DOLZHNO_BYTI_PUSTYM',1,'','Имя не должно быть пустым'),(226,51,'MSG_MESSAGE_NOVYE_PAROLI_DOLZHNY_SOVPADATI',1,'','Новые пароли должны совпадать'),(227,51,'MSG_MESSAGE_DANNYE_UDALOSI_IZMENITI',1,'','Данные удалось изменить'),(228,51,'MSG_MESSAGE_DANNYE_NE_UDALOSI_IZMENITI',1,'','Данные не удалось изменить'),(229,51,'MSG_MESSAGE_VYBERITE_VARIANT_OPLATY',1,'','Выберите вариант оплаты'),(230,51,'MSG_MESSAGE_NEOBHODIMO_OTMETITI_SVOYO_SOGLASIE_S_USLOVIYAMI',1,'','Необходимо отметить своё согласие с условиями'),(231,51,'MSG_MESSAGE_NEOBHODIMO_OTMETITI_SVOYO_SOGLASIE_S_POLITIKOJ',1,'','Необходимо отметить своё согласие с политикой'),(232,51,'MSG_MESSAGE_OPLATU_PROIZVESTI_NE_UDALOSI',1,'','Оплату произвести не удалось.'),(233,51,'MSG_MESSAGE_SOOBSCHENIE_OSTAVLENO',1,'','Сообщение оставлено'),(234,51,'MSG_MESSAGE_SOOBSCHENIE_NE_UDALOSI_OSTAVITI',1,'','Сообщение не удалось оставить'),(235,51,'MSG_MESSAGE_NAPISHITE_CHTO-NIBUDI',1,'','Напишите что-нибудь'),(236,51,'MSG_MESSAGE_VASH_ZAPROS_OSTAVLEN',1,'','Ваш запрос оставлен'),(237,51,'MSG_MESSAGE_ZAPROS_OSTAVITI_NE_UDALOSI',1,'','Запрос оставить не удалось'),(238,51,'MSG_MESSAGE_VYBERITE_VARIACIYU',1,'','Выберите вариацию'),(239,51,'MSG_MESSAGE_VYBERITE_RAZMER',1,'','Выберите размер'),(240,52,'MSG_LETTER_REGISTRACIYA_USPESHNO_ZAVERSHENA',1,'','Регистрация успешно завершена'),(241,52,'MSG_LETTER_HI',1,'','Hi,'),(242,52,'MSG_LETTER_WELLCOME_ON_REABOV_STOCK',1,'','Wellcome on REABOV STOCK, world first jewelry only, 3D models stock. here you can find a Tousand jewelry 3d models and sculptures that you can print and create you jewelry arts.'),(243,52,'MSG_LETTER_YOU_ARE_REGISTRATED',1,'','You are Registrated'),(244,52,'MSG_LETTER_LOG_IN_AND_GET_YOUR_SUBSCRIPTION_PLAN_NOW',1,'','log in and get your subscription plan now'),(245,52,'MSG_LETTER_GET_SUBSCRIPTION',1,'','Get subscription'),(246,52,'MSG_LETTER_ALL_RIGHTS_C_2023',1,'','all rights C 2023'),(247,52,'MSG_LETTER_CONFIRM_YOUR_EMAIL_TO_CONTINUE_YOUR_REGISTRATION',1,'','Confirm your email to continue your registration!'),(248,52,'MSG_LETTER_CONFIRM_EMAIL',1,'','CONFIRM EMAIL'),(249,52,'MSG_LETTER_CLICK_HERE',1,'','Click Here'),(250,52,'MSG_LETTER_IF_BUTTON_DOESNT_WORK_CLICK_ON_LINK_BELLOW',1,'','if button doesn&#39;t work click on link bellow'),(251,52,'MSG_LETTER_EMAIL_CONFIRM_LEA_LEA_LEA',1,'','email confirm lea lea lea'),(252,52,'MSG_LETTER_PODTVERDITE_SVOJ_EMEJL',1,'','Подтвердите свой емейл'),(253,51,'MSG_MESSAGE_NE_UDALOSI_SOZDATI_KLIENTA',1,'','Не удалось создать клиента'),(254,51,'MSG_MESSAGE_ETOT_EMEJL_UZHE_ZAREGISTRIROVAN_V_BAZE_DANNYH',1,'','Этот емейл уже зарегистрирован в базе данных'),(255,51,'MSG_MESSAGE_NOVYJ_PAROLI',1,'','Новый пароль'),(256,52,'MSG_LETTER_YOUR_PAYMENT_WAS_SUCCEFUL',1,'','your payment was succeful'),(257,52,'MSG_LETTER_EUR',1,'','EUR'),(258,52,'MSG_LETTER_YOUR_SUBSCRIPTION_PERIOD_IS_AVAILABLE_FROM_TO',1,'','your subscription period is available from/to'),(259,52,'MSG_LETTER_FOLLOW_US_ON_SOCIAL_MEDIA',1,'','FOLLOW US ON SOCIAL MEDIA'),(260,52,'MSG_LETTER_OPLATA_PROSHLA_USPESHNO',1,'','Оплата прошла успешно'),(261,53,'MSG_BLOCKS_WE_HAVE_A_COOKIES',1,'','We have a Cookies!'),(262,45,'MSG_MAIN_EXPLORE_MORE',1,'','Explore more'),(263,50,'MSG_AUTH_I_WANT_TO_',1,'','I want to '),(264,50,'MSG_AUTH_OPS_WRONG_PASSWORD_OR_EMAIL',1,'','ops, wrong password or email'),(265,52,'MSG_LETTER_NEW_REQUEST',1,'','New request'),(266,52,'MSG_LETTER_YOU_EMAIL_WAS_CHANGED_ACTIVATE_IT_AGAIN',1,'','You email was changed, activate it again'),(269,47,'MSG_CATALOG_SEE_MORE',1,'','See all'),(270,52,'MSG_LETTER_YOUR_NEW_PASSWORD',1,'','Your new password'),(271,52,'MSG_LETTER_BACK_TO_LOGIN',1,'','Back to login'),(272,52,'MSG_LETTER_NEW_REQUEST_TITLE',1,'','New request'),(273,52,'MSG_LETTER_INFORMATION_ABOUT_REQUEST',1,'','Information about request'),(274,52,'MSG_LETTER_NAME',1,'','Name'),(275,52,'MSG_LETTER_SURNAME',1,'','Surname'),(276,52,'MSG_LETTER_EMAIL',1,'','Email'),(277,52,'MSG_LETTER_COUNTRY',1,'','Country'),(278,52,'MSG_LETTER_TEXT',1,'','Text'),(279,51,'MSG_MESSAGE_OPLATU_NE_UDALOSI_ZAVERSHITI',1,'','Оплату не удалось завершить'),(280,51,'MSG_MESSAGE_PROIZOSHLA_OSHIBKA_V_SISTEME_OPLATY',1,'','Произошла ошибка в системе оплаты.'),(281,0,'NOT_FOUND',1,'','404'),(282,281,'MSG_NOT_FOUND_OPSS',1,'','Opss,'),(283,281,'MSG_NOT_FOUND_WE_GOT_A_PROBLEM_HERE_LET_US_KNOW_ABOUT_THIS_ERROR',1,'','we got a problem here, let us know about this error!'),(284,281,'MSG_NOT_FOUND_REPORT',1,'','Report'),(285,145,'MSG_SUBSCRIBES_SELECT_YOUR_PLAN_AND_START_DOWNLOAD',1,'','Select your Plan and start Download'),(286,53,'MSG_BLOCKS_DESIGNED_BY_',1,'','Designed by ');
+/*!40000 ALTER TABLE `ws_lang_dictionary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_mailer_news`
+--
+
+DROP TABLE IF EXISTS `ws_mailer_news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_mailer_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` enum('news','promo') NOT NULL DEFAULT 'news',
+  `news_id` int(11) NOT NULL,
+  `last_user_id` int(11) NOT NULL DEFAULT '0',
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0-new/1-process /2- end',
+  `date` datetime NOT NULL COMMENT 'добавлен',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_mailer_news`
+--
+
+LOCK TABLES `ws_mailer_news` WRITE;
+/*!40000 ALTER TABLE `ws_mailer_news` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ws_mailer_news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_main_link`
+--
+
+DROP TABLE IF EXISTS `ws_main_link`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_main_link` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link_en` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_main_link`
+--
+
+LOCK TABLES `ws_main_link` WRITE;
+/*!40000 ALTER TABLE `ws_main_link` DISABLE KEYS */;
+INSERT INTO `ws_main_link` VALUES (1,'http://google.com');
+/*!40000 ALTER TABLE `ws_main_link` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_menu_admin`
+--
+
+DROP TABLE IF EXISTS `ws_menu_admin`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_menu_admin` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `section_id` int(5) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `access` varchar(255) NOT NULL DEFAULT '1,2',
+  `access_delete` varchar(32) DEFAULT '1,2',
+  `num_page` int(11) NOT NULL DEFAULT '20',
+  `page_id` int(11) NOT NULL,
+  `sort` int(5) NOT NULL DEFAULT '500',
+  `assoc_table` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=106 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_menu_admin`
+--
+
+LOCK TABLES `ws_menu_admin` WRITE;
+/*!40000 ALTER TABLE `ws_menu_admin` DISABLE KEYS */;
+INSERT INTO `ws_menu_admin` VALUES (1,1,0,'Содержание сайта','/{WS_PANEL}/content/','fa-list','1,2,3,4,5,6,7,8,9','',20,0,600,''),(2,1,0,'Инфоблоки','/{WS_PANEL}/iblock/','fa-cubes','1,2,3,4,5,6,7,8,9','',20,0,550,''),(3,1,0,'Администрирование','/{WS_PANEL}/settings/','fa-wrench','1,2,3','',20,0,30,''),(6,1,1,'Все страницы','/{WS_PANEL}/content/pages/','','1,2,3,4,5,6,7,8,9','1,2',20,0,500,'ws_pages'),(9,1,3,'Словарь терминов','/{WS_PANEL}/settings/lang_term/','','1,2,3,4','',20,0,30,'ws_lang_dictionary'),(12,1,1,'Текстовые блоки','/{WS_PANEL}/content/page_inc/','','1,2,3,4,5,6,7,8,9','',20,0,20,'ws_pages_inc'),(13,1,3,'Настройки сайта','/{WS_PANEL}/settings/site/','','1,2,3','1,2,3',20,0,600,'ws_settings'),(14,1,0,'Пользователи','/{WS_PANEL}/users/','fa-user','1,2','1',20,0,400,'ws_users'),(15,0,3,'Бэкапы базы данных','/{WS_PANEL}/settings/backup_mysql/','','1,2,3','1,2',20,0,500,'ws_backup_mysql'),(16,0,3,'Управления языками сайта','/{WS_PANEL}/settings/languages/','','1','1,2',50,0,500,'ws_site_languages'),(21,0,3,'Мастер настроек','/{WS_PANEL}/settings/wizard/','','1','',0,0,500,''),(20,1,14,'Администраторы','/{WS_PANEL}/users/users/','','1,2,3,4,5,6,7,8,9','1,2',20,0,500,'ws_users'),(76,0,2,'Месяцы','/{WS_PANEL}/iblock/months/','','1,2','1',20,0,500,'ws_months'),(77,0,2,'Города','/{WS_PANEL}/iblock/cities/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_cities'),(72,1,0,'Обратная связь','/{WS_PANEL}/feedback/',' fa-commenting-o','1,2','1,2',20,0,500,''),(73,1,72,'Запросы на регистрацию','/{WS_PANEL}/feedback/contacts/','','1,2,3,4,5,6,7,8,9','1,2',20,0,500,'ws_messages'),(78,0,2,'Новости','/{WS_PANEL}/iblock/news/','','1,2','1,2',20,69,500,'ws_news'),(79,0,2,'Вложенность 1','/{WS_PANEL}/iblock/map_1/','','1,2','1,2',20,71,500,'ws_catalog'),(80,0,79,'Вложенность 2','/{WS_PANEL}/iblock/map_1/map_2/','','1,2','1,2',20,72,500,'ws_catalog_elements'),(82,1,2,'Страны','/{WS_PANEL}/iblock/country/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_country'),(83,1,2,'Видео-цикл','/{WS_PANEL}/iblock/video/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_video'),(84,1,0,'Каталог','/{WS_PANEL}/catalog/','fa fa-shopping-bag','1,2,3,4,5,6,7,8,9','',20,6,500,''),(85,1,14,'Пользователи','/{WS_PANEL}/users/clients/','','1,2','1,2',10,0,500,'ws_clients'),(86,0,2,'Банер','/{WS_PANEL}/iblock/banner/edit_elem.php?id=1','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_banner'),(87,1,2,'Карусель','/{WS_PANEL}/iblock/carousel/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_carousel'),(88,1,84,'Коллекции','/{WS_PANEL}/catalog/collections/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,73,500,'ws_collections'),(89,1,84,'Категории','/{WS_PANEL}/catalog/categories/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,78,500,'ws_categories'),(90,1,89,'Вариации','/{WS_PANEL}/catalog/categories/products/variations/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_categories_variation'),(91,1,2,'Абонемент','/{WS_PANEL}/iblock/abonament/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_abonament'),(92,1,89,'Товары','/{WS_PANEL}/catalog/categories/products/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,74,500,'ws_categories_elements'),(93,1,92,'Размеры','/{WS_PANEL}/catalog/categories/products/size/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_categories_elements_size'),(94,1,92,'Тэги','/{WS_PANEL}/catalog/categories/products/tags/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_tags'),(95,0,90,'Размеры вариаций','/{WS_PANEL}/catalog/categories/products/variations/size/','','1,2,3,4','1,2,3,4',20,0,500,'ws_categories_elements_size'),(96,1,72,'Сообщения','/{WS_PANEL}/feedback/msg/','','1,2,3,4','1,2,3,4',20,0,500,'ws_msg'),(97,0,2,'Опции','/{WS_PANEL}/iblock/abonament/lines/','','1,2,3,4','1,2,3,4',20,0,500,'ws_abonament_line'),(98,1,2,'Ссылка на главной','/{WS_PANEL}/iblock/link/','','1,2,3,4','1,2,3,4',20,0,500,'ws_main_link'),(99,1,2,'Картинка \"о нас\"','/{WS_PANEL}/iblock/main/','','1,2,3,4','1,2,3,4',20,0,500,'ws_about'),(100,1,2,'Соц-сети','/{WS_PANEL}/iblock/soc/','','1,2,3,4','1,2,3,4',20,0,500,'ws_soc'),(101,1,84,'Товары','/{WS_PANEL}/catalog/products/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,74,500,'ws_categories_elements'),(102,1,101,'Размеры','/{WS_PANEL}/catalog/products/size/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_categories_elements_size'),(103,1,101,'Тэги','/{WS_PANEL}/catalog/products/tags/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_tags'),(104,1,101,'Размеры вариаций','/{WS_PANEL}/catalog/products/variations/size/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_categories_elements_size'),(105,1,101,'Вариации','/{WS_PANEL}/catalog/products/variations/','','1,2,3,4,5,6,7,8,9','1,2,3,4,5,6,7,8,9',20,0,500,'ws_categories_variation');
+/*!40000 ALTER TABLE `ws_menu_admin` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_menu_admin_settings`
+--
+
+DROP TABLE IF EXISTS `ws_menu_admin_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_menu_admin_settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL,
+  `param` varchar(128) NOT NULL,
+  `value` varchar(1024) NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_menu_admin_settings`
+--
+
+LOCK TABLES `ws_menu_admin_settings` WRITE;
+/*!40000 ALTER TABLE `ws_menu_admin_settings` DISABLE KEYS */;
+INSERT INTO `ws_menu_admin_settings` VALUES (1,14,'image','/{WS_PANEL}/templates/lte/dist/img/users/',''),(2,20,'image','/{WS_PANEL}/templates/lte/dist/img/users/',''),(3,20,'image_width','160','Ширина аватары'),(4,20,'image_height','160','Высота аватары'),(61,78,'image','/upload/news/',''),(62,78,'image_width','300',''),(63,78,'image_height','200',''),(64,79,'image','/upload/catalog/',''),(65,79,'image_width','300',''),(66,79,'image_height','200',''),(67,80,'image','/upload/elements/',''),(68,80,'image_width','600',''),(69,80,'image_height','600',''),(72,83,'image','/upload/video/',''),(73,85,'image','/upload/clients/',''),(74,85,'image_width','300',''),(75,85,'image_height','300',''),(76,86,'image','/upload/banner/',''),(77,86,'image_width','1200',''),(78,86,'image_height','538',''),(79,88,'image','/upload/collections/',''),(80,88,'image_width','340',''),(81,88,'image_height','510',''),(82,89,'image','/upload/categories/',''),(83,89,'image_width','400',''),(84,89,'image_height','300',''),(85,92,'image','/upload/categories/products/',''),(86,92,'image_width','273',''),(87,92,'image_height','273',''),(88,93,'image','/upload/categories/products/size/',''),(89,93,'image_width','510',''),(90,93,'image_height','510',''),(91,95,'image','/upload/categories/products/size/',''),(92,95,'image_width','510',''),(93,95,'image_height','510',''),(94,88,'video','/upload/video_col/',''),(95,99,'image','/upload/about/',''),(96,99,'image_width','1200',''),(97,99,'image_height','538',''),(98,100,'image','/upload/soc/',''),(99,100,'image_width','46',''),(100,100,'image_height','46',''),(101,101,'image','/upload/categories/products/',''),(102,101,'image_width','273',''),(103,101,'image_height','273',''),(104,102,'image','/upload/categories/products/size/',''),(105,102,'image_width','510',''),(106,102,'image_height','510',''),(107,104,'image','/upload/categories/products/size/',''),(108,104,'image_width','510',''),(109,104,'image_height','510','');
+/*!40000 ALTER TABLE `ws_menu_admin_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_messages`
+--
+
+DROP TABLE IF EXISTS `ws_messages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_messages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `country` varchar(255) NOT NULL,
+  `name` varchar(130) NOT NULL,
+  `surname` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` varchar(300) NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_messages`
+--
+
+LOCK TABLES `ws_messages` WRITE;
+/*!40000 ALTER TABLE `ws_messages` DISABLE KEYS */;
+INSERT INTO `ws_messages` VALUES (3,1,'Ливония','Вася','Pupkin','admin@test.ro','fgserdghsrehseh','2023-05-08 00:00:00'),(4,1,'country','Name','Surname','email@mail.ru','text text text text text text text text text text text text text text','2023-05-25 15:19:04'),(5,1,'Country','Name','Surname','email@mail.ru','Tttttttttttttttt','2023-05-25 15:21:31'),(6,1,'testt','test','tset','tset@mail.ru','test','2023-05-26 17:07:02'),(7,1,'Chisinau','ana','ana','ana@mail.com','lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type a','2023-05-27 18:22:25'),(8,1,'test','pre','pre','nafrit13@gmail.com','test','2023-05-29 12:04:08'),(9,1,'dsdsdsdsds','Test','Test','nafrit13@gmail.com','dsdsdsdsd','2023-05-29 12:06:54'),(10,1,'res','Name','Surname','nafrit13@gmail.com','testtsettest','2023-05-29 12:08:12'),(11,1,'cxcxc','ferr','ferrrum','nsfnaf13@gmail.ru','bbbbbb','2023-05-29 12:09:11'),(12,1,'gfg','dsds','dsd','naf13@mail.ri','fg','2023-05-29 15:11:16'),(13,1,'c','NM','SAs','email@Maaaaail.sdsssssssss','a','2023-05-30 12:03:53'),(14,1,'Chisinau','valeria','valeria','victoria.webmaster.studio@gmail.com','Doresc sa fac parte din echipa dvs. ','2023-05-31 16:29:08'),(15,0,'Country of','Name','TheNm','hit@amil.en','Here is a long and smart comment','2023-06-01 16:27:51'),(16,1,'Country of','Name','TheNm','hit@amil.en','Here is a long and smart comment','2023-06-01 16:28:37'),(17,1,'Country of','Name','TheNm','hit@amil.en','Here is a long and smart comment','2023-06-01 16:29:21'),(18,1,'fff','fdf','fdf','df@mail.er','vvvvv','2023-06-01 16:31:19'),(19,1,'test','test','test','test@ail.ru','test','2023-07-04 09:57:39');
+/*!40000 ALTER TABLE `ws_messages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_months`
+--
+
+DROP TABLE IF EXISTS `ws_months`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_months` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title_ru` varchar(16) NOT NULL,
+  `title_en` varchar(16) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_months`
+--
+
+LOCK TABLES `ws_months` WRITE;
+/*!40000 ALTER TABLE `ws_months` DISABLE KEYS */;
+INSERT INTO `ws_months` VALUES (1,'Января','Января'),(2,'Февраля','Февраля'),(3,'Марта','Марта'),(4,'Апреля','Апреля'),(5,'Май','Май'),(6,'Июня','Июня'),(7,'Июль','Июль'),(8,'Августа','Августа'),(9,'Сентября','Сентября'),(10,'Октября','Октября'),(11,'Ноября','Ноября'),(12,'Декабря','Декабря');
+/*!40000 ALTER TABLE `ws_months` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_msg`
+--
+
+DROP TABLE IF EXISTS `ws_msg`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_msg` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` tinyint(4) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_msg`
+--
+
+LOCK TABLES `ws_msg` WRITE;
+/*!40000 ALTER TABLE `ws_msg` DISABLE KEYS */;
+INSERT INTO `ws_msg` VALUES (1,1,'dev@caynik.xom','Hello World!','2023-05-18 18:28:18'),(2,1,'nafrit13@gmail.com','send msg test','2023-05-25 15:49:59'),(3,1,'termoluxservicedev@gmail.com','Hello!','2023-05-26 17:01:55'),(4,1,'termoluxservicedev@gmail.com','уекук','2023-05-26 17:03:35'),(5,1,'victoria.webmaster.studio@gmail.com','Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.','2023-05-27 11:51:11'),(6,1,'','text','2023-05-29 11:46:48'),(7,1,'','sdsdd','2023-05-29 11:54:55'),(8,1,'','testgfgdfgjjj','2023-05-29 15:12:02'),(9,1,'victoria.webmaster.studio@gmail.com','doresc sa fac parte din echipa dvs.','2023-05-31 17:40:01'),(10,1,'alexandrureabov@gmail.com','lklkjljlkl','2023-06-24 04:01:06'),(11,1,'alexandrureabov@gmail.com','hgsdfgsdfgdsgsdf','2023-06-24 04:01:14'),(12,1,'reabovstock@gmail.com','Oricare.','2023-06-24 12:11:26'),(13,1,'reabovstock@gmail.com','oricare','2023-06-24 12:11:38'),(14,1,'nafrit13@gmail.com','rest','2023-07-04 10:19:33'),(15,1,'nafrit13@gmail.com','fffffszssssghggggeweeweweweweed','2023-07-04 10:20:43'),(16,1,'victoria.webmaster.studio@gmail.com','test ','2023-07-07 10:33:04'),(17,1,'denis.pascaru95@gmail.com','Hi there! I&#39;m so excited about your creativity, can i had some contacts for the future colaboration?','2023-07-22 22:11:12');
+/*!40000 ALTER TABLE `ws_msg` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_news`
+--
+
+DROP TABLE IF EXISTS `ws_news`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_news` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `title_ru` varchar(192) NOT NULL,
+  `preview_ru` varchar(256) NOT NULL,
+  `text_ru` longtext NOT NULL,
+  `image` varchar(32) NOT NULL,
+  `page_title_ru` varchar(256) NOT NULL,
+  `meta_d_ru` varchar(256) NOT NULL,
+  `meta_k_ru` varchar(256) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(192) NOT NULL,
+  `preview_en` varchar(256) NOT NULL,
+  `text_en` longtext NOT NULL,
+  `page_title_en` varchar(256) NOT NULL,
+  `meta_d_en` varchar(256) NOT NULL,
+  `meta_k_en` varchar(256) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_news`
+--
+
+LOCK TABLES `ws_news` WRITE;
+/*!40000 ALTER TABLE `ws_news` DISABLE KEYS */;
+INSERT INTO `ws_news` VALUES (35,'2021-07-22','1','3','<p>Hub <strong>has</strong></p>\r\n','xcvbily804.png','2','','',500,1,'1','3','<p>Hub <strong>has</strong></p>\r\n','2','','');
+/*!40000 ALTER TABLE `ws_news` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_notifications`
+--
+
+DROP TABLE IF EXISTS `ws_notifications`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_notifications` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `is_read` tinyint(4) NOT NULL DEFAULT '0',
+  `is_show` tinyint(4) NOT NULL DEFAULT '0',
+  `client_id` int(11) NOT NULL DEFAULT '0',
+  `type` varchar(255) NOT NULL,
+  `rang` int(11) NOT NULL COMMENT '0 = neitral,1 - sucess,2 - error',
+  `session_id` varchar(255) NOT NULL DEFAULT '',
+  `not_text` text NOT NULL,
+  `created` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=271 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_notifications`
+--
+
+LOCK TABLES `ws_notifications` WRITE;
+/*!40000 ALTER TABLE `ws_notifications` DISABLE KEYS */;
+INSERT INTO `ws_notifications` VALUES (1,1,1,27,'msg_success',1,'','','2023-05-25 08:24:32'),(2,1,1,27,'msg_error',2,'','','2023-05-25 06:26:32'),(3,1,1,27,'pay_error',2,'','','2023-05-25 09:30:32'),(4,1,1,27,'pay_success',1,'','','2023-05-25 08:24:27'),(5,1,1,27,'download_success',1,'','','2023-05-25 07:26:28'),(6,1,1,27,'download_success',1,'','','2023-05-25 08:28:29'),(7,1,0,27,'download_success',1,'','','2023-05-25 17:13:26'),(8,1,0,27,'download_success',1,'','','2023-05-25 17:13:29'),(9,1,0,27,'download_success',1,'','','2023-05-25 17:13:30'),(10,1,0,27,'download_success',1,'','','2023-05-25 17:13:31'),(11,1,0,27,'download_success',1,'','','2023-05-25 17:15:44'),(12,1,1,27,'download_success',1,'','','2023-05-25 17:15:50'),(13,1,0,27,'download_success',1,'','','2023-05-25 17:15:52'),(14,1,1,27,'download_success',1,'','','2023-05-25 17:15:55'),(15,1,1,27,'download_limit',2,'','','2023-05-25 17:15:58'),(16,1,0,28,'pay_success',1,'','','2023-05-26 16:55:06'),(17,1,1,28,'download_success',1,'','','2023-05-26 16:58:35'),(18,1,1,28,'download_success',1,'','','2023-05-26 16:59:10'),(19,1,1,28,'download_success',1,'','','2023-05-26 16:59:14'),(20,1,1,28,'download_success',1,'','','2023-05-26 17:00:03'),(21,1,1,28,'download_success',1,'','','2023-05-26 17:00:05'),(22,1,1,28,'download_limit',2,'','','2023-05-26 17:00:07'),(23,1,1,28,'download_limit',2,'','','2023-05-26 17:00:11'),(24,1,1,28,'msg_success',1,'','','2023-05-26 17:01:55'),(25,1,1,28,'msg_success',1,'','','2023-05-26 17:03:35'),(26,1,1,28,'download_success',1,'','','2023-05-27 11:13:38'),(27,1,1,30,'pay_success',1,'','','2023-05-27 11:41:07'),(28,1,1,30,'pay_success',1,'','','2023-05-27 11:41:10'),(29,1,1,30,'download_success',1,'','','2023-05-27 11:42:32'),(30,1,1,30,'download_success',1,'','','2023-05-27 11:43:15'),(31,1,1,30,'download_limit',2,'','','2023-05-27 11:43:19'),(32,1,1,30,'msg_success',1,'','','2023-05-27 11:51:11'),(33,1,0,31,'pay_success',1,'','','2023-05-29 19:34:44'),(34,1,1,31,'download_success',1,'','','2023-05-29 19:35:04'),(35,1,0,27,'pay_success',1,'','','2023-05-30 11:57:55'),(36,1,0,30,'download_success',1,'','','2023-05-31 16:59:05'),(37,1,1,30,'download_success',1,'','','2023-05-31 17:30:31'),(38,1,1,30,'download_limit',2,'','','2023-05-31 17:31:09'),(39,0,1,30,'msg_success',1,'','','2023-05-31 17:40:01'),(40,1,1,27,'pay_success',1,'','','2023-06-01 11:35:28'),(41,1,1,35,'download_success',1,'','','2023-06-07 22:42:29'),(42,1,1,35,'download_success',1,'','','2023-06-07 22:52:55'),(43,1,1,35,'download_limit',2,'','','2023-06-07 22:53:07'),(44,1,1,27,'download_success',1,'','','2023-06-09 13:08:24'),(45,1,1,27,'download_success',1,'','','2023-06-09 13:19:10'),(46,1,1,27,'download_limit',2,'','','2023-06-09 13:22:37'),(47,1,1,27,'download_limit',2,'','','2023-06-09 13:22:44'),(48,1,1,27,'download_limit',2,'','','2023-06-09 13:23:45'),(49,1,1,27,'download_limit',2,'','','2023-06-09 13:25:12'),(50,1,1,27,'download_limit',2,'','','2023-06-09 13:25:24'),(51,1,1,27,'download_limit',2,'','','2023-06-09 13:25:46'),(52,1,1,27,'download_limit',2,'','','2023-06-09 13:26:03'),(53,1,1,27,'download_limit',2,'','','2023-06-09 13:26:07'),(54,1,1,27,'download_limit',2,'','','2023-06-09 13:26:15'),(55,1,1,27,'download_limit',2,'','','2023-06-09 13:26:29'),(56,1,1,27,'download_limit',2,'','','2023-06-09 13:26:37'),(57,1,1,27,'download_limit',2,'','','2023-06-09 13:27:37'),(58,1,1,27,'download_limit',2,'','','2023-06-09 13:27:42'),(59,1,1,27,'download_limit',2,'','','2023-06-09 13:27:50'),(60,1,1,27,'download_limit',2,'','','2023-06-09 13:29:30'),(61,1,1,27,'download_limit',2,'','','2023-06-09 13:29:30'),(62,1,1,27,'download_limit',2,'','','2023-06-09 13:29:31'),(63,1,1,27,'download_limit',2,'','','2023-06-09 13:32:12'),(64,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:20:52'),(65,0,1,0,'just_text',0,'64846a43f0ff0','test notification','2023-06-10 15:21:23'),(66,0,1,0,'just_text',0,'64846a43f0ff0','test notification','2023-06-10 15:21:46'),(67,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:21:50'),(68,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:22:16'),(69,0,0,0,'just_text',0,'64846a43f0ff0','test notification','2023-06-10 15:22:40'),(70,0,0,0,'just_text',0,'64846a43f0ff0','test notification','2023-06-10 15:22:47'),(71,0,0,0,'just_text',0,'64846a43f0ff0','test notification','2023-06-10 15:22:53'),(72,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:23:29'),(73,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:24:00'),(74,0,1,32,'just_text',0,'','test notification','2023-06-10 15:24:42'),(75,0,1,32,'just_text',0,'','test notification','2023-06-10 15:24:44'),(76,0,1,32,'just_text',0,'','test notification','2023-06-10 15:24:47'),(77,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:24:53'),(78,0,1,32,'just_text',0,'','test notification','2023-06-10 15:25:00'),(79,0,1,32,'just_text',0,'','test notification','2023-06-10 15:25:13'),(80,0,1,32,'just_text',0,'','test notification','2023-06-10 15:25:16'),(81,0,1,32,'just_text',0,'','test notification','2023-06-10 15:26:08'),(82,0,1,0,'just_text',0,'648465576d0f0','test notification','2023-06-10 15:26:19'),(83,0,1,0,'just_text',2,'6488204ed23a2','Эта электронная почта не подтверждена','2023-06-13 11:09:53'),(84,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:13:14'),(85,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:00'),(86,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:04'),(87,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:05'),(88,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:05'),(89,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:05'),(90,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:05'),(91,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:05'),(92,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:06'),(93,0,1,0,'just_text',2,'6488204ed23a2','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:14:09'),(94,0,1,0,'just_text',2,'6488204ed23a2','Эта электронная почта не подтверждена','2023-06-13 11:14:14'),(95,0,1,0,'just_text',2,'6488204ed23a2','Эта электронная почта не подтверждена','2023-06-13 11:14:15'),(96,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:15:58'),(97,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:16:13'),(98,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 11:17:17'),(99,0,1,32,'just_text',0,'','Выберите вариант оплаты','2023-06-13 11:51:25'),(100,0,1,32,'just_text',0,'','Выберите вариант оплаты','2023-06-13 11:51:31'),(101,0,1,32,'just_text',1,'','Данные удалось изменить','2023-06-13 11:52:16'),(102,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 12:56:53'),(103,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 12:57:08'),(104,0,1,0,'just_text',2,'648820c1a8239','В базе данных нет пользователя с таким электронным адресом','2023-06-13 12:58:18'),(105,1,1,27,'just_text',1,'','Данные удалось изменить','2023-06-13 14:58:53'),(106,1,1,27,'just_text',1,'','Данные удалось изменить','2023-06-13 15:25:45'),(107,0,1,0,'just_text',2,'648820c1a8239','Неверный пароль','2023-06-13 16:05:47'),(108,0,1,0,'just_text',2,'648820c1a8239','Этот емейл уже зарегистрирован в базе данных','2023-06-13 16:06:44'),(109,0,1,0,'just_text',2,'648820c1a8239','Этот емейл уже зарегистрирован в базе данных','2023-06-13 16:06:46'),(110,0,1,0,'just_text',2,'648820c1a8239','Неверный пароль','2023-06-13 16:18:43'),(111,0,1,0,'just_text',0,'648820c1a8239','Неверный пароль','2023-06-13 16:24:29'),(112,0,1,0,'just_text',0,'648820c1a8239','Неверный пароль','2023-06-13 16:24:38'),(113,0,1,0,'just_text',0,'648820c1a8239','Неверный пароль','2023-06-13 16:24:41'),(114,0,1,0,'just_text',0,'6491a1062ffc5','Эта электронная почта не подтверждена','2023-06-20 17:38:34'),(115,0,1,32,'just_text',0,'','Данные удалось изменить','2023-06-20 17:44:46'),(116,1,1,27,'just_text',0,'','Данные удалось изменить','2023-06-20 18:52:02'),(117,1,1,27,'just_text',0,'','Данные удалось изменить','2023-06-20 18:52:25'),(118,1,1,27,'just_text',0,'','Данные удалось изменить','2023-06-20 18:53:52'),(119,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-21 09:18:11'),(120,1,1,27,'just_text',0,'','Выберите размер','2023-06-21 09:18:11'),(121,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-21 09:18:16'),(122,1,1,27,'just_text',0,'','Выберите размер','2023-06-21 09:18:16'),(123,1,1,27,'download_success',1,'','','2023-06-22 13:03:03'),(124,1,1,27,'download_success',1,'','','2023-06-22 13:03:08'),(125,1,1,27,'download_limit',2,'','','2023-06-22 13:03:16'),(126,1,1,27,'download_limit',2,'','','2023-06-22 13:03:26'),(127,1,1,27,'download_limit',2,'','','2023-06-22 13:03:36'),(128,1,1,27,'download_limit',2,'','','2023-06-22 13:03:39'),(129,1,1,27,'download_limit',2,'','','2023-06-22 13:03:46'),(130,1,1,27,'download_limit',2,'','','2023-06-22 13:04:13'),(131,1,1,27,'download_limit',2,'','','2023-06-22 13:04:40'),(132,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:05:24'),(133,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:05:24'),(134,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:06:55'),(135,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:06:55'),(136,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:07:02'),(137,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:07:02'),(138,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:07:10'),(139,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:07:10'),(140,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:07:12'),(141,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:07:12'),(142,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:07:12'),(143,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:07:12'),(144,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:07:12'),(145,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:07:12'),(146,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:08:16'),(147,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:08:16'),(148,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:08:22'),(149,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:08:22'),(150,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:08:24'),(151,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:08:24'),(152,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:10:40'),(153,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:10:40'),(154,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:10:45'),(155,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:10:45'),(156,1,1,27,'just_text',0,'','Выберите вариацию','2023-06-22 13:13:13'),(157,1,1,27,'just_text',0,'','Выберите размер','2023-06-22 13:13:13'),(158,0,1,0,'just_text',0,'64943e8195a57','В базе данных нет пользователя с таким электронным адресом','2023-06-22 15:30:38'),(159,0,1,0,'just_text',0,'64943e8195a57','В базе данных нет пользователя с таким электронным адресом','2023-06-22 15:30:43'),(160,0,1,0,'just_text',0,'64943e8195a57','В базе данных нет пользователя с таким электронным адресом','2023-06-22 15:30:45'),(161,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-22 15:30:56'),(162,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-22 15:30:58'),(163,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-22 15:33:39'),(164,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-22 15:34:41'),(165,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-22 15:38:59'),(166,0,1,0,'just_text',0,'64943e8195a57','В базе данных нет пользователя с таким электронным адресом','2023-06-22 15:39:10'),(167,0,1,0,'just_text',0,'64953805ecaad','Неверный пароль','2023-06-23 09:16:02'),(168,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-24 03:57:14'),(169,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-24 03:57:34'),(170,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-06-24 03:57:38'),(171,1,1,33,'just_text',0,'','Данные удалось изменить','2023-06-24 03:58:30'),(172,1,1,33,'msg_success',1,'','','2023-06-24 04:01:06'),(173,1,1,33,'just_text',0,'','Сообщение оставлено','2023-06-24 04:01:06'),(174,1,1,33,'msg_success',1,'','','2023-06-24 04:01:14'),(175,1,1,33,'just_text',0,'','Сообщение оставлено','2023-06-24 04:01:14'),(176,1,1,35,'just_text',0,'','Выберите размер','2023-06-24 05:11:52'),(177,1,1,35,'download_success',1,'','','2023-06-24 05:11:54'),(178,0,1,0,'just_text',0,'6496a564caf14','Этот емейл уже зарегистрирован в базе данных','2023-06-24 11:44:32'),(179,1,1,37,'just_text',0,'','Данные удалось изменить','2023-06-24 11:46:12'),(180,1,1,35,'just_text',0,'','Данные удалось изменить','2023-06-24 11:51:43'),(181,1,1,35,'just_text',0,'','Данные удалось изменить','2023-06-24 11:52:40'),(182,1,1,35,'msg_success',1,'','','2023-06-24 12:11:27'),(183,1,1,35,'just_text',0,'','Сообщение оставлено','2023-06-24 12:11:27'),(184,1,1,35,'just_text',0,'','Напишите что-нибудь','2023-06-24 12:11:32'),(185,1,1,35,'msg_success',1,'','','2023-06-24 12:11:39'),(186,1,1,35,'just_text',0,'','Сообщение оставлено','2023-06-24 12:11:39'),(187,0,1,0,'just_text',0,'6496a1e6a1dec','Данные удалось изменить','2023-06-24 12:47:59'),(188,0,1,0,'just_text',0,'64963e79c40c6','Неверный пароль','2023-06-24 12:48:47'),(189,0,1,0,'just_text',0,'64a3b584425d9','Ваш запрос оставлен','2023-07-04 09:57:40'),(190,1,1,27,'just_text',0,'','Данные удалось изменить','2023-07-04 10:17:58'),(191,1,1,27,'just_text',0,'','Напишите что-нибудь','2023-07-04 10:19:29'),(192,1,1,27,'msg_success',1,'','','2023-07-04 10:19:33'),(193,1,1,27,'just_text',0,'','Сообщение оставлено','2023-07-04 10:19:33'),(194,1,1,27,'msg_success',1,'','','2023-07-04 10:20:43'),(195,1,1,27,'download_success',1,'','','2023-07-04 16:34:49'),(196,0,1,34,'msg_success',1,'','','2023-07-07 10:33:04'),(197,0,1,0,'just_text',0,'64943e8195a57','В базе данных нет пользователя с таким электронным адресом','2023-07-07 20:13:33'),(198,0,1,0,'just_text',0,'64a849ce6ac67','Неверный пароль','2023-07-07 20:23:40'),(199,0,1,0,'just_text',0,'64943e8195a57','Неверный пароль','2023-07-10 13:10:32'),(200,1,1,27,'just_text',0,'','Напишите что-нибудь','2023-07-20 18:09:35'),(201,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:21:32'),(202,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:21:32'),(203,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:21:32'),(204,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:21:35'),(205,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:21:35'),(206,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:21:35'),(207,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:02'),(208,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:02'),(209,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:03'),(210,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:11'),(211,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:11'),(212,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:11'),(213,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:24'),(214,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:24'),(215,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:24'),(216,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:28'),(217,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:28'),(218,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:28'),(219,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:31'),(220,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:31'),(221,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:31'),(222,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:34'),(223,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:22:55'),(224,1,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:22:55'),(225,1,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:22:55'),(226,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:26:21'),(227,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:26:22'),(228,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:26:22'),(229,0,1,27,'just_text',0,'','Напишите что-нибудь','2023-07-21 09:27:30'),(230,0,1,27,'just_text',0,'','Напишите что-нибудь','2023-07-21 09:27:35'),(231,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:28:20'),(232,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:28:20'),(233,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:28:20'),(234,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:28:54'),(235,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:28:54'),(236,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:28:54'),(237,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:29:16'),(238,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:29:16'),(239,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:29:16'),(240,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 09:29:32'),(241,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 09:29:32'),(242,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 09:29:32'),(243,0,1,0,'just_text',0,'64ba67b36659c','В базе данных нет пользователя с таким электронным адресом','2023-07-21 14:16:10'),(244,0,1,0,'just_text',0,'64ba67b36659c','Эта электронная почта не подтверждена','2023-07-21 14:16:27'),(245,0,1,0,'just_text',0,'64ba67b36659c','Эта электронная почта не подтверждена','2023-07-21 14:21:04'),(246,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 15:06:56'),(247,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 15:06:56'),(248,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 15:06:56'),(249,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 15:08:00'),(250,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 15:08:01'),(251,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 15:08:01'),(252,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 15:12:32'),(253,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 15:12:32'),(254,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 15:12:32'),(255,0,1,27,'just_text',0,'','Выберите вариант оплаты','2023-07-21 15:12:40'),(256,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с условиями','2023-07-21 15:12:40'),(257,0,1,27,'just_text',0,'','Необходимо отметить своё согласие с политикой','2023-07-21 15:12:40'),(258,0,1,0,'just_text',0,'64bc252e5883c','Этот емейл уже зарегистрирован в базе данных','2023-07-22 22:09:43'),(259,1,1,37,'msg_success',1,'','','2023-07-22 22:11:12'),(260,0,1,0,'just_text',0,'64bfaab997e29','Эта электронная почта не подтверждена','2023-07-25 14:05:07'),(261,0,1,0,'just_text',0,'64bfaab997e29','Этот емейл уже зарегистрирован в базе данных','2023-07-25 14:07:53'),(262,0,1,0,'just_text',0,'64c219d57adf2','В базе данных нет пользователя с таким электронным адресом','2023-07-27 10:17:51'),(263,0,1,34,'just_text',0,'','Напишите что-нибудь','2023-07-27 14:17:16'),(264,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:05:09'),(265,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:10:06'),(266,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:12:44'),(267,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:14:41'),(268,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:17:24'),(269,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:19:56'),(270,0,1,0,'just_text',0,'64c209099533d','В базе данных нет пользователя с таким электронным адресом','2023-07-27 17:22:38');
+/*!40000 ALTER TABLE `ws_notifications` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_pages`
+--
+
+DROP TABLE IF EXISTS `ws_pages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_pages` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
+  `section_id` int(11) NOT NULL DEFAULT '0',
+  `page` varchar(255) NOT NULL,
+  `assoc_table` varchar(255) NOT NULL,
+  `edit_by_user` tinyint(1) NOT NULL DEFAULT '0',
+  `search` tinyint(4) NOT NULL DEFAULT '0',
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `show_gallery` tinyint(4) NOT NULL DEFAULT '0',
+  `show_text` tinyint(4) NOT NULL DEFAULT '1',
+  `title_en` varchar(255) NOT NULL,
+  `page_title_en` varchar(384) NOT NULL,
+  `text_en` longtext NOT NULL,
+  `meta_k_en` varchar(255) NOT NULL,
+  `meta_d_en` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=100 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_pages`
+--
+
+LOCK TABLES `ws_pages` WRITE;
+/*!40000 ALTER TABLE `ws_pages` DISABLE KEYS */;
+INSERT INTO `ws_pages` VALUES (1,0,'/index.php','',1,0,500,1,0,1,'Главная','Главная страница','','Главная страница','Главная страница'),(3,0,'/ajax.php','',0,0,500,1,0,0,'ajax','ajax','','',''),(2,0,'/404.php','',0,0,500,1,0,1,'Not found','Not found','Not found','',''),(69,0,'/news/detail.php','ws_news',0,0,500,1,0,1,'Дет страница новости','Дет страница новости','','Дет страница новости','Дет страница новости'),(70,0,'/news/index.php','',0,0,500,1,0,1,'Новости','Новости','<p>Новости</p>\r\n','Новости','Новости'),(71,0,'/catalog/index.php','ws_catalog',0,0,500,1,0,1,'Страница каталога','Страница каталога','Страница каталога','Страница каталога','Страница каталога'),(72,0,'/text_page.php','',1,0,500,1,0,1,'Terms and Conditions','Terms and Conditions','<ul>\r\n	<li><span style=\"font-size:20px\"><strong>Terms and Conditions for Digital Printable Jewelry 3D Models Stock</strong></span></li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Licensing:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">All digital 3D models of jewelry available in our stock are protected by copyright and are licensed for personal and non-commercial use only. You may not resell, distribute, or modify the models without obtaining written permission from the original creator.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Usage</strong>:</span></p>\r\n\r\n	<p><span style=\"font-size:20px\">The digital 3D models are intended for use in 3D printing and other digital fabrication processes to create physical jewelry items. They are not to be used for mass production, manufacturing, or commercial purposes without proper authorization.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Ownership</strong>:</span></p>\r\n\r\n	<p><span style=\"font-size:20px\">The ownership of the digital 3D models remains with the original creator. You are granted a non-exclusive, non-transferable license to use the models in accordance with these terms and conditions.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Accuracy</strong>:</span></p>\r\n\r\n	<p><span style=\"font-size:20px\">While we strive to provide accurate and high-quality 3D models, we do not guarantee their accuracy or suitability for any specific purpose. It is your responsibility to verify the dimensions, tolerances, and other specifications of the models before using them in your jewelry production process.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Liability</strong>:</span></p>\r\n\r\n	<p><span style=\"font-size:20px\">We are not liable for any damages, losses, or liabilities arising from the use of the digital 3D models, including but not limited to any physical, financial, or reputational damages. You use the models at your own risk.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Intellectual Property:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">You may not remove, alter, or obscure any copyright or other proprietary notices on the digital 3D models. You may not claim ownership or authorship of the models or any derivative works based on them.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Refunds</strong>:</span></p>\r\n\r\n	<p><span style=\"font-size:20px\">Due to the digital nature of the 3D models, all sales are final and no refunds will be provided unless there is a technical issue with the download or the models are materially different from the product description.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Updates:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">We may update or modify the terms and conditions at any time without prior notice. It is your responsibility to review the most current version of the terms and conditions before using the digital 3D models.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Governing Law:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">These terms and conditions shall be governed by and interpreted in accordance with the laws of the jurisdiction where we are based, without regard to its conflict of laws provisions.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Acceptance:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">By purchasing and downloading the digital 3D models, you acknowledge and agree to abide by these terms and conditions. Failure to comply with these terms and conditions may result in termination of your license and legal action. Typography</span></p>\r\n	</li>\r\n</ul>\r\n','Terms and Conditions','yo wassup, haw about some conditions'),(73,0,'/collection.php','ws_collections',1,0,500,1,0,1,'Коллекции','Коллекции','','Коллекции','Коллекции'),(74,0,'/catalog/product.php','ws_categories_elements',0,0,500,1,0,0,'Product','Product','','',''),(75,0,'/about.php','',1,0,500,1,0,1,'О нас','О нас','','',''),(76,0,'/collections.php','',1,0,500,1,0,0,'Коллекции','Коллекции','','',''),(77,0,'/catalog/search.php','',1,0,500,1,0,0,'Поиск','Поиск','','',''),(78,0,'/catalog/search.php','ws_categories',1,0,500,0,0,0,'Категории','Категории','','',''),(79,0,'/prices.php','',1,0,500,1,0,0,'Подписки','Подписки','','',''),(80,0,'/personal.php','',1,0,500,1,0,0,'Личный кабинет','Личный кабинет','','',''),(81,0,'/login/reg.php','',1,0,500,1,0,0,'Регистрация','Регистрация','','',''),(82,0,'/login/login.php','',1,0,500,1,0,0,'Вход','Вход','','',''),(83,0,'/login/forgot.php','',1,0,500,1,0,0,'Сброс пароля','Сброс пароля','','',''),(84,0,'/contacts.php','',1,0,500,1,0,1,'Contact us','Contact us','<p>Your opinion is very important for us, let us to know if we can help you with something, and also u can give us your suggestions. We will provide a response within approximately 5 working days.</p>\r\n','',''),(85,0,'/text_page.php','',1,0,500,1,0,1,'Политика конфиденциальности','Политика конфиденциальности','<ul>\r\n	<li><span style=\"font-size:20px\"><strong>Terms and Conditions for Digital Printable Jewelry 3D Models Stock</strong></span></li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Licensing:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">All digital 3D models of jewelry available in our stock are protected by copyright and are licensed for personal and non-commercial use only. You may not resell, distribute, or modify the models without obtaining written permission from the original creator.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Usage:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">The digital 3D models are intended for use in 3D printing and other digital fabrication processes to create physical jewelry items. They are not to be used for mass production, manufacturing, or commercial purposes without proper authorization.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Ownership:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">The ownership of the digital 3D models remains with the original creator. You are granted a non-exclusive, non-transferable license to use the models in accordance with these terms and conditions.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Accuracy:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">While we strive to provide accurate and high-quality 3D models, we do not guarantee their accuracy or suitability for any specific purpose. It is your responsibility to verify the dimensions, tolerances, and other specifications of the models before using them in your jewelry production process.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Liability:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">We are not liable for any damages, losses, or liabilities arising from the use of the digital 3D models, including but not limited to any physical, financial, or reputational damages. You use the models at your own risk.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Intellectual Property:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">You may not remove, alter, or obscure any copyright or other proprietary notices on the digital 3D models. You may not claim ownership or authorship of the models or any derivative works based on them.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Refunds:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">Due to the digital nature of the 3D models, all sales are final and no refunds will be provided unless there is a technical issue with the download or the models are materially different from the product description.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Updates:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">We may update or modify the terms and conditions at any time without prior notice. It is your responsibility to review the most current version of the terms and conditions before using the digital 3D models.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Governing Law:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">These terms and conditions shall be governed by and interpreted in accordance with the laws of the jurisdiction where we are based, without regard to its conflict of laws provisions.</span></p>\r\n	</li>\r\n	<li>\r\n	<p><span style=\"font-size:20px\"><strong>Acceptance:</strong></span></p>\r\n\r\n	<p><span style=\"font-size:20px\">By purchasing and downloading the digital 3D models, you acknowledge and agree to abide by these terms and conditions. Failure to comply with these terms and conditions may result in termination of your license and legal action. Typography</span></p>\r\n	</li>\r\n</ul>\r\n','',''),(86,0,'/login/accept_link.php','',1,0,500,1,0,0,'Регистрация завершена','Регистрация завершена','','',''),(87,0,'/login/logout.php','',1,0,500,1,0,0,'Logout','Logout','','',''),(88,0,'/pay_prices.php','',1,0,500,1,0,0,'Страница оплаты','Страница оплаты','','',''),(89,0,'/mail/mail1.php','',0,0,500,1,0,0,'Mail','Mail','','',''),(90,0,'/mail/mail2.php','',0,0,500,1,0,0,'Mail','Mail','','',''),(91,0,'/mail/mail3.php','',0,0,500,1,0,0,'Mail','Mail','','',''),(92,0,'/mail/mail4.php','',0,0,500,1,0,0,'Mail','Mail','','',''),(93,0,'/login/success.php','',1,0,500,1,0,0,'Success','Success','','',''),(94,0,'/paypal/success.php','',0,0,500,1,0,0,'Paypal success','Paypal success','','',''),(95,0,'/paypal/cancel.php','',0,0,500,1,0,0,'Paypal cancel','Paypal cancel','','',''),(96,0,'/paypal/test.php','',0,0,500,1,0,0,'Paypal test','Paypal test','','',''),(97,0,'/paypal_new/pay_success.php','',0,0,500,1,0,0,'Paypal success','Paypal success','','',''),(98,0,'/paypal_new/pay_fail.php','',0,0,500,1,0,0,'Paypal cancel','Paypal cancel','','',''),(99,0,'/test.php','',0,0,500,1,0,0,'Test','Test','','','');
+/*!40000 ALTER TABLE `ws_pages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_pages_inc`
+--
+
+DROP TABLE IF EXISTS `ws_pages_inc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_pages_inc` (
+  `id` int(3) unsigned NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) NOT NULL,
+  `edit_by_user` tinyint(1) NOT NULL DEFAULT '1',
+  `title_en` varchar(255) NOT NULL,
+  `text_en` longtext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_pages_inc`
+--
+
+LOCK TABLES `ws_pages_inc` WRITE;
+/*!40000 ALTER TABLE `ws_pages_inc` DISABLE KEYS */;
+INSERT INTO `ws_pages_inc` VALUES (1,'NEW_NEWS',0,'Текст рассылки','<p>Лорем ипсум! Приветсвуем</p>\r\n\r\n<p>Это текст о том, что появилась новая публикация &ndash;&nbsp;{title}</p>\r\n\r\n<p>А далее следует текст о том, что по этой ссылке &ndash;&nbsp;{link} &ndash;&nbsp;можно перейти и прочитать</p>\r\n'),(3,'CHECKED_CODE',0,'Ссылка подтверждения для регистрации','<p>Ваша ссылка подтверждения для регистрации&nbsp;&ndash;&nbsp;{link}</p>\r\n'),(4,'FORGOT_TEXT',1,'Текст для сброса пароля','<p>Ваш новый пароль&nbsp;&ndash;&nbsp;{pass}</p>\r\n'),(5,'NOT_MSG_SUCCESS',1,'Notification msg success','<p>Notification msg success text&nbsp;</p>\r\n'),(6,'NOT_MSG_ERROR',1,'Notification msg error','<p>Notification msg error text</p>\r\n'),(7,'NOT_PAY_ERROR',1,'Notification pay error','<p>Notification pay error text</p>\r\n'),(8,'NOT_PAY_SUCCESS',1,'Notification pay success','<p>Notification pay success text</p>\r\n'),(9,'NOT_DOWNLOAD_SUCCESS',1,'Notification download success','<p>Notification download success text</p>\r\n'),(10,'NOT_DOWNLOAD_LIMIT',1,'Notification download limit','<p>Dear User, you have exceeded the daily download limit</p>\r\n'),(11,'NEW_REQUEST',1,'Текст уведомления о новом запросе на регистрацию','<p>Новый запрос на регистрацию:</p>\r\n\r\n<p>Name &ndash;&nbsp;{name}</p>\r\n\r\n<p>Surname &ndash;&nbsp;{surname}</p>\r\n\r\n<p>Email &ndash;&nbsp;{email}</p>\r\n\r\n<p>Country &ndash;&nbsp;{country}</p>\r\n\r\n<p>Message &ndash;&nbsp;{text}</p>\r\n'),(12,'SUBSCRIBE_ERROR',1,'Notification subscribe error','<p>Subscribe error text</p>\r\n'),(13,'DOWNLOAD_ERROR',1,'Notification download error','<p>Notification download error text</p>\r\n');
+/*!40000 ALTER TABLE `ws_pages_inc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_photogallery`
+--
+
+DROP TABLE IF EXISTS `ws_photogallery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_photogallery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `page_id` int(11) NOT NULL,
+  `elem_id` int(11) NOT NULL,
+  `image` varchar(64) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `date` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_photogallery`
+--
+
+LOCK TABLES `ws_photogallery` WRITE;
+/*!40000 ALTER TABLE `ws_photogallery` DISABLE KEYS */;
+INSERT INTO `ws_photogallery` VALUES (14,74,1,'s6jkm2ci22.jpg',500,'2023-05-10 12:07:32'),(13,74,1,'nnim5rrt5s.jpg',500,'2023-05-10 12:07:31'),(15,74,1,'kulgi5tfnr.jpg',500,'2023-05-10 12:07:33'),(16,74,2,'9nlv7d963a.jpg',500,'2023-05-10 13:55:31'),(17,74,2,'i4lvvg8f37.jpg',500,'2023-05-10 13:55:32'),(19,74,11,'_7_uzg45nf.jpg',500,'2023-05-10 14:39:45'),(20,74,12,'u9m_gpm2hs.jpg',500,'2023-05-10 14:40:12'),(21,74,13,'fv2v7bvpf8.jpg',500,'2023-05-11 15:50:50'),(22,74,13,'g99gnmne7t.jpg',500,'2023-05-18 15:08:23'),(24,74,42,'_3aa2clly2.jpg',500,'2023-05-27 11:55:09'),(25,74,42,'ji_3k16tbj.jpg',500,'2023-05-27 11:55:12'),(26,74,42,'yp6kr3ozrk.jpg',500,'2023-05-27 11:55:16'),(27,74,42,'rus32z_eeg.jpg',500,'2023-05-27 11:55:19'),(67,74,78,'21y2d_1a_g.jpg',500,'2023-07-21 19:32:59'),(66,74,77,'utbhlrs4e4.jpg',500,'2023-07-21 19:32:31'),(65,74,72,'i_4myr1n_3.jpg',500,'2023-07-07 11:24:45'),(64,74,72,'2ff8n685de.jpg',700,'2023-07-07 11:24:45'),(63,74,72,'ac8e8gb55f.jpg',500,'2023-07-07 11:24:44'),(34,74,56,'miv4rcsp2s.jpg',500,'2023-05-31 17:25:40'),(35,74,56,'8c9jph9e5k.png',500,'2023-05-31 17:25:41'),(36,74,56,'r1u_5jcne1.png',500,'2023-05-31 17:25:42'),(37,74,56,'9gvmcm47cp.png',500,'2023-05-31 17:26:29'),(47,74,64,'959zaadtgk.png',500,'2023-06-07 19:46:05'),(48,74,64,'b74j_fl43i.png',500,'2023-06-07 19:46:06'),(49,74,64,'dlehif7vmk.png',500,'2023-06-07 19:46:06'),(50,74,64,'9ickue4po8.png',500,'2023-06-07 19:46:07'),(51,74,55,'hnsup5ks6j.png',500,'2023-06-07 20:06:32'),(52,74,55,'8fvjmmtkz9.png',500,'2023-06-07 20:06:34'),(53,74,55,'5zh7i6nzsi.png',500,'2023-06-07 20:06:35'),(54,74,55,'ug3c6p8z85.png',500,'2023-06-07 20:06:36'),(55,74,54,'ehnd4596e_.png',500,'2023-06-07 20:08:34'),(56,74,54,'jglg6c1f9i.png',500,'2023-06-07 20:08:35'),(57,74,54,'ki5i19l3rl.png',500,'2023-06-07 20:08:37'),(58,74,54,'432ipub_p9.png',500,'2023-06-07 20:08:38'),(59,74,65,'psr5p9ce1m.jpg',500,'2023-06-07 22:20:21'),(60,74,65,'1aaz4jll89.jpg',500,'2023-06-07 22:20:22'),(61,74,65,'2lz47v1s5u.jpg',500,'2023-06-07 22:20:22'),(62,74,65,'tnb83nl97u.png',500,'2023-06-07 22:20:51');
+/*!40000 ALTER TABLE `ws_photogallery` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_photogallery_params`
+--
+
+DROP TABLE IF EXISTS `ws_photogallery_params`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_photogallery_params` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'если требуется резать много, то просто черехз запятую',
+  `page_id` int(11) NOT NULL,
+  `resize_library` int(1) NOT NULL COMMENT 'использовать библиотеку для ресайза',
+  `thumb_width` varchar(128) NOT NULL,
+  `thumb_height` varchar(128) NOT NULL,
+  `image_width` varchar(128) NOT NULL,
+  `image_height` varchar(128) NOT NULL,
+  `filter_gray` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'фильтр для функции makefiler',
+  `save_original_image` tinyint(4) NOT NULL DEFAULT '1' COMMENT 'если картинка менее, чем какой-то размер - сохранять исходный размер',
+  `comment` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_photogallery_params`
+--
+
+LOCK TABLES `ws_photogallery_params` WRITE;
+/*!40000 ALTER TABLE `ws_photogallery_params` DISABLE KEYS */;
+INSERT INTO `ws_photogallery_params` VALUES (1,0,1,'300','300','1200','0',0,0,''),(2,74,1,'273','273','910','910',0,1,'');
+/*!40000 ALTER TABLE `ws_photogallery_params` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_settings`
+--
+
+DROP TABLE IF EXISTS `ws_settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_settings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `title` varchar(32) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `value` text NOT NULL,
+  `description` text NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_settings`
+--
+
+LOCK TABLES `ws_settings` WRITE;
+/*!40000 ALTER TABLE `ws_settings` DISABLE KEYS */;
+INSERT INTO `ws_settings` VALUES (1,1,'Окончание ЧПУ','CPU_KEYWORD','new','Окончание для ЧПУ (если уже существует такой ЧПУ)',500),(2,0,'Поисковый ключ по-умолчанию','DEFAULT_SEARCH_KEY','SearchWord','Поисковый ключ по-умолчанию',500),(3,1,'Домен сайта в текущий момент','DOMAIN','domain.com','Не находясь на домене, сайт будет закрыт заглушкой для поисковых систем',500),(4,1,'SMTP MAIL','SMTP_MAIL','testsend@allapelsin.ru','Сервис отправки почты',500),(5,1,'SMTP_SERVER','SMTP_SERVER','mail.istihost.ru','Сервис отправки почты',500),(6,1,'SMTP_PASS','SMTP_PASS','KtX7R0N2ep','Сервис отправки почты',500),(7,1,'SMTP_PORT','SMTP_PORT','587','Сервис отправки почты',500),(8,0,'latitude ','MAP_LAT','46.978976','latitude',500),(9,0,'longitude','MAP_LNG','28.854929','longitude',500),(14,1,'Абонемент ','DAY_ABONMENT_MAIL','5','Сколько дней перед окончание абонемента отправить на почту сообщение ',500),(15,0,'Макс. количество скачиваний ','MAX_DOWNLOAD_PER_DAY','1','Максимальное количество скачиваний для 1 дня',500),(16,1,'Patreon link','PATREON_LINK','https://www.patreon.com/','',500),(17,1,'PayPal link','PAYPAL_LINK','https://www.paypal.com/ru/home','',500),(18,1,'Tip link','TIP','https://www.tipeeestream.com/','',500),(19,1,'Emailk','EMAIL','support@reabovstock.com','',500),(20,0,'Facebook link','FACEBOOK_LINK','https://www.facebook.com/','',500),(21,0,'Instagram link','INSTAGRAM_LINK','http://instagram.com/api.md/','',500),(22,0,'Telegram link','TELEGRAM_LINK','https://web.telegram.org/','',500),(23,1,'Reabov link','REABOV_LINK','http://reabov.webfun.cf/','',500),(24,1,'Admin email','ADMIN_EMAIL','nafrit13@gmail.com','',500),(25,1,'Footer link','FOOTER_LINK','http://www.reabovstudio.com','',500);
+/*!40000 ALTER TABLE `ws_settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_site_languages`
+--
+
+DROP TABLE IF EXISTS `ws_site_languages`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_site_languages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(8) NOT NULL,
+  `title` varchar(32) NOT NULL,
+  `sort` int(11) NOT NULL DEFAULT '500',
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `is_default` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_site_languages`
+--
+
+LOCK TABLES `ws_site_languages` WRITE;
+/*!40000 ALTER TABLE `ws_site_languages` DISABLE KEYS */;
+INSERT INTO `ws_site_languages` VALUES (6,'en','English',500,1,1);
+/*!40000 ALTER TABLE `ws_site_languages` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_soc`
+--
+
+DROP TABLE IF EXISTS `ws_soc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_soc` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `link_en` varchar(255) NOT NULL DEFAULT '',
+  `image` varchar(255) NOT NULL DEFAULT '',
+  `image_act` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_soc`
+--
+
+LOCK TABLES `ws_soc` WRITE;
+/*!40000 ALTER TABLE `ws_soc` DISABLE KEYS */;
+INSERT INTO `ws_soc` VALUES (1,'https://www.facebook.com/','6jfb1m_dc6.svg','3tb_g6ccav.svg'),(2,'http://instagram.com/api.md/','l8d14vffto.svg','7vnldfd5hk.svg'),(3,'https://web.telegram.org/','kl9u21igno.svg','3myd_9_c3r.svg');
+/*!40000 ALTER TABLE `ws_soc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_subscribers`
+--
+
+DROP TABLE IF EXISTS `ws_subscribers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_subscribers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` datetime NOT NULL,
+  `lang` varchar(2) NOT NULL DEFAULT 'ro',
+  `name` varchar(128) NOT NULL,
+  `email` varchar(96) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_subscribers`
+--
+
+LOCK TABLES `ws_subscribers` WRITE;
+/*!40000 ALTER TABLE `ws_subscribers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ws_subscribers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_tags`
+--
+
+DROP TABLE IF EXISTS `ws_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_tags` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `elem_id` int(11) NOT NULL,
+  `title_en` varchar(256) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `sort` int(11) NOT NULL DEFAULT '500',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_tags`
+--
+
+LOCK TABLES `ws_tags` WRITE;
+/*!40000 ALTER TABLE `ws_tags` DISABLE KEYS */;
+INSERT INTO `ws_tags` VALUES (1,2,'Tag 1',1,500),(2,2,'Tag 2',1,500),(3,1,'Tag 1',1,500),(4,1,'Tag 2',1,500),(5,1,'Tag 3',1,500),(6,13,'Tag 1',1,500),(7,13,'Tag 2',1,500),(8,4,'Tag 1',1,500),(9,4,'Tag 2',1,500),(10,4,'Tag 3',1,500),(11,13,'Tag 5',1,500),(12,4,'Tag 6',1,500),(13,4,'Tag 7',1,500),(14,4,'Tag 8',1,500),(15,1,'Tag 5',1,500),(16,1,'Tag 6',1,500),(17,1,'Tag 7',1,500),(18,1,'Tag 8',1,500),(19,13,'Tag 51',1,500),(20,13,'Tag 52',1,500),(21,13,'Tag 53',1,500),(22,13,'Tag 54',1,500),(23,13,'Tag 55',1,500),(24,13,'Tag 56',1,500),(25,0,'2023',1,500),(26,0,'2023',1,500),(27,0,'fdfd',1,500),(28,0,'123',1,500),(29,0,'test tag',1,500),(30,57,'test tag',1,500),(31,59,'rrr',1,500),(32,59,'fdgf',1,500),(33,56,'valeria',1,500),(34,42,'valeria',1,500),(35,41,'valeria',1,500),(36,56,'Tag 1',1,500),(37,56,'Tag 2',1,500),(40,56,'bang',1,500),(47,64,'unu',1,500),(48,64,'doi',1,500),(49,64,'trei',1,500),(50,64,'patru',1,500),(51,64,'cinci',1,500),(52,64,'sase',1,500),(53,64,'sapte',1,500),(54,64,'opt',1,500),(55,64,'noua',1,500),(56,64,'zece',1,500),(57,55,'unu',1,500),(58,55,'doi',1,500),(59,55,'trei',1,500),(60,55,'patru',1,500),(61,55,'doisprezece',1,500),(62,55,'douazeci',1,500),(63,55,'zece',1,500),(64,54,'doi',1,500),(65,54,'nui doi',1,500),(66,54,'patru',1,500),(67,54,'floare',1,500),(68,54,'copac',1,500),(69,54,'copac',1,500),(70,53,'unu',1,500),(71,52,'cinci',1,500),(72,52,'patru',1,500),(73,52,'trei',1,500),(74,65,'rings',1,500),(75,65,'women ring',1,500),(79,65,'unu',1,500),(80,54,'unu',1,500),(81,52,'unu',1,500),(82,49,'unu',1,500);
+/*!40000 ALTER TABLE `ws_tags` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_user_group`
+--
+
+DROP TABLE IF EXISTS `ws_user_group`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_user_group` (
+  `id` int(2) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_user_group`
+--
+
+LOCK TABLES `ws_user_group` WRITE;
+/*!40000 ALTER TABLE `ws_user_group` DISABLE KEYS */;
+INSERT INTO `ws_user_group` VALUES (1,'Разработчик'),(2,'Главный администратор'),(3,'Администратор'),(4,'Контент-менеджер');
+/*!40000 ALTER TABLE `ws_user_group` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_users`
+--
+
+DROP TABLE IF EXISTS `ws_users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `usergroup` int(3) NOT NULL COMMENT 'ws_user_group',
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `user_name` varchar(255) NOT NULL COMMENT 'first_name',
+  `email` varchar(64) NOT NULL,
+  `lang` varchar(8) NOT NULL DEFAULT 'ru',
+  `interface_lang` varchar(4) NOT NULL DEFAULT 'en',
+  `pass` varchar(384) NOT NULL,
+  `login_crypt` varchar(255) NOT NULL,
+  `block` tinyint(4) NOT NULL DEFAULT '0',
+  `image` varchar(64) NOT NULL,
+  `auth_date` datetime NOT NULL,
+  `skin` varchar(64) NOT NULL DEFAULT 'skin-blue',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_users`
+--
+
+LOCK TABLES `ws_users` WRITE;
+/*!40000 ALTER TABLE `ws_users` DISABLE KEYS */;
+INSERT INTO `ws_users` VALUES (1,'user',1,1,'user','user@gmail.com','en','ru','','',0,'nbpibyax.jpg','2022-05-01 15:08:00','skin-blue'),(31,'max_dev',1,1,'max_dev','user@gmail.com','en','ru','c340fa7a3bf54c6c4a1ee165c8a58da1e2b7a9d0d8fd462e23695e3a3473485b0fd97eedfe578a4ff582205270366a8def1df7f0dd812379f5a6f6fb49802b1d','$1$5TZRr95c$5.Cz8t45cEcPGzpvrbMeM0',0,'nbpibyax.jpg','2023-05-11 09:02:51','skin-blue'),(32,'olesea_tech',1,1,'olesea_tech','olesea@tech','en','ru','a638f4767e9cd91e59a66c185559847a1d3989f7a70534ae67b3d545ef80cb637ab9584466105e05a5b8406fd35d18cbb0c2a4fe5fed517f1090842bcb54be76','$1$RZaankfT$Ps4Jbmuy2j8RQlki/HBJn.',0,'','2023-07-21 10:29:13','skin-red'),(33,'valery',2,1,'valery','valery@mail.ru','en','ru','872965705e214f16df1c72a93df5d6641d67f53b3625bc8184aad2d2235d3658c6aed79847b492a4ffe36275dd58d1c46c8d8b6621884b15f210a40ad1adca14','$1$qJx3Dvml$dFwqV.XpbEH6.hzETcrXf.',0,'a4p4zcgz.jpg','2023-07-27 14:47:07','skin-blue'),(34,'rar',2,1,'rar','rar@mail.ru','en','ru','f1805ad6fae7df3443a630effb0b06403cd19c200453f12ddb844047f01560fb55bb9519a75891481227ef575d9f1c236b41f2474e194426f20d351a31960d71','',0,'lesyc86b.jpg','0000-00-00 00:00:00','skin-blue'),(35,'Alexandru',2,1,'Alexandru','info@webmaster.md','en','ru','d62eb67c5e52eccc338f4ce81248e81535f6064994ca082608936ba3f0e8c5c89dc151820166f00eca6dd9a2296eadef11bd9a499d80f2e96d54594e98fea386','$1$tnP7.kiQ$C/VvChBwDS1.bYbq.IOYZ1',0,'a5l7mtuz.jpg','2023-06-24 04:28:31','skin-blue'),(36,'dionis',2,1,'dionis','projectmaxwebmaster@gmail.com','en','ru','8219a1dfa71ec7a14f45b5a7f7197278cbed42aaca7b3763b100b37e34ed7b87185ad6a0a5a899f657fa28d4ea2a7e06ef16cf558370cfe3d347f05bae2beda4','$1$j01mV39J$cySCItune009JH0uaZrUK0',0,'99_zdj6l.png','2023-07-22 22:15:35','skin-blue');
+/*!40000 ALTER TABLE `ws_users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ws_video`
+--
+
+DROP TABLE IF EXISTS `ws_video`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ws_video` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `active` int(11) NOT NULL DEFAULT '1',
+  `title_en` varchar(256) NOT NULL,
+  `video` varchar(256) NOT NULL,
+  `mob_video` varchar(256) NOT NULL DEFAULT '',
+  `mob_size` int(11) NOT NULL DEFAULT '850',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ws_video`
+--
+
+LOCK TABLES `ws_video` WRITE;
+/*!40000 ALTER TABLE `ws_video` DISABLE KEYS */;
+INSERT INTO `ws_video` VALUES (1,0,'Video-Index','ggm_tiutk7.mp4','rnddypjdob.mp4',850),(2,0,'Video-Index-2','cas_m23c_6.mp4','7gdv2u_sd9.mp4',850),(3,0,'Video-Colection','hell94c2ze.mp4','71budt38o_.mp4',850),(4,1,'Video-About','ltyadip8ft.mp4','',750),(5,1,'Video-Subscribe','i91spmt8kg.mp4','',850);
+/*!40000 ALTER TABLE `ws_video` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-07-29 17:53:42

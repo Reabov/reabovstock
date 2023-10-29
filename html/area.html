@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/slick/slick.css">
+    <link rel="stylesheet" href="/css/blocks.css">
+    <link rel="stylesheet" href="/css/ws.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+
+    <title>Reabov</title>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header__mobile" >
+            <button class="burger" onclick="setMobileActive(this)">
+                <img src="/images/icons/burger.png" alt="">
+            </button>
+            <a href="index.html" class="logo-black">
+                <img src="/images/elements/logo/logo-black.svg" alt="">
+            </a>
+
+            <a href="register.html" class="cabin">
+                <img src="/images/icons/log-mobile.png" alt="">
+            </a>
+        </div>
+
+        <div class="header__mobile_active" >
+            <div class="mobile_active_wr">
+                <div class="mobile_active_header">
+                    <button class="burger" onclick="setMobileActive(this)"> 
+                        <img src="/images/icons/burger.png" alt="">
+                    </button>
+                    <a href="" class="" class="mobile_active_close" onclick="setMobileActive(this)">
+                        <img src="/images/icons/Group 453.png" alt="">
+                    </a>
+                </div>
+
+                <div class="header__mid-mob">
+                    <a href="about.html" class="header__link header__link_mob">about us</a>
+                    <a href="prices.html" class="header__link header__link_mob prices">prices 
+                        <span><img src="/images/icons/Ellipse 20.png" alt=""></span>
+                    </a>
+                    <a href="contact.html" class="header__link header__link_mob">contact us</a>
+                    <a href="" class="header__link">3D models
+                    </a>
+                </div>
+                <a href="index.html" class="logo-black-mob">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="header__wrapper"> 
+            <div class="header__start">
+                <a href="index.html" class="logo-black">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+            </div>
+            <div class="header__mid">
+                <a href="about.html" class="header__link">about us</a>
+                <a href="prices.html" class="header__link prices">prices 
+                    <span><img src="/images/icons/Ellipse 20.png" alt=""></span>
+                </a>
+                <a href="contact.html" class="header__link">contact us</a>
+                <a href="" class="header__link">3D models
+                </a>
+            </div>
+            <div class="header__end">
+                <button class="area__btn" onclick="setAreaProfile(this)">Vin Diesel</button>
+                <div class="area__img">
+                    <img src="/images/elements/vin.png" alt="pic" >
+                    <span>2</span>
+                </div>
+                
+                
+                <div class="area__detals" >
+                    <div class="area__detals_wr">
+                        <a href="" class="area__detals_link">My Profile</a>
+                        <a href="" class="area__detals_link">Downloads</a>
+                        <a href="" class="area__detals_link">Settings</a>
+                        <a href="" class="area__detals_link">Subscription</a>
+                        <a href="" class="area__detals_link">Notifications <span>2</span></a>
+                        <div class="area_hr"></div>
+                        <button class="area__detals_btn">LOG OUT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="not_modal_wr">
+                <div class="not_modal">
+                    <span>Your payment is succefully</span>
+                    <button class="not_modal_close" onclick="setCloseNotMod(this)">
+                        <img src="/images/icons/Close Icon.svg" alt="">
+                    </button>
+    
+                </div>
+                <div class="not_modal mod-red">
+                    <span>Your payment is succefully</span>
+                    <button class="not_modal_close" onclick="setCloseNotMod(this)">
+                        <img src="/images/icons/Close Icon.svg" alt="">
+                    </button>
+    
+                </div>
+                <div class="not_modal mod-grey">
+                    <span>Your payment is succefully</span>
+                    <button class="not_modal_close" onclick="setCloseNotMod(this)">
+                        <img src="/images/icons/Close Icon.svg" alt="">
+                    </button>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="all__hr"></div>
+
+    <section class="area">
+        <div class="area__wrapper">
+            <div class="area__img-wr">
+                <div class="u">
+                     <img src="/images/elements/vin.png" alt="pic" class="area__title_img2">
+                     <button class="z">
+                        <img src="/images/icons/CompositeLayer.png" alt="">
+                     </button>
+                </div>
+            </div>
+            <div class="area__name">Vin Diesel</div>
+
+            <div class="area__choice_wr">
+                <button class="area__download" onclick="setChangeArea(this),setDownload(this)"><span>01/10</span>Downloads</button>
+                <button class="area__notification" onclick="setChangeArea(this),setNot(this)"><span>2</span>Notifications</button>
+                <button class="area__subscription activ-colorgreen"onclick="setChangeArea(this),setSub(this)">Subscriptions</button>
+                <button class="area__sittings" onclick="setChangeArea(this),setS(this)">Settings</button>
+
+            </div>
+        </div>
+    </section>
+
+        <section class="download">
+            <div class="download__wr">
+                <div class="accordion accordion-download">
+                    <div class="accordion__item download-elem">
+                            <div class="accordion__title download_title">
+                                <div class="title-wr title-wr-download">
+                                    <span class="accordion__subtitle-text fw300">31 iuly 2023</span>
+                                </div>
+                                <div class="accordion__arrow download_arrow">
+                                    <span class="accordion__arrow-item ">
+                                        <img src="/images/icons/arrow-accordion.png" alt="">
+                                    </span>
+                                </div> 
+
+                            </div>
+                            <div class="accordion__content accordion__content-download ">
+                                <div class="accordion__item2">
+                                    <div class="accordion__title2 download_title2">
+                                        <div class="title-wr-download2">
+                                            <span class="subtitle_number">10/10</span>
+                                            <span class="download__title-text fwnorm">Model inb3</span>
+                                            <span class="download__subtitle-text">31 iuly 2023</span>
+                                            <span class="accordion__arrow-item ">
+                                                <img src="/images/icons/arrow-accordion.png" alt="">
+                                            </span>
+                                        </div>
+                                    
+                                    </div>
+                                        <!-- <div class="accordion__content3 download-content-green">
+                                            <div class="download_btn-wr">
+                                            <img src="/images/icons/download.svg" alt="">
+                                        <button class="click_down-btn">Click to download</button>
+                                            </div>
+                                        </div> -->
+
+        <!--блок accordion__content3 имеет 2 версии : зеленая и красная в первом примере красный ярлык скачивания означает что скачивать нельзя также есть зеленый ярлык значит разрешенно-->                               
+                                        <div class="accordion__content3 download-content-red">
+                                            <div class="download_btn-wr ">
+                                            <img src="/images/icons/download-red.png" alt="">
+                                        <button class="click_down-btn click_down-red">Click to download</button>
+                                            </div>
+                                        </div>
+
+                                </div>
+
+
+                                <div class="accordion__item2">
+                                    <div class="accordion__title2 download_title2">
+                                        <div class="title-wr-download2">
+                                            <span class="subtitle_number ">10/10</span>
+                                            <span class="download__title-text">Model inb3</span>
+                                            <span class="download__subtitle-text ">31 iuly 2023</span>
+                                            <span class="accordion__arrow-item ">
+                                                <img src="/images/icons/arrow-accordion.png" alt="">
+                                            </span>
+                                        </div>
+                                    
+                                    </div>
+                                        <div class="accordion__content3">
+                                            <div class="download_btn-wr">
+                                            <img src="/images/icons/download.svg" alt="">
+                                        <button class="click_down-btn">Click to download</button>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                    </div>
+
+                    
+                    
+                    
+                    <div class="accordion__item download-elem">
+                        <div class="accordion__title download_title">
+                            <div class="title-wr title-wr-download">
+                                <span class="accordion__subtitle-text fw300">31 iuly 2023</span>
+                            </div>
+                            <div class="accordion__arrow download_arrow">
+                                <span class="accordion__arrow-item ">
+                                    <img src="/images/icons/arrow-accordion.png" alt="">
+                                </span>
+                            </div> 
+
+                        </div>
+                        <div class="accordion__content accordion__content-download ">
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number">8/10</span>
+                                        <span class="download__title-text fwnorm">Model inb3</span>
+                                        <span class="download__subtitle-text">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">7/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">6/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">5/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">4/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">3/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">2/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">1/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion__item download-elem">
+                        <div class="accordion__title download_title">
+                            <div class="title-wr title-wr-download">
+                                <span class="accordion__subtitle-text fw300">31 iuly 2023</span>
+                            </div>
+                            <div class="accordion__arrow download_arrow">
+                                <span class="accordion__arrow-item ">
+                                    <img src="/images/icons/arrow-accordion.png" alt="">
+                                </span>
+                            </div> 
+
+                        </div>
+                        <div class="accordion__content accordion__content-download ">
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number">10/10</span>
+                                        <span class="download__title-text fwnorm">Model inb3</span>
+                                        <span class="download__subtitle-text">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">10/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion__item download-elem">
+                        <div class="accordion__title download_title">
+                            <div class="title-wr title-wr-download">
+                                <span class="accordion__subtitle-text fw300">31 iuly 2023</span>
+                            </div>
+                            <div class="accordion__arrow download_arrow">
+                                <span class="accordion__arrow-item ">
+                                    <img src="/images/icons/arrow-accordion.png" alt="">
+                                </span>
+                            </div> 
+
+                        </div>
+                        <div class="accordion__content accordion__content-download ">
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number">10/10</span>
+                                        <span class="download__title-text fwnorm">Model inb3</span>
+                                        <span class="download__subtitle-text">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+
+
+                            <div class="accordion__item2">
+                                <div class="accordion__title2 download_title2">
+                                    <div class="title-wr-download2">
+                                        <span class="subtitle_number ">10/10</span>
+                                        <span class="download__title-text">Model inb3</span>
+                                        <span class="download__subtitle-text ">31 iuly 2023</span>
+                                        <span class="accordion__arrow-item ">
+                                            <img src="/images/icons/arrow-accordion.png" alt="">
+                                        </span>
+                                    </div>
+                                
+                                </div>
+                                    <div class="accordion__content3">
+                                        <div class="download_btn-wr">
+                                        <img src="/images/icons/download.svg" alt="">
+                                    <button class="click_down-btn">Click to download</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notification">
+            <div class="notification_wr">
+                <div class="accordion">
+                    <div class="accordion__item">
+                        <div class="accordion__title">
+                            <div class="accordion__arrow">
+                                <span class="accordion__arrow-item ">
+                                    <img src="/images/icons/arrow-accordion.png" alt="">
+                                </span>
+                            </div> 
+                                <div class="title-wr">
+                                    <span class="accordion__title-text">31 iuly 2023</span>
+                                    <span class="accordion__subtitle-text">your subscription expires</span>
+                                </div>
+
+                            </div>
+                            <div class="accordion__content">
+                                Dear User, you have exceeded the daily download limit
+                                Please read our <span>Term and Conditions</span> if you have any lea lea lea
+                            </div>
+                    </div>
+
+                    <div class="accordion__item">
+                            <div class="accordion__title">
+                                <div class="accordion__arrow">
+                                    <span class="accordion__arrow-item ">
+                                        <img src="/images/icons/arrow-accordion.png" alt="">
+                                    </span>
+                                </div> 
+                                <div class="title-wr">
+                                <span class="accordion__title-text">29 iuly 2023</span>
+                                <span class="accordion__subtitle-text">exceeded the download limit</span>
+                                </div>
+                            </div>
+                            <div class="accordion__content">
+                                Dear User, you have exceeded the daily download limit <br>
+                                Please read our <span>Term and Conditions</span> if you have any lea lea lea
+                            </div>
+                    </div>
+                    
+                    <div class="accordion__item">
+                            <div class="accordion__title">
+                                <div class="accordion__arrow">
+                                    <span class="accordion__arrow-item ">
+                                        <img src="/images/icons/arrow-accordion.png" alt="">
+                                    </span>
+                                </div> 
+                                <div class="title-wr">
+                                    <span class="accordion__title-text">31 iuly 2023</span>
+                                    <span class="accordion__subtitle-text">your subscription expires</span>
+                                </div>
+
+                            </div>
+                            <div class="accordion__content">
+                                Dear User, you have exceeded the daily download limit
+                                Please read our <span>Term and Conditions</span> if you have any lea lea lea
+                            </div>
+                    </div>
+                    
+                    <div class="accordion__item">
+                        <div class="accordion__title">
+                            <div class="accordion__arrow">
+                                <span class="accordion__arrow-item ">
+                                    <img src="/images/icons/arrow-accordion.png" alt="">
+                                </span>
+                            </div> 
+                            <div class="title-wr">
+                                <span class="accordion__title-text">29 iuly 2023</span>
+                                <span class="accordion__subtitle-text">exceeded the download limit</span>
+                            </div>
+
+                        </div>
+                        <div class="accordion__content">
+                            Dear User, you have exceeded the daily download limit
+                                Please read our <span>Term and Conditions</span> if you have any lea lea lea
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+        <section class="subscription subset settings-act">
+            <div class="subscription__wrapper">
+                <div class="subscription__title subset_title">
+                    Get a Subscription Now and start Download 
+                </div>
+                <div class="subscription__descr subset_descr">
+                    Thousands of Jewelry printable 3D Models, Vector arts for engraving or for 3D modeling, sculptures, 3D jewelry elements, just SUBSCRIBE AND DOWNLOAD. 
+                </div>
+                <div class="subscription__choice subset_choice">
+                    Select your Plan and start Download your 3D Models
+                </div>
+                <a href="getaplan.html" class="subscription__link">
+                    Get a Plan
+                </a>
+            </div>
+        </section>
+    
+        <section class="settings"  >
+            <div class="settings__wr">
+                <div class="settings__title">Edit</div>
+                <div class="settings__content_wr">
+                    <div class="settings__content_name">
+                        <div class="settings__content_descr">Full name</div>
+                        <div class="settings__content_data">Vin Diesel</div>
+                    </div>
+                    <div class="settings__content_contry">
+                        <div class="settings__content_descr">Country</div>
+                        <div class="settings__content_data">Republic of Moldova</div>
+                    </div>
+                    <div class="settings__content__mail">
+                        <div class="settings__content_descr">Email</div>
+                        <div class="settings__content_data">vindiesel@mail.com</div>
+                    </div>
+                    <div class="settings__content_oldpas">
+                        <div class="settings__content_descr">Old Password</div>
+                        <div class="settings__content_data">************</div>
+                    </div>
+                    <div class="settings__content_newpas">
+                        <div class="settings__content_descr">New Password</div>
+                        <div class="settings__content_data">************</div>
+                    </div>
+                    <div class="settings__content_pas">
+                        <div class="settings__content_descr">Password</div>
+                        <div class="settings__content_data">************</div>
+                    </div>
+                </div>  
+
+                <button class="settings__content_btn">Save changes</button>
+            </div>
+        </section>
+    
+    
+    
+    
+    
+        <footer class="footer footer__area">
+            <div class="footer__wrapper">
+                <div class="part1">
+                    <div class="footer__start">
+                        <a href="index.html" class="logo-white">
+                            <img src="/images/elements/logo/logo-white.svg" alt="">
+                        </a>
+                    </div>
+                    <span></span>
+                    <div class="footer__mid">
+                        <a href="prices.html" class="footer__link">prices</a>
+                        <a href="about.html" class="footer__link">about us</a>
+                        <a href="contact.html" class="footer__link">contact us</a>
+                        <a href="terms.html" class="footer__link">terms and conditions</a>
+                        <a href="privacy.html" class="footer__link">privacy policy</a>
+                        
+                    </div>
+                    <span></span>
+                </div>
+                <div class="part2">
+                    <div class="footer__mid-pay">
+                        <img src="/images/other/visa.svg" alt="">
+                        <img src="/images/other/master.svg" alt="">
+                        <img src="/images/other/american.svg" alt="">
+                        <img src="/images/other/paypal-logo-footer.svg" alt="">
+                    </div>
+                    <span></span>
+                    <div class="footer__end">
+                        <div class="right">all right is reserved © 2023</div>
+                        <div class="designed">REABOV STUDIO</div>
+        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+    <div class="scroll_up" onclick="scroll_up()">
+        <div class="scroll_wr">
+            <div class="scroll_back-item" onclick="history.back();" >
+                <img src="/images/icons/arrow-back.png" alt="">
+                <span>back</span>
+            </div>
+            <div class="scroll_up-item">
+                <img src="/images/icons/arrow-up.png" alt="">
+                <span>top</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="/lib/jquery/jquery.2.2.2.js"></script>
+    <script src="/lib/slick/slick.min.js"></script>
+    <script>
+        function setCloseNotMod(btn){
+            $(btn).parent().hide();
+        }
+    $(function() {
+	
+
+	$(".accordion__title").on("click", function(e) {
+
+		e.preventDefault();
+		var $this = $(this);
+
+		if (!$this.hasClass("accordion-active")) {
+			$(".accordion__content").slideUp(400);
+			$(".accordion__title").removeClass("accordion-active");
+			$('.accordion__arrow').removeClass('accordion__rotate');
+		}
+
+		$this.toggleClass("accordion-active");
+		$this.next().slideToggle();
+		$('.accordion__arrow',this).toggleClass('accordion__rotate');
+	});
+
+    
+	
+    });
+
+
+    
+    $(function() {
+	
+
+	$(".accordion__title2").on("click", function(e) {
+
+		e.preventDefault();
+		var $this = $(this);
+
+		if (!$this.hasClass("accordion-active2")) {
+			$(".accordion__content2").slideUp(400);
+			$(".accordion__title2").removeClass("accordion-active2");
+		}
+		$this.toggleClass("accordion-active2");
+		$this.next().slideToggle();
+		$('.accordion__arrow-item ',this).toggleClass('accordion__rotate');
+	});
+
+    
+	
+    });
+
+
+        function setDownload(){
+            $('.settings').removeClass('settings-act');
+            $('.subscription').removeClass('settings-act');
+            $('.notification').removeClass('settings-act');
+            $('.download').addClass('settings-act');
+        }
+
+
+        function setNot(){
+            $('.settings').removeClass('settings-act');
+            $('.subscription').removeClass('settings-act');
+            $('.download').removeClass('settings-act');
+            $('.notification').addClass('settings-act');
+
+
+        }
+        function setSub(){
+            $('.settings').removeClass('settings-act');
+            $('.notification').removeClass('settings-act');
+            $('.download').removeClass('settings-act');
+            $('.subscription').addClass('settings-act');
+
+        }
+        function setS(){
+            $('.subscription').removeClass('settings-act');
+            $('.notification').removeClass('settings-act');
+            $('.download').removeClass('settings-act');
+            $('.settings').addClass('settings-act');
+
+        }
+        function setAreaProfile(){
+            $('.area__detals').toggleClass('area-profile');
+        }
+
+
+        function setChangeArea(btn){
+            $('.area__choice_wr').children().removeClass('activ-colorgreen');
+            $(btn).addClass('activ-colorgreen');
+
+        }
+
+        $(document).ready(function(){
+            check_scroll();
+        })
+
+        $(window).on('scroll',function(){
+            check_scroll();
+        })
+
+        function check_scroll(){
+            var w = $(window).scrollTop();
+            $('.scroll_up-item').css('display','block');
+        }
+
+        function scroll_up(){
+            $('html,body').animate({scrollTop:0}, '500');
+        }
+
+        function setMobileActive(){
+            $('.header__mobile').hide();
+            $('.header__mobile_active').show();
+        }
+
+        function setMobileClose(){
+            $('.header__mobile_active').hide();
+            $('.header__mobile').show();
+            
+        }
+    </script>
+</body>

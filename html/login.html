@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/blocks.css">
+    <link rel="stylesheet" href="/css/ws.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__wrapper">
+            <div class="header__start">
+                <a href="index.html" class="logo-black">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+            </div>
+            <div class="header__mid">
+                <a href="about.html" class="header__link">about us</a>
+                <a href="prices.html" class="header__link prices">prices 
+                    <span><img src="/images/icons/Ellipse 20.png" alt=""></span>
+                </a>
+                <a href="contact.html" class="header__link">contact us</a>
+                <a href="" class="header__link" style="display: none;">3D models
+                </a>
+            </div>
+            <div class="header__end">
+                <a href="login.html" class="log-in">Log In</a>
+                <span></span>
+                <a href="register.html" class="registerlink">Register</a>
+            </div>
+        </div>
+        <div class="all__hr log-hr"></div>
+
+    </div>
+   
+   
+    <div class="back-black">
+        <section  class="login">
+            <div class="login__wrapper">
+                <a href="index.html" class="login__close reset_close">
+                    <img src="/images/icons/Group 453.png" alt="">
+                </a>
+                <!-- <div class="login__menu">
+                    <a href="index.html" class="login__close_menu">
+                        <img src="/images/icons/Group 453.png" alt="">
+                    </a>
+                    <a href="register.html" class="cabin">
+                        <img src="/images/icons/log-mobile.png" alt="">
+                    </a>
+                </div> -->
+                <div class="login__title">
+                    <a href="login.html" class="log activ-colorgreen">Log in</a>
+                    <span></span>
+                    <a href="register.html" class="reg activ-colorgrey">Register</a>
+                </div>
+    
+                <div class="login__subtitle">Hi,</div>
+                <div class="login__descr">We are happy to see you back again!</div>
+    
+                <div action="" class="login__form">
+                    <input type="email" class="email login__input" placeholder="Email">
+                    <input type="password" class="password login__input" placeholder="Password">
+                </div>
+
+                <!-- <div class="login__error_pas">ops, wrong password or email</div> -->
+                <!--Текст появляется при неправильном вводе пароля(появляется при неправильном пароле)-->
+
+                <div class="accept accept-log"></div>
+                <button class="forget">
+                    <span class="e"><span class="w"></span></span>Stay logged on this computer
+                </button>
+    
+    
+                <button class="login__btn">Log in</button>
+    
+                <a href="index.html" class="logo-black-mob logo-reg">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+
+                <!-- <a href="" class="login__reset">I want to <span>Reset my password</span></a> -->
+                <!--Cылка для восстановления пароля(появляется при неправильном пароле)-->
+            </div>
+        </section>
+        
+    </div>
+    
+    
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="part1">
+                <div class="footer__start">
+                    <a href="index.html" class="logo-white">
+                        <img src="/images/elements/logo/logo-white.svg" alt="">
+                    </a>
+                </div>
+                <span></span>
+                <div class="footer__mid">
+                    <a href="prices.html" class="footer__link">prices</a>
+                    <a href="about.html" class="footer__link">about us</a>
+                    <a href="contact.html" class="footer__link">contact us</a>
+                    <a href="terms.html" class="footer__link">terms and conditions</a>
+                    <a href="privacy.html" class="footer__link">privacy policy</a>
+                    
+                </div>
+                <span></span>
+            </div>
+            <div class="part2">
+                <div class="footer__mid-pay">
+                    <img src="/images/other/visa.svg" alt="">
+                    <img src="/images/other/master.svg" alt="">
+                    <img src="/images/other/american.svg" alt="">
+                    <img src="/images/other/paypal-logo-footer.svg" alt="">
+                </div>
+                <span></span>
+                <div class="footer__end">
+                    <div class="right">all right is reserved © 2023</div>
+                    <div class="designed">REABOV STUDIO</div>
+    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="scroll_up" onclick="scroll_up()">
+        <div class="scroll_wr">
+            <div class="scroll_back-item" onclick="history.back();" >
+                <img src="/images/icons/arrow-back.png" alt="">
+                <span>back</span>
+            </div>
+            <div class="scroll_up-item">
+                <img src="/images/icons/arrow-up.png" alt="">
+                <span>top</span>
+            </div>
+
+        </div>
+    </div>
+    <script src="/lib/jquery/jquery.2.2.2.js"></script>
+    <script src="js/blocks.js"></script>
+    <script>
+        $(document).ready(function(){
+            check_scroll();
+        })
+
+        $(window).on('scroll',function(){
+            check_scroll();
+        })
+
+        function check_scroll(){
+            var w = $(window).scrollTop();
+            $('.scroll_up-item').css('display','block');
+
+        }
+
+        function scroll_up(){
+            $('html,body').animate({scrollTop:0}, '500');
+        }
+
+        function setMobileActive(){
+            $('.header__mobile').hide();
+            $('.header__mobile_active').show();
+        }
+
+        function setMobileClose(){
+            $('.header__mobile_active').hide();
+            $('.header__mobile').show();
+            
+        }
+        function setActivRing(){
+            if ($('w') === hide()) {
+            $('w').show();
+            } else {
+            $('w') === hide();
+            }
+        }
+    </script>
+</body>
+</html>

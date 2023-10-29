@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/slick/slick.css">
+    <link rel="stylesheet" href="/css/blocks.css">
+    <link rel="stylesheet" href="/css/ws.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+
+    <title>Reabov</title>
+</head>
+<body>
+    <div class="header">
+        <div class="header__mobile" >
+            <button class="burger" onclick="setMobileActive(this)">
+                <img src="/images/icons/burger.png" alt="">
+            </button>
+            <a href="index.html" class="logo-black">
+                <img src="/images/elements/logo/logo-black.svg" alt="">
+            </a>
+
+            <a href="register.html" class="cabin">
+                <img src="/images/icons/log-mobile.png" alt="">
+            </a>
+        </div>
+
+        <div class="header__mobile_active" >
+            <div class="mobile_active_wr">
+                <div class="mobile_active_header">
+                    <button class="burger" onclick="setMobileActive(this)"> 
+                        <img src="/images/icons/burger.png" alt="">
+                    </button>
+                    <a href="" class="" class="mobile_active_close" onclick="setMobileActive(this)">
+                        <img src="/images/icons/Group 453.png" alt="">
+                    </a>
+                </div>
+
+                <div class="header__mid-mob">
+                    <a href="about.html" class="header__link header__link_mob">about us</a>
+                    <a href="prices.html" class="header__link header__link_mob prices">prices 
+                        <span><img src="/images/icons/Ellipse 20.png" alt=""></span>
+                    </a>
+                    <a href="contact.html" class="header__link header__link_mob">contact us</a>
+                    <a href="" class="header__link">3D models
+                    </a>
+                </div>
+                <a href="index.html" class="logo-black-mob">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+            </div>
+        </div>
+        
+        
+        <div class="header__wrapper"> 
+            <div class="header__start">
+                <a href="index.html" class="logo-black">
+                    <img src="/images/elements/logo/logo-black.svg" alt="">
+                </a>
+            </div>
+            <div class="header__mid">
+                <a href="about.html" class="header__link">about us</a>
+                <a href="prices.html" class="header__link prices">prices 
+                    <span><img src="/images/icons/Ellipse 20.png" alt=""></span>
+                </a>
+                <a href="contact.html" class="header__link">contact us</a>
+                <a href="" class="header__link">3D models
+                </a>
+            </div>
+            <div class="header__end">
+                <button class="area__btn" onclick="setAreaProfile(this)">Vin Diesel</button>
+                <div class="area__img">
+                    <img src="/images/elements/vin.png" alt="pic" >
+                    <span>2</span>
+                </div>
+                
+                
+                <div class="area__detals" >
+                    <div class="area__detals_wr">
+                        <a href="" class="area__detals_link">My Profile</a>
+                        <a href="" class="area__detals_link">Downloads</a>
+                        <a href="" class="area__detals_link">Settings</a>
+                        <a href="" class="area__detals_link">Subscription</a>
+                        <a href="" class="area__detals_link">Notifications <span>2</span></a>
+                        <div class="area_hr"></div>
+                        <button class="area__detals_btn">LOG OUT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="method">
+        <div class="method__wrapper">
+            <a href="index.html" class="method__close">
+                <img src="/images/icons/Group 453.png" alt="">
+            </a>
+
+            <div class="method__info">
+                <div class="info__name">Name: Vin Diesel</div>
+                <div class="info__mail">Email: vindiesel@gmail.com</div>
+            </div>
+            <div class="method__period">
+                <div class="period__title">Your Subscription Period</div>
+                <div class="period__data">03 april 2023 - 03 may 2023</div>
+            </div>
+            <div class="method__select">
+                <div class="select__title">SELECT A PAYMENT METHOD</div>
+                <button class="accept accept-method" onclick="setO(this)">
+                    <span class="a"><span class="s"></span></span>Visa, Mastercard, American Express
+                </button>
+                <div class="price__hr"></div>
+                <button class="accept accept-method"onclick="setO(this)">
+                    <span class="a"><span class="s"></span></span>Paypal
+                </button>
+            </div>
+
+            <div class="method__descr">
+                <div class="method__descr-title">You will pay</div>
+                <div class="method__descr-price">000 USD</div>
+            </div>
+
+            <div class="method__accept">
+                <button class="accept" onclick="setAll1(this)">
+                    <span class="ac ac1"><span class="s"></span></span>I accept all <a href="terms.html" class="underline">Terms and Condition</a>
+                </button>
+                <button class="accept method-accept-btn2" onclick="setAll2(this)">
+                    <span class="ac ac2"><span class="s"></span></span>I accept <a href="privacy.html" class="underline">Privacy Policy</a>
+                </button>
+            </div>
+
+            <button class="method__pay">Pay</button>
+
+            <div class="method_logo-pay">
+                <div class="method_logo-item">
+                    <img src="/images/other/pay-grey/paypal-logo.svg" alt="">
+                </div>
+                <div class="method_logo-item">
+                    <img src="/images/other/pay-grey/visa.svg" alt="">
+                </div>
+                <div class="method_logo-item">
+                    <img src="/images/other/pay-grey/master.svg" alt="">
+                </div>
+                <div class="method_logo-item">
+                    <img src="/images/other/pay-grey/american.svg" alt="">
+                </div>
+                
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__wrapper">
+            <div class="part1">
+                <div class="footer__start">
+                    <a href="index.html" class="logo-white">
+                        <img src="/images/elements/logo/logo-white.svg" alt="">
+                    </a>
+                </div>
+                <span></span>
+                <div class="footer__mid">
+                    <a href="prices.html" class="footer__link">prices</a>
+                    <a href="about.html" class="footer__link">about us</a>
+                    <a href="contact.html" class="footer__link">contact us</a>
+                    <a href="terms.html" class="footer__link">terms and conditions</a>
+                    <a href="terms.html" class="footer__link">privacy policy</a>
+                    
+                </div>
+                <span></span>
+            </div>
+            <div class="part2">
+                <div class="footer__mid-pay">
+                    <img src="/images/other/visa.svg" alt="">
+                    <img src="/images/other/master.svg" alt="">
+                    <img src="/images/other/american.svg" alt="">
+                    <img src="/images/other/paypal-logo-footer.svg" alt="">
+                </div>
+                <span></span>
+                <div class="footer__end">
+                    <div class="right">all right is reserved © 2023</div>
+                    <div class="designed">REABOV STUDIO</div>
+    
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="forget"></div>
+    <script src="/lib/jquery/jquery.2.2.2.js"></script>
+    <!-- <script src="js/blocks.js"></script> -->
+
+    <script>
+        function setO(btn){
+            $('.a').children().removeClass('s-activ');
+            $(btn).children('.a').children().toggleClass('s-activ');
+
+            // $('.a').children().toggleClass('s-activ');
+        }
+        function setAll1(){
+            $('.ac1').children().toggleClass('s-activ');
+            // $(btn).children('.a').children().toggleClass('s-activ');
+
+            // $('.a').children().toggleClass('s-activ');
+        }
+        function setAll2(){
+            $('.ac2').children().toggleClass('s-activ');
+            // $(btn).children('.a').children().toggleClass('s-activ');
+
+            // $('.a').children().toggleClass('s-activ');
+        }
+        
+        function setAreaProfile(){
+            $('.area__detals').toggleClass('area-profile');
+        }
+        function setMobileActive(){
+            $('.header__mobile_active').show();
+        }
+
+        function setMobileClose(){
+            $('.header__mobile_active').hide();            
+        }
+    </script>
+
+</body>
+</html>    

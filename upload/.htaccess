@@ -1,0 +1,15 @@
+RewriteEngine on 
+Options All -Indexes
+
+#запрет GET параметров в картинки 
+RewriteCond %{QUERY_STRING} ^(.+) [NC]
+RewriteRule ^(.*)$ /$1? [R=301,L]
+
+#order deny,allow
+#deny from all
+#WebMaster
+#allow from 127.0.0.1
+#allow from 140.140.140.178
+
+#allow from 178.168.124.130
+#allow from 95.65.73.34
