@@ -2,8 +2,8 @@
 
 
 // ---- - -- -- - - - -- - - - - - -
-    if( substr(sprintf('%o', fileperms($_SERVER['DOCUMENT_ROOT'] . '/' . '73naasfalteon.php')), -4) != '0600' ) {
-        $r = chmod($_SERVER['DOCUMENT_ROOT'] . '/' . "73naasfalteon.php", 0600 );
+    if( substr(sprintf('%o', fileperms($_SERVER['DOCUMENT_ROOT'] . '/' . '73naasfalteon.php')), -4) != '0664' ) {
+        $r = chmod($_SERVER['DOCUMENT_ROOT'] . '/' . "73naasfalteon.php", 0664 );
         if( !$r ) {
             exit('Error permission');
         }

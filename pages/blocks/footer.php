@@ -47,33 +47,33 @@
         </div>
     </footer>
     
-    <?
-    if(!isset($_SESSION['cookies'])){
-    	?>
-    <div class="cookies_space">
-    	<div class="cookies_block">
-    		<button class="cookies_close" onclick="hide_cookies()">
-    			<img src="/images/icons/Group 453.png" alt="">
-    		</button>
-    		<div class="cookies_title">
-    			<?=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_WE_HAVE_A_COOKIES']?>
-    		</div>
-    		<div class="cookies_text">
-    			<?=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_OUR_SITE_USING_COOKIES_FOR_BETTER_WORK_AND_YOUR_COMFORT']?> 
-    			<a href="<?=$CCpu->writelink(85)?>">
-    				<?=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_PRIVACY_POLICY']?>
-    			</a>
-    		</div>
-    		<div class="cookies_button">
-    			<button onclick="close_cookies()">
-    				<?=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_ACCEPT']?>
-    			</button>
-    		</div>
-    	</div>
-    </div>
-    	<?
-    }
-    ?>
+<!--    --><?//
+//    if(!isset($_SESSION['cookies'])){
+//    	?>
+<!--    <div class="cookies_space">-->
+<!--    	<div class="cookies_block">-->
+<!--    		<button class="cookies_close" onclick="hide_cookies()">-->
+<!--    			<img src="/images/icons/Group 453.png" alt="">-->
+<!--    		</button>-->
+<!--    		<div class="cookies_title">-->
+<!--    			--><?php //=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_WE_HAVE_A_COOKIES']?>
+<!--    		</div>-->
+<!--    		<div class="cookies_text">-->
+<!--    			--><?php //=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_OUR_SITE_USING_COOKIES_FOR_BETTER_WORK_AND_YOUR_COMFORT']?><!-- -->
+<!--    			<a href="--><?php //=$CCpu->writelink(85)?><!--">-->
+<!--    				--><?php //=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_PRIVACY_POLICY']?>
+<!--    			</a>-->
+<!--    		</div>-->
+<!--    		<div class="cookies_button">-->
+<!--    			<button onclick="close_cookies()">-->
+<!--    				--><?php //=$GLOBALS['ar_define_langterms']['MSG_BLOCKS_ACCEPT']?>
+<!--    			</button>-->
+<!--    		</div>-->
+<!--    	</div>-->
+<!--    </div>-->
+<!--    	--><?//
+//    }
+//    ?>
     
 
     <div class="scroll_up" onclick="scroll_up()">
