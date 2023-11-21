@@ -1,5 +1,5 @@
 <?
-	$db =  mysqli_connect($SERVER_NAME, $DB_LOGIN, $DB_PASS, $DB_NAME, $DB_PORT);
+	$db =  mysqli_connect($SERVER_NAME, $DB_LOGIN, $DB_PASS, $DB_NAME);
 
 
     if (!$db) {
