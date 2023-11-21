@@ -1,4 +1,6 @@
 <?
+$env = parse_ini_file('.env');
+
 /* используется при создании хэша пароля */
 $GLOBALS['security_salt'] = '1Fe403GcWLuyf7zH'; // указать длину от 15 символов // https://www.lastpass.com/password-generator
 if( $GLOBALS['security_salt'] == '' || strlen( $GLOBALS['security_salt'] ) < 15 ) {
@@ -25,10 +27,11 @@ $GLOBALS['protocol'] = stripos( $_SERVER['SERVER_PROTOCOL'] , 'https' ) === true
 $GLOBALS['timezone'] = 'Europe/Chisinau';
 
 /* доступы к БД */
-$SERVER_NAME    = "localhost";
-$DB_LOGIN       = "reabovst_db";
-$DB_PASS        = "kk3Gj9!4khE&";
-$DB_NAME        = "reabovst_db";
+$SERVER_NAME    = $env['SERVER_NAME'];
+$DB_LOGIN       = $env['DB_LOGIN'];
+$DB_PASS        = $env['DB_PASS'];
+$DB_NAME        = $env['DB_NAME'];
+$DB_PORT        = $env['DB_PORT'];
 
 // используется в созданий авто бэкапов и в ручную из админке
 // $dateName = date("Y-m-d-H");

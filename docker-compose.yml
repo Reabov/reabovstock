@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  php:
+    container_name: reabovst-php
+    build:
+      context: docker/php
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html/
+    depends_on:
+      - db
+    ports:
+      - 88:80
+    networks:
+      - reabovst_network
+    restart: unless-stopped
+
+  db:
+    container_name: reabovst-db
+    image: mariadb:10.5
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_ROOT_USER=root
+    ports:
+      - "9906:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - reabovst_network
+    restart: unless-stopped
+
+  phpmyadmin:
+    container_name: reabovst-phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - '8080:80'
+    environment:
+      PMA_HOST: db
+    depends_on:
+      - db
+    networks:
+      - reabovst_network
+    restart: unless-stopped
+
+networks:
+  reabovst_network:
+    driver: bridge
+
