@@ -1239,7 +1239,7 @@ video::-webkit-media-controls {
         margin-top: 25px;
     }
     .promo__wrapper{
-        max-height: 258px;
+        /*max-height: 258px;*/
         height: 100%;
     }
     .collection{
