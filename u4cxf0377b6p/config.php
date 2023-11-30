@@ -1,5 +1,5 @@
 <?
-include_once('env.php');
+require_once 'env_reader.php';
 
 /* используется при создании хэша пароля */
 $GLOBALS['security_salt'] = '1Fe403GcWLuyf7zH'; // указать длину от 15 символов // https://www.lastpass.com/password-generator
@@ -27,10 +27,10 @@ $GLOBALS['protocol'] = stripos( $_SERVER['SERVER_PROTOCOL'] , 'https' ) === true
 $GLOBALS['timezone'] = 'Europe/Chisinau';
 
 /* доступы к БД */
-$SERVER_NAME    = DB_HOST;
-$DB_LOGIN       = DB_USERNAME;
-$DB_PASS        = DB_PASSWORD;
-$DB_NAME        = DB_NAME;
+$SERVER_NAME    = $_ENV['DB_HOST'];
+$DB_LOGIN       = $_ENV['DB_USERNAME'];
+$DB_PASS        = $_ENV['DB_PASSWORD'];
+$DB_NAME        = $_ENV['DB_NAME'];
 
 // используется в созданий авто бэкапов и в ручную из админке
 // $dateName = date("Y-m-d-H");
@@ -39,11 +39,11 @@ switch ( $GLOBALS['mode'] ) {
 	case 'dev':
 		error_reporting( E_ALL );
 		break;
-	
+
 	case 'public':
 		error_reporting( 0 );
 		break;
-	
+
 	default:
 		error_reporting( E_ERROR );
 		break;

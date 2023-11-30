@@ -1,4 +1,6 @@
 /mysql
+/upload
+docker/php/*.ini
 .idea
 
-./env.php
+u4cxf0377b6p/.env
