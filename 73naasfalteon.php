@@ -10,7 +10,7 @@
     }
 
 
-    $path = 'u4cxf0377b6p'; /* НАЗВАНИЕ ПАПКИ АДМИН ПАНЕЛИ */
+    $path = 'admin'; /* НАЗВАНИЕ ПАПКИ АДМИН ПАНЕЛИ */
     if( !is_dir( $_SERVER['DOCUMENT_ROOT'] . '/' . $path ) ) {
         exit( 'Error connect panel' );
     }

@@ -3,4 +3,4 @@
 docker/php/*.ini
 .idea
 
-u4cxf0377b6p/.env
+admin/.env
