@@ -174,8 +174,7 @@ if($ar_clean['task'] == 'pre_reg'){
 	
 	if($check_email == array()){
 		$client_query = $Db->q("INSERT INTO `ws_clients` (email,password,full_name,countrye,active,activated,image,crypt,registration_date,last_auth_date,elem_id)
-											VALUES ('".$email."','".$pass."','".$name."','".$country."',1,0,'','',NOW(),'',".$country_id.") ");
-		
+											VALUES ('".$email."','".$pass."','".$name."','".$country."',1,0,'','',NOW(), NOW(),".$country_id.") ");
 		$client_id = mysqli_insert_id($db);
 		if($client_query){
 			

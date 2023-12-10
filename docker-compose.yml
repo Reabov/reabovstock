@@ -42,6 +42,15 @@ services:
     networks:
       - reabovst_network
     restart: unless-stopped
+  mailhog:
+    image: mailhog/mailhog
+    container_name: reabovst-mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - reabovst_network
+    restart: unless-stopped
 
 networks:
   reabovst_network:
