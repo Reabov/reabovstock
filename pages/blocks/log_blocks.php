@@ -1,5 +1,5 @@
 <div class="modal_space <?/* back-black */?>">
-    	<section class="login modal_block" id="login_space">
+    <section class="login modal_block" id="login_space">
     		<div class="login__wrapper">
                 <a onclick="close_modal()" class="login__close <?/* reset_close */?>">
                     <img src="/images/icons/Group 453.png" alt="">
@@ -323,14 +323,6 @@
         	$(this).find('.s').toggleClass('s-activ');
         	check_forgot_values();
         })
-        
-        function setActivRing(){
-            if ($('w') === hide()) {
-            $('w').show();
-            } else {
-            $('w') === hide();
-            }
-        }
     </script>
     <!--- forgot --->
     
@@ -384,13 +376,12 @@
     				}
     			}
     		})
-    		
     	}
+
     	function check_log_values(){
     		var check_email = $('#login_space #email').hasClass('checked');
     		var check_pass = $('#login_space #password').hasClass('checked');
-    		//var check_accept = $('#accept_btn').find('.w').hasClass('s-activ');
-    		
+
     		if( check_email && check_pass ){
     			$('#login_space .login__btn').prop('disabled',false);
     		}else{
@@ -402,47 +393,28 @@
     		$(this).css('border-color','');
     	})
     	
-    	$('#login_space #email').keyup(function(){
-    		var v = $(this).val();
-    		var err = 0;
-    		
-    		if(v == ''){
-    			err = 1;
-    		}
-    		
-    		var email_arr = v.split('@');
-    		if(email_arr.length == 2 && email_arr[0] != '' && email_arr[1] != ''){
-    			var mail = email_arr[1];
-    			var mail_arr = mail.split('.');
-    			if(mail_arr.length < 2 || mail_arr[0] == '' || mail_arr[1] == ''){
-    				err = 1;
-    			}
-    		}else{
-    			err = 1;
-    		}
-    		
-    		if(err == 0){
+    	$('#login_space #email').keyup(function() {
+    		const email = $(this).val();
+            const emailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+    		if (emailRegex.test(email)) {
     			$(this).addClass('checked');
-    		}else{
+    		} else {
     			$(this).removeClass('checked');
     		}
+
     		check_log_values();
     	})
     	
-    	$('#login_space #password').keyup(function(){
-    		var v = $(this).val();
-    		if(v != ''){
+    	$('#login_space #password').keyup(function() {
+    		const password = $(this).val();
+
+    		if (password !== '') {
     			$(this).addClass('checked');
-    		}else{
+    		} else {
     			$(this).removeClass('checked');
     		}
-    		
-    		var re_pass = $('#login_space #re_password').val();
-    		if(re_pass == v){
-    			$('#login_space #re_password').addClass('checked');
-    		}else{
-    			$('#login_space #re_password').removeClass('checked');
-    		}
+
     		check_log_values();
     	})
     	
@@ -450,21 +422,9 @@
         	$(this).find('.w').toggleClass('s-activ');
         	check_log_values();
         })
-    	
-        function setActivRing(){
-            if ($('w') === hide()) {
-            $('w').show();
-            } else {
-            $('w') === hide();
-            }
-        }
     </script>
     <!--- login --->
-    
-    
-    
-    
-    
+
     <!--- reg --->
     <script>
     	$('#reg_space #country_search').on('focus',function(){
