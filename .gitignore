@@ -1,5 +1,4 @@
 /mysql
-/upload
 docker/php/*.ini
 .idea
 
