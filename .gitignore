@@ -3,3 +3,4 @@ docker/php/*.ini
 .idea
 
 admin/.env
+upload/*
